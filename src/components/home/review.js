@@ -1,6 +1,6 @@
 import React from "react"
 import Carousel from "react-bootstrap/Carousel"
-import { parallax } from "../../components/main"
+import { parallax } from "../main"
 
 import z from "../../images/review/z.svg"
 import zz from "../../images/about/zz.svg"

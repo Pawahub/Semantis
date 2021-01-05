@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react"
 import Carousel from "react-bootstrap/Carousel"
-import { rippleEffect } from "../../components/main"
+import { rippleEffect } from "../main"
 import { StateContext } from "../../state/stateCotext"
 
-import Modal from "../../components/modal"
+import Modal from "../modal"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHandHoldingUsd, faTimes } from "@fortawesome/free-solid-svg-icons"
