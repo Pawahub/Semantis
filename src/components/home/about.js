@@ -1,5 +1,5 @@
 import React from "react"
-import { parallax, rippleEffect } from "../../components/main"
+import { parallax, rippleEffect } from "../main"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDownload } from "@fortawesome/free-solid-svg-icons"

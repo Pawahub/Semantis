@@ -45,18 +45,18 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Projects\Semantis-online\src" />
+      <recent name="C:\Users\Admin\Downloads" />
+      <recent name="C:\Users\Admin\Projects\Semantis-online\public\" />
+      <recent name="C:\Users\Admin\Projects\Semantis-online\src\css" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Projects\Semantis-online\src\state" />
       <recent name="C:\Users\Admin\Projects\Semantis-online\src\components" />
       <recent name="C:\Users\Admin\Projects\Semantis-online\src\pages\home" />
       <recent name="C:\Users\Admin\Projects\Semantis-online\public" />
       <recent name="C:\Users\Admin\Projects\Semantis-online\public\icons" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\Projects\Semantis-online\src" />
-      <recent name="C:\Users\Admin\Downloads" />
-      <recent name="C:\Users\Admin\Projects\Semantis-online\public\" />
-      <recent name="C:\Users\Admin\Projects\Semantis-online\src\css" />
     </key>
   </component>
   <component name="RunManager" selected="npm.develop">
@@ -175,7 +175,7 @@
       <workItem from="1609312341816" duration="3505000" />
       <workItem from="1609767584266" duration="4557000" />
       <workItem from="1609778875239" duration="8108000" />
-      <workItem from="1609840594319" duration="1687000" />
+      <workItem from="1609840594319" duration="4490000" />
     </task>
     <servers />
   </component>
