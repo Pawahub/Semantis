@@ -113,13 +113,15 @@ export default () => {
 
   const handleCheckbox = () => setFormData({ ...formData, copy: !formData.copy })
 
-  const mail = fetch("https://semantis.by/mail.php", {
-    method: "POST",
-    headers: {
-      "Content-Type": "multipart/form-data"
-    },
-    body: JSON.stringify(formData)
-  })
+  const mail = async () => {
+    await fetch("https://semantis.by/mail.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "multipart/form-data"
+      },
+      body: JSON.stringify(formData)
+    })
+  }
 
   const handleSubmit = (e) => {
     rippleEffect(e)
