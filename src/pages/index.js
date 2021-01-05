@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import PageScroller from "../react-page-scroller-master/src/index"
+import ReactPageScroller from "react-page-scroller"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
@@ -12,9 +12,11 @@ import Contacts from "../pages/home/contacts"
 
 const IndexPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)
-
   const handleSectionChange = number => {
-    setSectionNumber(number)
+    if (sectionNumber !== number) {
+      setSectionNumber(number)
+    }
+
   }
 
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
@@ -31,9 +33,9 @@ const IndexPage = () => {
   } else return (
     <Layout selectedSection={sectionNumber}>
       <SEO title="Разработка сайтов и веб-приложений"/>
-      <PageScroller
+      <ReactPageScroller
         customPageNumber={sectionNumber}
-        onBeforePageScroll={handleSectionChange}
+        pageOnChange={handleSectionChange}
         renderAllPagesOnFirstRender
         animationTimerBuffer={50}
         animationTimer={750}
@@ -43,7 +45,7 @@ const IndexPage = () => {
         <How/>
         <Review/>
         <Contacts/>
-      </PageScroller>
+      </ReactPageScroller>
     </Layout>
   )
 }
