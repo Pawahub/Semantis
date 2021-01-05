@@ -1,0 +1,99 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: transparent;
+}
+
+.menu ul, .tel ul {
+    letter-spacing: 1px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.menu a, .tel a {
+    text-decoration: none;
+    font-family: "Gotham Pro", sans-serif;
+    font-weight: normal;
+    font-size: 0.875em;
+    margin: 0.5rem;
+    color: inherit;
+}
+
+.menu a.active {
+    color: #085DDB;
+}
+
+.menu a.activeWhite {
+    color: white;
+}
+
+#line {
+    position: absolute;
+    border-color: #085DDB;
+    border-bottom: 1px solid transparent;
+    transform: translateX(-60px);
+    transition: all 0.3s ease-out;
+    z-index: -1;
+}
+
+.burger, .chatTop, .modalBtn {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 25px;
+    border: none;
+    color: #085DDB;
+    background: rgba(8, 93, 219, 0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.burger.open, .chatTop.open, .modalBtn.open {
+    color: #F6FAFF;
+    background: #085DDB;
+}
+
+.chat {
+    position: relative;
+}
+
+.chat a {
+    position: absolute;
+    bottom: -20px;
+    right: -28px;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+}
+
+.chat a:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.chat a:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+
+.chat.active a:nth-child(1) {
+    opacity: 1;
+    transform: translateY(375%);
+}
+
+.chat.active a:nth-child(2) {
+    opacity: 1;
+    transform: translateY(250%);
+}
+
+.chat.active a:nth-child(3) {
+    opacity: 1;
+    transform: translateY(125%);
+}
