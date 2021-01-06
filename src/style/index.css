@@ -361,7 +361,11 @@ body::-webkit-scrollbar {
 a, a:hover, a:active {
   text-decoration: none;
 }
-
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 .h1 {
   font-family: Gotham Pro, sans-serif;
   font-style: normal;
