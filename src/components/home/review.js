@@ -30,7 +30,7 @@ export default () => {
       <div className="circle circle6" data-translate="10">
         <img src={step1} className="img-fluid" alt=""/>
       </div>
-      <div className="container py-5 d-flex justify-content-center align-items-center flex-wrap">
+      <div className="container py-5 d-flex justify-content-center align-items-center flex-wrap overflow-hidden">
         <h2 className="h1 col-12 text-center">Наши клиенты</h2>
         <Carousel className="col-12 col-md-8 col-lg-6" indicators={false}>
           <Carousel.Item>

@@ -968,8 +968,12 @@ textarea {
 /*---------------------------------------------------*/
 @media screen and (orientation: portrait) {
   section {
-    min-height: auto !important;
+    min-height: 100vh;
     align-items: start;
+  }
+
+  .home {
+    min-height: auto;
   }
 
   .form, .bg-white {
