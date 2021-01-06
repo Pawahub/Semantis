@@ -16,7 +16,7 @@ export default () => {
 
   useEffect(() => {
     if (state.selectedSection === 2 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (document.documentElement.clientWidth <= 991)) {
-      let delay = 0.5
+      let delay
       document.querySelectorAll(".step").forEach(item => {
         item.childNodes[0].style.animationDelay = `${delay}s`
         item.style.transitionDelay = `${delay}s`
