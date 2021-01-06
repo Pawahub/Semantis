@@ -1,0 +1,34 @@
+.stages-of-creation
+  position: relative
+  height: 100%
+  width: 100%
+  display: flex
+  z-index: 3
+  background-color: #F6FAFF
+  > div
+    margin: auto
+    z-index: 2
+  &__items
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    z-index: 1 !important
+    .item1
+      position: absolute
+      bottom: 50px
+      left: 5%
+    .item2
+      position: absolute
+      top: 180px
+      right: 5%
+  .col-md-6
+    margin-bottom: 20px
+
+@media screen and (max-width: 990px)
+  .stages-of-creation
+    padding-top: 50px
+    padding-bottom: 50px

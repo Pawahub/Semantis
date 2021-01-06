@@ -2,17 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f4f42c9-4ce6-4eb5-addb-5053997ea758" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/buttons/button-cviz.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/buttons/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/card/card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/card/card.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/card/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/develop-page/develop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/develop-page/develop.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/section-left-right/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/section-left-right/section-left-right.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/section-left-right/section-left-right.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/first-section/first-section.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/first-section/first-section.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/first-section/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/stages-of-creation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/stages-of-creation/stages-of-creation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/stages-of-creation/stages-of-creation.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/we-will-do/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/we-will-do/we-will-do.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/we-will-do/we-will-do.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/develop.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/fon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/brif.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/create.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/dev.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/dots.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/ellipse.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/item1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/item2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/line1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/line2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/macBook.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/macBook1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/macBook2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/macBook3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/macBook4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/polygon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/result.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/treangls.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/develop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/web-dev.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="Semantis-online" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -25,12 +65,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/components/home/contacts.js" root0="SKIP_INSPECTION" />
-  </component>
   <component name="ProjectId" id="1iYXRs38LVWs9rc2crRQKkmcoI5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
@@ -42,7 +86,7 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Admin\Projects\Semantis-online\node_modules\prettier" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -188,12 +232,11 @@
       <workItem from="1609312341816" duration="3505000" />
       <workItem from="1609767584266" duration="4557000" />
       <workItem from="1609778875239" duration="8108000" />
-      <workItem from="1609840594319" duration="11186000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -207,5 +250,34 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609926205272">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609926205272" />
+    <state width="1899" height="377" key="GridCell.Tab.0.bottom" timestamp="1609919647288">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="377" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609919647288" />
+    <state width="1899" height="377" key="GridCell.Tab.0.center" timestamp="1609919647288">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="377" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609919647288" />
+    <state width="1899" height="377" key="GridCell.Tab.0.left" timestamp="1609919647288">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="377" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609919647288" />
+    <state width="1899" height="377" key="GridCell.Tab.0.right" timestamp="1609919647288">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="377" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609919647288" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1609928097538">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609928097538" />
   </component>
 </project>

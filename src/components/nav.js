@@ -64,7 +64,7 @@ export default ({ siteTitle }) => {
         <nav className="menu d-none d-md-flex align-items-center">
           <ul role="navigation" onMouseOver={spyLine} onMouseLeave={spyLine} onClick={(e) => currentPage(e, state.selectedSection)}>
             <li><Link className={state.selectedSection === 2 ? "activeWhite" : "active"} to="/">Главная</Link></li>
-            <li><Link to="/">Веб-разработка</Link></li>
+            <li><Link to="/web-dev">Веб-разработка</Link></li>
             <li><Link to="/">Продвижение</Link></li>
             <li><Link to="/">Дизайн</Link></li>
             <li><Link to="/">SMM</Link></li>
