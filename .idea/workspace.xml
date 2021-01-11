@@ -1,53 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3f4f42c9-4ce6-4eb5-addb-5053997ea758" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/buttons/button-cviz.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/buttons/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/card/card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/card/card.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/card/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/develop-page/develop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/develop-page/develop.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/section-left-right/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/section-left-right/section-left-right.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/section-left-right/section-left-right.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/first-section/first-section.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/first-section/first-section.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/first-section/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/stages-of-creation/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/stages-of-creation/stages-of-creation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/stages-of-creation/stages-of-creation.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/we-will-do/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/we-will-do/we-will-do.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/we-will-do/we-will-do.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/develop.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/fon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/brif.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/create.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/dev.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/dots.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/ellipse.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/item1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/item2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/line1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/line2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/macBook.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/macBook1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/macBook2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/macBook3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/macBook4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/polygon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/result.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/treangls.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/develop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/web-dev.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/card/card-case.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/carousel/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/carousel/carousel.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/carousel/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/slider/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/slider/fonts/slick.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/slider/fonts/slick.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/slider/fonts/slick.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/slider/fonts/slick.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/slider/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/slider/slick-theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/slider/slick.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/slider/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/slider/slider.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/case/case.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/case/case.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/web-dev/case/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/case.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/case/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/case/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/case/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/line-with-dot.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/web-dev/line3.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card/card.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/card.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/card/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/web-dev/stages-of-creation/stages-of-creation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/web-dev/stages-of-creation/stages-of-creation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/web-dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/web-dev.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,18 +111,6 @@
       <recent name="C:\Users\Admin\Projects\Semantis-online\public" />
       <recent name="C:\Users\Admin\Projects\Semantis-online\public\icons" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="npm.develop">
     <configuration name="develop" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -244,12 +240,23 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="COLUMN_ORDER" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -259,22 +266,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609926205272" />
-    <state width="1899" height="377" key="GridCell.Tab.0.bottom" timestamp="1609919647288">
+    <state width="1899" height="377" key="GridCell.Tab.0.bottom" timestamp="1610368671793">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="377" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609919647288" />
-    <state width="1899" height="377" key="GridCell.Tab.0.center" timestamp="1609919647288">
+    <state width="1899" height="377" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610368671793" />
+    <state width="1899" height="377" key="GridCell.Tab.0.center" timestamp="1610368671793">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="377" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609919647288" />
-    <state width="1899" height="377" key="GridCell.Tab.0.left" timestamp="1609919647288">
+    <state width="1899" height="377" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610368671793" />
+    <state width="1899" height="377" key="GridCell.Tab.0.left" timestamp="1610368671793">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="377" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609919647288" />
-    <state width="1899" height="377" key="GridCell.Tab.0.right" timestamp="1609919647288">
+    <state width="1899" height="377" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610368671793" />
+    <state width="1899" height="377" key="GridCell.Tab.0.right" timestamp="1610368671793">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="377" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1609919647288" />
+    <state width="1899" height="377" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1610368671793" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1609928097538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -27,7 +27,8 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-number-format": "^4.4.1",
-    "react-page-scroller": "^2.0.7-beta"
+    "react-page-scroller": "^2.0.7-beta",
+    "react-slick": "^0.27.13"
   },
   "devDependencies": {
     "prettier": "2.1.2"

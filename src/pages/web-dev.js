@@ -5,13 +5,11 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 
-import About from "../components/home/about"
-import How from "../components/home/how"
-import Review from "../components/home/review"
-import Contacts from "../components/home/contacts"
+
 import FirstSection from "../components/web-dev/first-section"
 import WeWillDo from "../components/web-dev/we-will-do"
 import StagesOfCreation from "../components/web-dev/stages-of-creation"
+import Case from "../components/web-dev/case"
 
 const IndexPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)
@@ -30,7 +28,7 @@ const IndexPage = () => {
         <FirstSection/>
         <WeWillDo/>
         <StagesOfCreation/>
-
+        <Case/>
 
 
       </Layout>
@@ -41,13 +39,14 @@ const IndexPage = () => {
       <ReactPageScroller
         customPageNumber={sectionNumber}
         pageOnChange={handleSectionChange}
-        renderAllPagesOnFirstRender
+        // renderAllPagesOnFirstRender
         animationTimerBuffer={50}
         animationTimer={750}
       >
         <FirstSection/>
         <WeWillDo/>
         <StagesOfCreation/>
+        <Case/>
 
 
       </ReactPageScroller>

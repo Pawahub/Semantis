@@ -1,2 +1,3 @@
 import Card from "./card"
-export default Card;
+import CardCase from "./card-case"
+export { Card, CardCase };
