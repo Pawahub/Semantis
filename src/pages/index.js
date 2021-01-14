@@ -16,7 +16,6 @@ const IndexPage = () => {
     if (sectionNumber !== number) {
       setSectionNumber(number)
     }
-
   }
 
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {

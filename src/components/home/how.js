@@ -23,8 +23,7 @@ export default () => {
     { img: step6, text: "Публикация и оптимизация" }
   ]
 
-
-  const delay = [500, 1000, 1500, 2000, 2500, 3000];
+  const delay = [500, 1000, 1500, 2000, 2500, 3000]
 
   const items = () => {
     return steps.map(({ img, text }, index) => {
@@ -36,8 +35,8 @@ export default () => {
             timeout={500}
             classNames="fade"
           >
-            <div className="step" style={{transitionDelay: `${delay[index]}ms`}}>
-              <img src={img} alt={text} className="rounded-circle" style={{animationDelay: `${delay[index]}ms`}}/>
+            <div className="step" style={{ transitionDelay: delay[index] + "ms" }}>
+              <img src={img} alt={text} className="rounded-circle" style={{ animationDelay: delay[index] + "ms" }}/>
               <div>
                 <div className="d-md-none d-flex number">{index + 1}
                   <strong>&#8228;</strong>
@@ -46,12 +45,11 @@ export default () => {
               </div>
             </div>
           </CSSTransition>
-          <div className="progressLine" style={{transitionDelay: delay[index] - 450 + 'ms'}}>{index + 1}</div>
+          <div className="progressLine" style={{ transitionDelay: delay[index] - 450 + "ms" }}>{index + 1}</div>
         </div>
       )
     })
   }
-
 
   return (
     <section className="how">
@@ -60,7 +58,7 @@ export default () => {
         <img className="zz2 d-none d-lg-block" src={zz} alt=""/>
         <h2 className="text-white h1">Как мы работаем?</h2>
         <TransitionGroup className="row m-0 justify-content-center">
-          {state.selectedSection === 2 ? items() : null }
+          {(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991 || state.selectedSection === 2) ? items() : null}
         </TransitionGroup>
       </div>
     </section>
