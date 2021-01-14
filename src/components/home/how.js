@@ -26,29 +26,27 @@ export default () => {
   const delay = [500, 1000, 1500, 2000, 2500, 3000]
 
   const items = () => {
-    return steps.map(({ img, text }, index) => {
-      return (
-        <div className="col-12 col-md-4 m-0 p-0">
-          <CSSTransition
-            in={state.selectedSection === 2}
-            key={index}
-            timeout={500}
-            classNames="fade"
-          >
-            <div className="step" style={{ transitionDelay: delay[index] + "ms" }}>
-              <img src={img} alt={text} className="rounded-circle" style={{ animationDelay: delay[index] + "ms" }}/>
-              <div>
-                <div className="d-md-none d-flex number">{index + 1}
-                  <strong>&#8228;</strong>
-                </div>
-                <h6>{text}</h6>
+    return steps.map(({ img, text }, index) => (
+      <div className="col-12 col-md-4 m-0 p-0">
+        <CSSTransition
+          in={state.selectedSection === 2}
+          key={index}
+          timeout={500}
+          classNames="fade"
+        >
+          <div className="step" style={{ transitionDelay: delay[index] + "ms" }}>
+            <img src={img} alt={text} className="rounded-circle" style={{ animationDelay: delay[index] + "ms" }}/>
+            <div>
+              <div className="d-md-none d-flex number">{index + 1}
+                <strong>&#8228;</strong>
               </div>
+              <h6>{text}</h6>
             </div>
-          </CSSTransition>
-          <div className="progressLine" style={{ transitionDelay: delay[index] - 450 + "ms" }}>{index + 1}</div>
-        </div>
-      )
-    })
+          </div>
+        </CSSTransition>
+        <div className="progressLine" style={{ transitionDelay: delay[index] - 450 + "ms" }}>{index + 1}</div>
+      </div>
+    ))
   }
 
   return (
