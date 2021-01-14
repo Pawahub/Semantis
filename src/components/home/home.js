@@ -2,8 +2,8 @@ import React, { useContext } from "react"
 import { rippleEffect } from "../main"
 import { StateContext } from "../../state/stateCotext"
 
-import Modal from "../modal"
-import Quiz from "../quiz"
+import Modal from "../modal/modal"
+import Quiz from "../quiz/quiz"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHandHoldingUsd, faTimes } from "@fortawesome/free-solid-svg-icons"
@@ -61,7 +61,7 @@ export default () => {
               </div>
               <Quiz/>
             </Modal>
-            : ""
+            : null
           }
         </div>
         <div className="offset-sm-4 offset-md-6 offset-lg-0 mt-5 social">

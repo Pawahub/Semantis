@@ -1,13 +1,13 @@
 import React, { useContext } from "react"
-import { StateContext } from "../state/stateCotext"
+import { StateContext } from "../../state/stateCotext"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faComments } from "@fortawesome/free-solid-svg-icons"
-import whatsapp from "../images/nav/whatsapp.png"
-import telegram from "../images/nav/telegram.png"
-import viber from "../images/nav/viber.png"
+import whatsapp from "../../images/nav/whatsapp.png"
+import telegram from "../../images/nav/telegram.png"
+import viber from "../../images/nav/viber.png"
 
-import "../style/chat.css"
+import "./chat.css"
 
 export default () => {
   const { state, dispatch } = useContext(StateContext)

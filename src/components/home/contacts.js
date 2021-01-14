@@ -3,7 +3,7 @@ import { rippleEffect } from "../main"
 import { StateContext } from "../../state/stateCotext"
 
 import NumberFormat from "react-number-format"
-import Modal from "../modal"
+import Modal from "../modal/modal"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPaperPlane, faTimes } from "@fortawesome/free-solid-svg-icons"

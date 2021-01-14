@@ -1,23 +1,23 @@
 import React, { useContext, useEffect, useRef } from "react"
 import { Link } from "gatsby"
-import { currentPage } from "./main"
-import { StateContext } from "../state/stateCotext"
+import { currentPage } from "../main"
+import { StateContext } from "../../state/stateCotext"
 
-import Modal from "./modal"
-import Sidebar from "./sidebar"
-import Button from "./chat"
+import Modal from "../modal/modal"
+import Sidebar from "../sidebar/sidebar"
+import Button from "../chat/chat"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPhoneAlt, faComments, faBars, faTimes, faMobileAlt } from "@fortawesome/free-solid-svg-icons"
-import blueLogo from "../images/nav/logo.png"
-import whiteLogo from "../images/nav/logo-white.svg"
-import whatsapp from "../images/nav/whatsapp.png"
-import telegram from "../images/nav/telegram.png"
-import viber from "../images/nav/viber.png"
-import ru from "../images/nav/ru.svg"
-import by from "../images/nav/by.svg"
+import blueLogo from "../../images/nav/logo.png"
+import whiteLogo from "../../images/nav/logo-white.svg"
+import whatsapp from "../../images/nav/whatsapp.png"
+import telegram from "../../images/nav/telegram.png"
+import viber from "../../images/nav/viber.png"
+import ru from "../../images/nav/ru.svg"
+import by from "../../images/nav/by.svg"
 
-import "../style/nav.css"
+import "./nav.css"
 
 export default ({ siteTitle }) => {
   const { state, dispatch } = useContext(StateContext)

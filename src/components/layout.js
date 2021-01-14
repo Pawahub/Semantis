@@ -11,9 +11,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import { StateContext } from "../state/stateCotext"
 import { Reducer } from "../state/stateReducer"
 
-import Nav from "./nav"
+import Nav from "./nav/nav"
 
-import "../style/index.css"
+import "../pages/index.css"
 
 const Layout = ({ selectedSection, children }) => {
   const data = useStaticQuery(graphql`

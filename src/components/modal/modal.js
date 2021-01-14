@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useEffect } from "react"
-import { StateContext } from "../state/stateCotext"
+import { StateContext } from "../../state/stateCotext"
 
-import "../style/modal.css"
+import "./modal.css"
 
 export default ({ children }) => {
   const { state, dispatch } = useContext(StateContext)
