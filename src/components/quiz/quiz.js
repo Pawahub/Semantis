@@ -1,5 +1,5 @@
 import React from "react"
-import { rippleEffect } from "./main"
+import { rippleEffect } from "../main"
 
 export default () => {
   // const [quizData, setQuizData] = useState({

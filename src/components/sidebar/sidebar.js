@@ -1,15 +1,15 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
-import { currentPage } from "./main"
-import { StateContext } from "../state/stateCotext"
+import { currentPage } from "../main"
+import { StateContext } from "../../state/stateCotext"
 
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faInstagram, faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { faTimes } from "@fortawesome/free-solid-svg-icons"
-import whiteLogo from "../images/nav/logo-white.svg"
+import whiteLogo from "../../images/nav/logo-white.svg"
 
-import "../style/sidebar.css"
+import "./sidebar.css"
 
 export default () => {
   const { state, dispatch } = useContext(StateContext)
