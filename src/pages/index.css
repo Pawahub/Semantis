@@ -631,12 +631,14 @@ a, a:hover, a:active {
     transform: translateX(-50%);
     z-index: -1;
 }
-
-.step.fade-enter-done .progressLine:after {
+.step.fade-enter-done + .progressLine {
+    color: #085ddb;
+}
+.step.fade-enter-done + .progressLine:after {
     transform: scaleX(1);
 }
 
-.step.fade-enter-done .progressLine:before {
+.step.fade-enter-done + .progressLine:before {
     background-position-x: 50px;
 }
 
