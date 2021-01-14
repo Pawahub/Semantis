@@ -53,7 +53,7 @@ export default () => {
                 in={state.selectedSection === 2}
                 key={index}
                 timeout={500}
-                classNames="fadeIn"
+                classNames="fade"
               >
                 <div className="step">
                   <img src={img} alt={text} className="rounded-circle"/>

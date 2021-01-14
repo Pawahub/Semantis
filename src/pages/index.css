@@ -563,8 +563,9 @@ a, a:hover, a:active {
     opacity: 0;
 }
 
-.fade-enter-active, .fade-done {
+.fade-enter-active, .fade-enter-done {
     opacity: 1;
+    transition: opacity 500ms ease-out;
 }
 
 .step div {
@@ -579,7 +580,7 @@ a, a:hover, a:active {
     width: 24px;
 }
 
-.fade-done img {
+.fade-enter-done img {
     box-shadow: 0 10px 30px rgba(36, 67, 176, 0.2);
     -webkit-animation: bounce-in-fwd 0.6s both;
     animation: bounce-in-fwd 0.6s both;
@@ -631,11 +632,11 @@ a, a:hover, a:active {
     z-index: -1;
 }
 
-.step.fade-done .progressLine:after {
+.step.fade-enter-done .progressLine:after {
     transform: scaleX(1);
 }
 
-.step.fade-done .progressLine:before {
+.step.fade-enter-done .progressLine:before {
     background-position-x: 50px;
 }
 
