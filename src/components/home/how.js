@@ -22,7 +22,6 @@ export default () => {
     { img: step5, text: "Наполнение контентом" },
     { img: step6, text: "Публикация и оптимизация" }
   ]
-  console.log('1')
 
 
   const delay = [500, 1000, 1500, 2000, 2500, 3000];
@@ -61,7 +60,7 @@ export default () => {
         <img className="zz2 d-none d-lg-block" src={zz} alt=""/>
         <h2 className="text-white h1">Как мы работаем?</h2>
         <TransitionGroup className="row m-0 justify-content-center">
-          {items()}
+          {state.selectedSection === 2 ? items() : null }
         </TransitionGroup>
       </div>
     </section>
