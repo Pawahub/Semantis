@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext } from "react"
 import { StateContext } from "../../state/stateCotext"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 
@@ -22,25 +22,37 @@ export default () => {
     { img: step5, text: "Наполнение контентом" },
     { img: step6, text: "Публикация и оптимизация" }
   ]
+  console.log('1')
 
-  // const startAnimate = (e, initialDelay) => {
-  //   document.querySelectorAll(".step").forEach(item => {
-  //     item.childNodes[0].style.animationDelay = `${initialDelay}s`
-  //     item.style.transitionDelay = `${initialDelay}s`
-  //     item.classList.add("fadeIn")
-  //     e.target.childNodes[1].style.transitionDelay = `${initialDelay - 0.3}s`
-  //     e.target.childNodes[1].style.color = `#085DDB`
-  //     e.target.childNodes[1].classList.add("fadeIn")
-  //   })
-  // }
 
-  useEffect(() => {
-    if (state.selectedSection === 2 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (document.documentElement.clientWidth <= 991)) {
-      // startAnimate()
-    }
-  }, [state.selectedSection])
+  const delay = [500, 1000, 1500, 2000, 2500, 3000];
 
-  const delay = [500, 1000, 1500, 2000, 2500, 3000]
+  const items = () => {
+    return steps.map(({ img, text }, index) => {
+      return (
+        <div className="col-12 col-md-4 m-0 p-0">
+          <CSSTransition
+            in={state.selectedSection === 2}
+            key={index}
+            timeout={500}
+            classNames="fade"
+          >
+            <div className="step" style={{transitionDelay: `${delay[index]}ms`}}>
+              <img src={img} alt={text} className="rounded-circle" style={{animationDelay: `${delay[index]}ms`}}/>
+              <div>
+                <div className="d-md-none d-flex number">{index + 1}
+                  <strong>&#8228;</strong>
+                </div>
+                <h6>{text}</h6>
+              </div>
+            </div>
+          </CSSTransition>
+          <div className="progressLine" style={{transitionDelay: delay[index] - 450 + 'ms'}}>{index + 1}</div>
+        </div>
+      )
+    })
+  }
+
 
   return (
     <section className="how">
@@ -49,29 +61,7 @@ export default () => {
         <img className="zz2 d-none d-lg-block" src={zz} alt=""/>
         <h2 className="text-white h1">Как мы работаем?</h2>
         <TransitionGroup className="row m-0 justify-content-center">
-          {steps.map(({ img, text }, index) => {
-            return (
-              <div className="col-12 col-md-4 m-0 p-0">
-                <CSSTransition
-                  in={state.selectedSection === 2}
-                  key={index}
-                  timeout={500}
-                  classNames="fade"
-                >
-                  <div className="step" style={{transitionDelay: `${delay[index]}ms`}}>
-                    <img src={img} alt={text} className="rounded-circle"/>
-                    <div>
-                      <div className="d-md-none d-flex number">{index + 1}
-                        <strong>&#8228;</strong>
-                      </div>
-                      <h6>{text}</h6>
-                    </div>
-                  </div>
-                </CSSTransition>
-                <div className="progressLine" style={{transitionDelay: delay[index] - 450 + 'ms'}}>{index + 1}</div>
-              </div>
-            )
-          })}
+          {items()}
         </TransitionGroup>
       </div>
     </section>
