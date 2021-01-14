@@ -14,7 +14,6 @@ const IndexPage = () => {
     if (sectionNumber !== number) {
       setSectionNumber(number)
     }
-
   }
 
 

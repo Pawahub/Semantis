@@ -1,6 +1,6 @@
 import React from "react"
 import './stages-of-creation.sass'
-import Card from "../../card"
+import { Card } from "../../card"
 
 import brif from '../../../images/web-dev/brif.svg'
 import dev from '../../../images/web-dev/dev.svg'
