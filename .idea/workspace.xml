@@ -26,36 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f4f42c9-4ce6-4eb5-addb-5053997ea758" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/card/card-case.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/carousel/carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/carousel/carousel.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/carousel/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/ajax-loader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/fonts/slick.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/fonts/slick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/fonts/slick.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/fonts/slick.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/slick-theme.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/slick.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/slider.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/case/case.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/case/case.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/web-dev/case/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/case.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/case/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/case/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/case/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/line-with-dot.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/web-dev/line3.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/card.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/card.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/card/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/web-dev/stages-of-creation/stages-of-creation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/web-dev/stages-of-creation/stages-of-creation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/web-dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/web-dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/develop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/develop.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
