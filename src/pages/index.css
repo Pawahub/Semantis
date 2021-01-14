@@ -582,8 +582,8 @@ a, a:hover, a:active {
 
 .fade-enter-done img {
     box-shadow: 0 10px 30px rgba(36, 67, 176, 0.2);
-    -webkit-animation: bounce-in-fwd 0.6s both;
-    animation: bounce-in-fwd 0.6s both;
+    -webkit-animation: bounce-in-fwd 0.5s both;
+    animation: bounce-in-fwd 0.5s both;
 }
 
 .progressLine {
