@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 import { currentPage } from "../main"
 import { StateContext } from "../../state/stateCotext"
@@ -22,6 +22,12 @@ import "./nav.css"
 export default ({ siteTitle }) => {
   const { state, dispatch } = useContext(StateContext)
 
+  const [active, setActive] = useState({
+    activeEl: null,
+    parth: null
+  })
+
+
   const line = useRef()
 
   const spyLine = (e) => {
@@ -34,9 +40,9 @@ export default ({ siteTitle }) => {
       left = target.getBoundingClientRect().left,
       top = target.getBoundingClientRect().top
 
-    line.current.style.width = `${width}px`
+    line.current.style.width = `${width - 16}px`
     line.current.style.height = `${height}px`
-    line.current.style.left = `${left}px`
+    line.current.style.left = `${left + 8}px`
     line.current.style.top = `${top}px`
     line.current.style.transform = "none"
   }
@@ -53,17 +59,31 @@ export default ({ siteTitle }) => {
     }
   }, [])
 
+  const styleMenu = (m = null, e = null) => {
+    // console.log(window.location.pathname)
+    const parth = window.location.pathname;
+    switch (parth) {
+      case '/':
+        if (m) return state.selectedSection === 2 ? { color: "#FFFFFF" } : { color: "#3B3F45" };
+        else return state.selectedSection === 2 ? "activeWhite" : "active";
+        break;
+      case '/web-dev':
+        return state.selectedSection === 3 ? { color: "#FFFFFF" } : { color: "#3B3F45" }
+    }
+  }
+
+
   return (
     <header>
       <div className="container d-flex justify-content-between align-items-center mt-3 mb-2"
-           style={state.selectedSection === 2 ? { color: "#FFFFFF" } : { color: "#3B3F45" }}>
+           style={styleMenu('m')}>
         <div>
           <img src={state.selectedSection === 2 ? whiteLogo : blueLogo} alt={siteTitle} className="img-fluid"
                width="120px"/>
         </div>
         <nav className="menu d-none d-md-flex align-items-center">
           <ul role="navigation" onMouseOver={spyLine} onMouseLeave={spyLine} onClick={(e) => currentPage(e, state.selectedSection)}>
-            <li><Link className={state.selectedSection === 2 ? "activeWhite" : "active"} to="/">Главная</Link></li>
+            <li><Link className={styleMenu(null,'e')} to="/">Главная</Link></li>
             <li><Link to="/web-dev">Веб-разработка</Link></li>
             <li><Link to="/">Продвижение</Link></li>
             <li><Link to="/">Дизайн</Link></li>
