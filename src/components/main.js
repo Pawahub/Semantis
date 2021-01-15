@@ -13,7 +13,7 @@ const rippleEffect = (e) => {
   target.appendChild(ripple)
   setTimeout(function() {
     ripple.parentElement.removeChild(ripple)
-  }, 1000)
+  }, 500)
   setTimeout(function() {
     target.style.transform = "scale(1)"
   }, 100)

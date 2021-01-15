@@ -385,6 +385,33 @@ a, a:hover, a:active {
     opacity: 1;
 }
 
+.blue-color {
+    color: #085DDB;
+}
+
+.mainBtn {
+    position: relative;
+    overflow: hidden;
+    width: 160px;
+    height: 40px;
+    background: #085DDB;
+    color: #F6FAFF;
+    border: none;
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(#0855bb 10%, transparent 25%, #0855bb 45%, transparent 75%);
+    width: 5px;
+    height: 5px;
+    animation: rippleEffect 0.8s 1;
+    opacity: 0;
+    z-index: -1;
+}
+
 /*---------------------------------------------------*/
 /*                     H O M E                       */
 /*---------------------------------------------------*/
@@ -439,31 +466,8 @@ a, a:hover, a:active {
     width: 24px;
 }
 
-.blue-color {
-    color: #085DDB;
-}
-
-.mainBtn {
-    position: relative;
-    overflow: hidden;
-    width: 160px;
-    height: 40px;
-    background: #085DDB;
-    color: #F6FAFF;
-    border: none;
-    border-radius: 6px;
-    box-shadow: none;
-}
-
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(#0855bb 10%, transparent 25%, #0855bb 45%, transparent 75%);
-    width: 5px;
-    height: 5px;
-    animation: rippleEffect 0.8s 1;
-    opacity: 0;
-    z-index: -1;
+form[name=quiz] {
+    min-width: 100%;
 }
 
 /*---------------------------------------------------*/

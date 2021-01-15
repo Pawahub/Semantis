@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import ReactPageScroller from "react-page-scroller"
+import ReactPageScroller from "../react-page-scroller/src"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
@@ -18,7 +18,7 @@ const IndexPage = () => {
     }
   }
 
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
+  if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
     return (
       <Layout>
         <SEO title="Разработка сайтов и веб-приложений"/>
@@ -34,7 +34,7 @@ const IndexPage = () => {
       <SEO title="Разработка сайтов и веб-приложений"/>
       <ReactPageScroller
         customPageNumber={sectionNumber}
-        pageOnChange={handleSectionChange}
+        onBeforePageScroll={handleSectionChange}
         renderAllPagesOnFirstRender
         animationTimerBuffer={50}
         animationTimer={750}

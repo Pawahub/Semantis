@@ -21,7 +21,7 @@ export default () => {
   const [showForm, setShowForm] = useState(false)
 
   useEffect(() => {
-    if (state.selectedSection === 4 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (document.documentElement.clientWidth <= 991)) {
+    if (state.selectedSection === 4 || /Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (document.documentElement.clientWidth <= 991)) {
       setShowForm(true)
     } else setShowForm(false)
   }, [state.selectedSection])
@@ -156,7 +156,7 @@ export default () => {
         <img className="dotted2 d-none d-lg-block" src={dotted} alt=""/>
         <img className="dottedgroup d-none d-md-block" src={dottedgroup} alt=""/>
         <img className="zCircle d-none d-lg-block" src={zCircle} alt=""/>
-        <div className={showForm ? "form col-12 col-md-6 pt-md-5 show" : "form col-12 col-md-6 pt-md-5"}>
+        <div className={showForm ? "form col-12 col-md-6 p-0 pt-md-5 show" : "form col-12 col-md-6 p-0 pt-md-5"}>
           <h2 className="h1">Оставьте заявку!</h2>
           <form name="contactForm" className="mr-md-5">
             <div className="d-flex justify-content-between flex-wrap">
@@ -238,7 +238,7 @@ export default () => {
             </button>
           </form>
         </div>
-        <div className="col-12 col-md-6 pt-5 pl-md-5">
+        <div className="col-12 col-md-6 p-0 pt-5 pl-md-5">
           <h2 className="h1">Нужна помощь?</h2>
           <div className="mb-4"><h6>Наши телефоны:</h6>
             <a href="tel:+375292624063">+375 (29) 2624063</a> <br/>
@@ -278,7 +278,7 @@ export default () => {
             OK
           </button>
         </Modal>
-        : ""
+        : null
       }
     </section>
   )
