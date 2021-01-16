@@ -44,7 +44,7 @@ export default ({ siteTitle }) => {
       top = target.getBoundingClientRect().top
 
     if (line.current === null) return
-    
+
     line.current.style.width = `${width - 16}px`
     line.current.style.height = `${height}px`
     line.current.style.left = `${left + 8}px`
