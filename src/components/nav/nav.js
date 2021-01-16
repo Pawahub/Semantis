@@ -34,7 +34,9 @@ export default ({ siteTitle }) => {
   const spyLine = (e) => {
     let target
 
-    (!e || e.type === "mouseleave" || e.target.tagName !== "A") ? target = document.querySelectorAll(".active, .activeWhite")[0] : target = e.target
+    (!e || e.type === "mouseleave" || e.target.tagName !== "A") ?
+      target = document.querySelectorAll(".active, .activeWhite")[0] :
+      target = e.target
 
     let width = target.getBoundingClientRect().width,
       height = target.getBoundingClientRect().height,
@@ -61,6 +63,7 @@ export default ({ siteTitle }) => {
   }, [])
 
   const parth = window.location.pathname;
+
   const styleMenu = () => {
     switch (parth) {
       case '/':
@@ -73,8 +76,24 @@ export default ({ siteTitle }) => {
           return 'whiteMenu';
         } else return 'greyMenu'
       break;
+      case '/develop':
+        return 'greyMenu line-none'
+        break;
       default:
-        return 'header'
+        return 'greyMenu'
+    }
+  }
+  const styleImg = () => {
+    console.log(parth)
+    switch (parth) {
+      case '/':
+        return state.selectedSection === 2 ? whiteLogo : blueLogo
+        break;
+      case '/web-dev':
+        return state.selectedSection === 3 ? whiteLogo : blueLogo
+        break;
+      default:
+        return blueLogo
     }
   }
 
@@ -84,7 +103,7 @@ export default ({ siteTitle }) => {
       <div className="container d-flex justify-content-between align-items-center mt-3 mb-2"
            >
         <div>
-          <img src={state.selectedSection === 2 ? whiteLogo : blueLogo} alt={siteTitle} className="img-fluid"
+          <img src={styleImg()} alt={siteTitle} className="img-fluid"
                width="120px"/>
         </div>
         <nav className="menu d-none d-md-flex align-items-center">
@@ -95,9 +114,9 @@ export default ({ siteTitle }) => {
             onClick={(e) => currentPage(e, state.selectedSection)}>
               <li><Link className={parth === '/' ? 'active': null} to="/">Главная</Link></li>
               <li><Link className={parth === '/web-dev' ? 'active': null} to="/web-dev">Веб-разработка</Link></li>
-              <li><Link to="/">Продвижение</Link></li>
-              <li><Link to="/">Дизайн</Link></li>
-              <li><Link to="/">SMM</Link></li>
+              <li><Link to="/develop">Продвижение</Link></li>
+              <li><Link to="/develop">Дизайн</Link></li>
+              <li><Link to="/develop">SMM</Link></li>
           </ul>
         </nav>
         <span ref={line} id="line" className="d-none d-md-block"/>
