@@ -35,7 +35,7 @@ export default ({ siteTitle }) => {
     let target
 
     (!e || e.type === "mouseleave" || e.target.tagName !== "A") ?
-      target = document.querySelectorAll(".active, .activeWhite")[0] :
+      target = document.querySelector(".active") :
       target = e.target
 
     let width = target.getBoundingClientRect().width,
@@ -43,6 +43,8 @@ export default ({ siteTitle }) => {
       left = target.getBoundingClientRect().left,
       top = target.getBoundingClientRect().top
 
+    if (line.current === null) return
+    
     line.current.style.width = `${width - 16}px`
     line.current.style.height = `${height}px`
     line.current.style.left = `${left + 8}px`
@@ -84,7 +86,6 @@ export default ({ siteTitle }) => {
     }
   }
   const styleImg = () => {
-    console.log(parth)
     switch (parth) {
       case '/':
         return state.selectedSection === 2 ? whiteLogo : blueLogo
