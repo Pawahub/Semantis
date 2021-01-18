@@ -1,0 +1,113 @@
+.none-found
+  position: relative
+  min-height: 100vh
+  width: 100%
+  display: flex
+  z-index: 3
+  overflow: hidden
+  > div
+    margin: auto
+    z-index: 2
+  a.mainBtn
+    text-align: center
+    text-decoration: none
+    max-height: 48px
+    display: flex
+    justify-content: center
+    align-items: center
+    transition: 0.3s ease box-shadow
+    cursor: pointer
+    &:hover
+      color: white
+  &__content
+    font-style: normal
+    font-weight: 700
+    letter-spacing: 0em
+    text-align: center
+    display: flex
+    flex-direction: column
+    align-items: center
+    h1
+      font-size: 248px
+      line-height: 237px
+      color: #085DDB
+    h2
+      font-size: 24px
+      line-height: 23px
+      margin-top: 15px
+    p
+      font-size: 18px
+      font-weight: 400
+      line-height: 17px
+      margin-top: 10px
+      padding-bottom: 20px
+  &__element
+    pointer-events: none
+    touch-action: none
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+    img
+      z-index: 2
+      position: absolute
+      height: 554px
+      width: 226px
+      left: 15%
+      bottom: 0
+      border-radius: 0px
+    .item1,
+    .item2
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+    .item1
+      z-index: 3
+      height: 146px
+      background-position-x: 0px
+      animation: wave1
+      animation-duration: 30s
+      animation-timing-function: linear
+      animation-iteration-count: infinite
+      animation-direction: alternate
+    .item2
+      z-index: 1
+      height: 196px
+      background-position-x: 0px
+      animation: wave2
+      animation-duration: 40s
+      animation-timing-function: linear
+      animation-iteration-count: infinite
+      animation-direction: alternate
+@keyframes wave1
+  from
+    background-position-x: 0px
+  to
+    background-position-x: 2880px
+@keyframes wave2
+  from
+    background-position-x: 2880px
+  to
+    background-position-x: 0
+
+
+@media screen and (max-width: 990px)
+  .none-found
+    &__element
+      img
+        left: 5%
+        width: 120px
+        height: 270px
+        bottom: -45px
+      .item1
+        height: 106px
+      .item2
+        height: 156px
+
+@media screen and (max-width: 500px)
+  .none-found__content h1
+    font-size: 180px

@@ -82,7 +82,7 @@ export default ({ siteTitle }) => {
         return 'greyMenu line-none'
         break;
       default:
-        return 'greyMenu'
+        return 'greyMenu line-none'
     }
   }
   const styleImg = () => {
