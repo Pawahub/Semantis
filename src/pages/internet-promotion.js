@@ -10,8 +10,10 @@ import WeWillDo from "../components/web-dev/we-will-do"
 import StagesOfCreation from "../components/web-dev/stages-of-creation"
 import Case from "../components/web-dev/case"
 import Contacts from "../components/home/contacts"
+import FirstSectionIP from "../components/internet-promotion/first-section"
+import OptimizationSite from "../components/internet-promotion/optimization-site"
 
-const WebDevPage = () => {
+const InternetPromotionPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {
     if (sectionNumber !== number) {
@@ -23,8 +25,8 @@ const WebDevPage = () => {
     return (
       <Layout>
         <SEO title="Разработка сайтов и веб-приложений"/>
-        <FirstSection/>
-        <WeWillDo/>
+        <FirstSectionIP/>
+        <OptimizationSite/>
         <StagesOfCreation/>
         <Case/>
         <Contacts/>
@@ -40,8 +42,8 @@ const WebDevPage = () => {
         animationTimerBuffer={50}
         animationTimer={750}
       >
-        <FirstSection/>
-        <WeWillDo/>
+        <FirstSectionIP/>
+        <OptimizationSite/>
         <StagesOfCreation/>
         <Case/>
         <Contacts/>
@@ -50,4 +52,4 @@ const WebDevPage = () => {
   )
 }
 
-export default WebDevPage
+export default InternetPromotionPage

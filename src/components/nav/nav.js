@@ -19,6 +19,7 @@ import by from "../../images/nav/by.svg"
 
 import "./nav.css"
 import './nav-state.sass'
+import InternetPromotionPage from "../../pages/internet-promotion"
 
 export default ({ siteTitle }) => {
   const { state, dispatch } = useContext(StateContext)
@@ -69,20 +70,27 @@ export default ({ siteTitle }) => {
   const styleMenu = () => {
     switch (parth) {
       case '/':
-        return state.selectedSection === 2 ? 'whiteMenu' : 'greyMenu';
+        return state.selectedSection === 2 ? 'whiteMenu' : 'grayMenu';
         break;
       case '/web-dev':
         if (state.selectedSection === 1) {
           return 'left-gray_right-white'
         } else if (state.selectedSection === 3) {
           return 'whiteMenu';
-        } else return 'greyMenu'
+        } else return 'grayMenu'
+      break;
+      case '/internet-promotion':
+        if (state.selectedSection === 1) {
+          return 'gray'
+        } else if (state.selectedSection === 3) {
+          return 'whiteMenu';
+        } else return 'grayMenu'
       break;
       case '/develop':
         return 'greyMenu line-none'
         break;
       default:
-        return 'greyMenu line-none'
+        return 'grayMenu line-none'
     }
   }
   const styleImg = () => {
@@ -115,7 +123,7 @@ export default ({ siteTitle }) => {
             onClick={(e) => currentPage(e, state.selectedSection)}>
               <li><Link className={parth === '/' ? 'active': null} to="/">Главная</Link></li>
               <li><Link className={parth === '/web-dev' ? 'active': null} to="/web-dev">Веб-разработка</Link></li>
-              <li><Link to="/develop">Продвижение</Link></li>
+              <li><Link className={parth === '/internet-promotion' ? 'active': null} to="/internet-promotion">Продвижение</Link></li>
               <li><Link to="/develop">Дизайн</Link></li>
               <li><Link to="/develop">SMM</Link></li>
           </ul>
