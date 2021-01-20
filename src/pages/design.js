@@ -4,14 +4,13 @@ import ReactPageScroller from "../react-page-scroller/src"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-import Case from "../components/web-dev/case"
-import Contacts from "../components/home/contacts"
-import FirstSectionIP from "../components/internet-promotion/first-section"
-import OptimizationSite from "../components/internet-promotion/optimization-site"
-import TargetedAdvertising from "../components/internet-promotion/targeted-advertising"
-import ContextualAdvertising from "../components/internet-promotion/contextual-advertising"
 
-const InternetPromotionPage = () => {
+import Contacts from "../components/home/contacts"
+import FirstSectionDesign from "../components/design-page/first-section"
+import Identity from "../components/design-page/identity"
+import Presentations from "../components/design-page/presentations"
+
+const DesignPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {
     if (sectionNumber !== number) {
@@ -23,10 +22,9 @@ const InternetPromotionPage = () => {
     return (
       <Layout>
         <SEO title="Разработка сайтов и веб-приложений"/>
-        <FirstSectionIP/>
-        <OptimizationSite/>
-        <TargetedAdvertising/>
-        <ContextualAdvertising/>
+        <FirstSectionDesign/>
+        <Identity/>
+        <Presentations/>
         <Contacts/>
       </Layout>
     )
@@ -40,14 +38,13 @@ const InternetPromotionPage = () => {
         animationTimerBuffer={50}
         animationTimer={750}
       >
-        <FirstSectionIP/>
-        <OptimizationSite/>
-        <TargetedAdvertising/>
-        <ContextualAdvertising/>
+        <FirstSectionDesign/>
+        <Identity/>
+        <Presentations/>
         <Contacts/>
       </ReactPageScroller>
     </Layout>
   )
 }
 
-export default InternetPromotionPage
+export default DesignPage

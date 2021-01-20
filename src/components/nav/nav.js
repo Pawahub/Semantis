@@ -82,12 +82,17 @@ export default ({ siteTitle }) => {
       case '/internet-promotion':
         if (state.selectedSection === 1) {
           return 'gray'
-        } else if (state.selectedSection === 3) {
-          return 'whiteMenu';
         } else return 'grayMenu'
       break;
       case '/develop':
         return 'greyMenu line-none'
+        break;
+      case '/design':
+        if (state.selectedSection === 0) {
+          return 'whiteMenu'
+        } else if (state.selectedSection === 3) {
+          return 'whiteMenu';
+        } else return 'grayMenu'
         break;
       default:
         return 'grayMenu line-none'
@@ -100,6 +105,9 @@ export default ({ siteTitle }) => {
         break;
       case '/web-dev':
         return state.selectedSection === 3 ? whiteLogo : blueLogo
+        break;
+      case '/design':
+        return state.selectedSection === 0 ? whiteLogo : blueLogo
         break;
       default:
         return blueLogo
@@ -124,7 +132,7 @@ export default ({ siteTitle }) => {
               <li><Link className={parth === '/' ? 'active': null} to="/">Главная</Link></li>
               <li><Link className={parth === '/web-dev' ? 'active': null} to="/web-dev">Веб-разработка</Link></li>
               <li><Link className={parth === '/internet-promotion' ? 'active': null} to="/internet-promotion">Продвижение</Link></li>
-              <li><Link to="/develop">Дизайн</Link></li>
+              <li><Link className={parth === '/design' ? 'active': null} to="/design">Дизайн</Link></li>
               <li><Link to="/develop">SMM</Link></li>
           </ul>
         </nav>

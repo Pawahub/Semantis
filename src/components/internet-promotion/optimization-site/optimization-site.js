@@ -2,17 +2,16 @@ import React from "react"
 import SectionLeftRight from "../../section-left-right"
 import './optimization-site.sass'
 import seo from '../../../images/internet-promotion/seo.png'
+import List from "../../list"
 export default function OptimizationSite() {
-  const list = (arr) => {
-    return arr.map((el, idx) => {
-      return (
-        <li key={idx}>
-          <div className="number"><span>{idx < 10 ? '0' + (idx + 1) : idx + 1} </span><strong>&#8228;</strong></div>
-          <span className="span-child">{el}</span>
-        </li>
-      )
-    })
-  }
+  const listArr = [
+    'Регистрация в каталогах поисковых систем',
+    'Создание микроразметк',
+    'Создание сниппетов',
+    'Создание внешних ссылок',
+    'Оптимизация тегов и мета-тегов',
+    'Работа над контентом'];
+
   const left = (
     <div className="container">
       <div className="row justify-content-lg-start justify-content-center">
@@ -23,16 +22,7 @@ export default function OptimizationSite() {
               улучшения позиции в выдаче поисковых систем по определённым запросам и
               увеличения скорости его работы, а именно:
             </p>
-            <ul className="home-list">
-              {list([
-                'Регистрация в каталогах поисковых систем',
-                'Создание микроразметк',
-                'Создание сниппетов',
-                'Создание внешних ссылок',
-                'Оптимизация тегов и мета-тегов',
-                'Работа над контентом'
-              ])}
-            </ul>
+            <List listArr={listArr}/>
           </div>
         </div>
       </div>
