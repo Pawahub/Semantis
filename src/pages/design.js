@@ -9,6 +9,7 @@ import Contacts from "../components/home/contacts"
 import FirstSectionDesign from "../components/design-page/first-section"
 import Identity from "../components/design-page/identity"
 import Presentations from "../components/design-page/presentations"
+import Logo from "../components/design-page/logo"
 
 const DesignPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)
@@ -25,6 +26,7 @@ const DesignPage = () => {
         <FirstSectionDesign/>
         <Identity/>
         <Presentations/>
+        <Logo/>
         <Contacts/>
       </Layout>
     )
@@ -41,6 +43,7 @@ const DesignPage = () => {
         <FirstSectionDesign/>
         <Identity/>
         <Presentations/>
+        <Logo/>
         <Contacts/>
       </ReactPageScroller>
     </Layout>
