@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import FourthSection from "./fourthSection"
 
-export default () => {
+export default ({ status }) => {
   const [step, setStep] = useState(1)
 
   const initialStep1 = {
@@ -151,10 +151,9 @@ export default () => {
       />
     </div>
   )
-
   return (
     <div className="quiz">
-      <span className="progressbar"/>
+      <span className="progressbar" style={{transform: `scaleX(${status[step]})`}}/>
       {step === 1 ? firstSection : null}
       {step === 2 ? secondSection : null}
       {step === 3 ? thirdSection : null}

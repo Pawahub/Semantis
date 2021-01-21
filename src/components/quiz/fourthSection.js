@@ -123,7 +123,6 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
 
   return (
     <div className="quiz">
-      <span className="progressbar"/>
       <div className="d-flex flex-column">
         <span className="mb-2">Почти готово!</span>
         <div className="input-group-main">

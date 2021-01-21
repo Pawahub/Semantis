@@ -3,7 +3,7 @@ import { rippleEffect } from "../main"
 
 import FourthSection from "./fourthSection"
 
-export default () => {
+export default ({ status }) => {
   const [step, setStep] = useState(1)
 
   const initialStep2 = {
@@ -161,7 +161,7 @@ export default () => {
 
   return (
     <div className="quiz">
-      <span className="progressbar"/>
+      <span className="progressbar" style={{transform: `scaleX(${status[step]})`}}/>
       {step === 1 ? firstSection : null}
       {step === 2 ? secondSection : null}
       {step === 3 ? thirdSection : null}
