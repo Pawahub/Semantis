@@ -8,8 +8,9 @@ import FirstSection from "../components/web-dev/first-section"
 import WeWillDo from "../components/web-dev/we-will-do"
 import StagesOfCreation from "../components/web-dev/stages-of-creation"
 import Case from "../components/web-dev/case"
+import Contacts from "../components/home/contacts"
 
-const IndexPage = () => {
+const WebDevPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {
     if (sectionNumber !== number) {
@@ -25,6 +26,7 @@ const IndexPage = () => {
         <WeWillDo/>
         <StagesOfCreation/>
         <Case/>
+        <Contacts/>
       </Layout>
     )
   } else return (
@@ -41,9 +43,10 @@ const IndexPage = () => {
         <WeWillDo/>
         <StagesOfCreation/>
         <Case/>
+        <Contacts/>
       </ReactPageScroller>
     </Layout>
   )
 }
 
-export default IndexPage
+export default WebDevPage

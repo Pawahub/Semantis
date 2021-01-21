@@ -1,0 +1,57 @@
+.first-section-IP
+  &__elements
+    display: none
+  .ellipse1
+    position: absolute
+    right: 5%
+    bottom: 15%
+    pointer-events: none
+  .ellipse2
+    pointer-events: none
+    position: absolute
+    right: 3%
+    bottom: 30%
+  &__content
+    position: relative
+    z-index: 2
+    .h1 span
+      padding-left: 60px
+    p, ul
+      padding-left: 80px
+    ul li:first-child
+      .span-child
+        color: #0862ff
+        font-weight: 700
+@media (max-width: 440px)
+  .first-section-IP
+    &__content
+      .h1
+        font-size: 35px
+        span
+          padding-left: 30px
+      p, ul
+        padding-left: 20px
+    .ellipse1
+      bottom: 5%
+    .ellipse2
+      bottom: 15%
+@media (min-width: 768px)
+  .first-section-IP
+    &__elements
+      display: block
+      pointer-events: none
+      position: relative
+      width: 100%
+      height: 100%
+      z-index: 1
+      .dots-img
+        position: absolute
+        bottom: 12%
+        left: 15%
+        z-index: 1
+      .mac
+        z-index: 2
+        position: absolute
+        top: 35%
+        left: 50%
+        transform: translate(-50%)

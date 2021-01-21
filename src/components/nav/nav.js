@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import { Link } from "gatsby"
 import { currentPage } from "../main"
 import { StateContext } from "../../state/stateCotext"
@@ -18,25 +18,36 @@ import ru from "../../images/nav/ru.svg"
 import by from "../../images/nav/by.svg"
 
 import "./nav.css"
+import './nav-state.sass'
 
 export default ({ siteTitle }) => {
   const { state, dispatch } = useContext(StateContext)
+
+  const [active, setActive] = useState({
+    activeEl: null,
+    parth: null
+  })
+
 
   const line = useRef()
 
   const spyLine = (e) => {
     let target
 
-    (!e || e.type === "mouseleave" || e.target.tagName !== "A") ? target = document.querySelectorAll(".active, .activeWhite")[0] : target = e.target
+    (!e || e.type === "mouseleave" || e.target.tagName !== "A") ?
+      target = document.querySelector(".active") :
+      target = e.target
 
     let width = target.getBoundingClientRect().width,
       height = target.getBoundingClientRect().height,
       left = target.getBoundingClientRect().left,
       top = target.getBoundingClientRect().top
 
-    line.current.style.width = `${width}px`
+    if (line.current === null) return
+
+    line.current.style.width = `${width - 16}px`
     line.current.style.height = `${height}px`
-    line.current.style.left = `${left}px`
+    line.current.style.left = `${left + 8}px`
     line.current.style.top = `${top}px`
     line.current.style.transform = "none"
   }
@@ -53,25 +64,88 @@ export default ({ siteTitle }) => {
     }
   }, [])
 
+  const parth = window.location.pathname;
+
+  const styleMenu = () => {
+    switch (parth) {
+      case '/':
+        return state.selectedSection === 2 ? 'whiteMenu' : 'grayMenu';
+        break;
+      case '/web-dev':
+        if (state.selectedSection === 1) {
+          return 'left-gray_right-white'
+        } else if (state.selectedSection === 3) {
+          return 'whiteMenu';
+        } else return 'grayMenu'
+      break;
+      case '/internet-promotion':
+        if (state.selectedSection === 1) {
+          return 'gray'
+        } else return 'grayMenu'
+      break;
+      case '/develop':
+        return 'greyMenu line-none'
+        break;
+      case '/design':
+        if (state.selectedSection === 0) {
+          return 'whiteMenu'
+        } else if (state.selectedSection === 3) {
+          return 'left-gray_right-white';
+        } else return 'grayMenu'
+        break;
+      case '/smm':
+        if (state.selectedSection === 3) {
+          return 'whiteMenu'
+        } else if (state.selectedSection === 0) {
+          return 'gray'
+        } else return 'grayMenu'
+        break;
+      default:
+        return 'grayMenu line-none'
+    }
+  }
+  const styleImg = () => {
+    switch (parth) {
+      case '/':
+        return state.selectedSection === 2 ? whiteLogo : blueLogo
+        break;
+      case '/web-dev':
+        return state.selectedSection === 3 ? whiteLogo : blueLogo
+        break;
+      case '/design':
+        return state.selectedSection === 0 ? whiteLogo : blueLogo
+        break;
+      case '/smm':
+        return state.selectedSection === 3 ? whiteLogo : blueLogo
+        break;
+      default:
+        return blueLogo
+    }
+  }
+
+
   return (
-    <header>
+    <header className={styleMenu()}>
       <div className="container d-flex justify-content-between align-items-center mt-3 mb-2"
-           style={state.selectedSection === 2 ? { color: "#FFFFFF" } : { color: "#3B3F45" }}>
+           >
         <div>
-          <img src={state.selectedSection === 2 ? whiteLogo : blueLogo} alt={siteTitle} className="img-fluid"
+          <img src={styleImg()} alt={siteTitle} className="img-fluid"
                width="120px"/>
         </div>
         <nav className="menu d-none d-md-flex align-items-center">
-          <ul role="navigation" onMouseOver={spyLine} onMouseLeave={spyLine} onClick={(e) => currentPage(e, state.selectedSection)}>
-            <li><Link className={state.selectedSection === 2 ? "activeWhite" : "active"} to="/">Главная</Link></li>
-            <li><Link to="/web-dev">Веб-разработка</Link></li>
-            <li><Link to="/">Продвижение</Link></li>
-            <li><Link to="/">Дизайн</Link></li>
-            <li><Link to="/">SMM</Link></li>
+          <ul
+            role="navigation"
+            onMouseOver={spyLine}
+            onMouseLeave={spyLine}
+            onClick={(e) => currentPage(e, state.selectedSection)}>
+              <li><Link className={parth === '/' ? 'active': null} to="/">Главная</Link></li>
+              <li><Link className={parth === '/web-dev' ? 'active': null} to="/web-dev">Веб-разработка</Link></li>
+              <li><Link className={parth === '/internet-promotion' ? 'active': null} to="/internet-promotion">Продвижение</Link></li>
+              <li><Link className={parth === '/design' ? 'active': null} to="/design">Дизайн</Link></li>
+              <li><Link className={parth === '/smm' ? 'active': null} to="/smm">SMM</Link></li>
           </ul>
         </nav>
-        <span ref={line} id="line" className="mt-1 d-none d-md-block"
-              style={state.selectedSection === 2 ? { borderColor: "#FFFFFF" } : { borderColor: "#085DDB" }}/>
+        <span ref={line} id="line" className="d-none d-md-block"/>
         <div className="tel d-none d-lg-block">
           <ul>
             <li>

@@ -13,7 +13,7 @@ export default function WeWillDo() {
   const list = (arr) => {
     return arr.map((el, idx) => {
       return (
-        <li>
+        <li key={idx}>
           <div className="number"><span>{idx < 10 ? '0' + (idx + 1) : idx + 1} </span><strong>&#8228;</strong></div>
           <span>{el}</span>
         </li>
