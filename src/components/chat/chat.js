@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { StateContext } from "../../state/stateCotext"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -13,6 +13,30 @@ export default () => {
   const { state, dispatch } = useContext(StateContext)
 
   let chatBtn
+
+  const parth = window.location.pathname;
+  const style = () => {
+
+    const lightBtn = state.show === "messengers" ? "chatBtn chatBtnLightOpen" : "chatBtn chatBtnLight"
+    const darkBtn = state.show === "messengers" ? "chatBtn chatBtnDarkOpen" : "chatBtn"
+
+    switch (parth) {
+      case '/':
+        if (state.selectedSection === 2) return lightBtn
+        else return darkBtn
+        break;
+      case '/web-dev':
+        if (state.selectedSection === 1 || state.selectedSection === 3) return lightBtn
+        else return darkBtn
+        break;
+      case '/design':
+        if (state.selectedSection === 0 || state.selectedSection === 3) return lightBtn
+        else return darkBtn
+        break;
+      default:
+        return 'chatBtn'
+    }
+  }
 
   if (state.selectedSection === 2) {
     if (state.show === "messengers") chatBtn = "chatBtn chatBtnLightOpen"
@@ -32,7 +56,7 @@ export default () => {
       <a href="https://wa.me/79217750328" className="m-2"><img src={whatsapp} alt="whatsapp" width="40px"/></a>
       <a href="https://t.me/semantis" className="m-2"><img src={telegram} alt="telegram" width="40px"/></a>
       <a href="viber://chat?number=+375292624063" className="m-2"><img src={viber} alt="viber" width="40px"/></a>
-      <button className={chatBtn} onClick={handlerMessengerMenu}>
+      <button className={style()} onClick={handlerMessengerMenu}>
         <FontAwesomeIcon icon={faComments} size="lg" className={state.show === "messengers" ? "icon rotate" : "icon"}/>
       </button>
     </div>

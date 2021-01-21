@@ -91,7 +91,7 @@ export default ({ siteTitle }) => {
         if (state.selectedSection === 0) {
           return 'whiteMenu'
         } else if (state.selectedSection === 3) {
-          return 'whiteMenu';
+          return 'left-gray_right-white';
         } else return 'grayMenu'
         break;
       default:
