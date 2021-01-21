@@ -1,0 +1,77 @@
+.smm
+  position: relative
+  width: 100%
+  min-height: auto
+  display: flex
+  z-index: 3
+  padding-top: 150px
+  padding-bottom: 50px
+  background: #085DDB
+  color: white
+  > div
+    margin: auto
+    z-index: 2
+  .h1
+    margin-bottom: 50px
+  &__elements
+    display: none
+  .ellipse2,
+  .dots1,
+  .polygon
+    position: absolute
+    pointer-events: none
+  .dots1
+    left: 5%
+    top: 40%
+    transform: translateY(-40%)
+  .ellipse2
+    left: 80px
+    top: 20%
+    transform: translateY(-20%)
+  .polygon
+    left: 50px
+    top: 18%
+    transform: translateY(-18%)
+@media (min-width: 990px)
+  .smm
+    min-height: 100vh
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    &__elements
+      pointer-events: none
+      display: block
+      position: absolute
+      right: 0
+      top: 0
+      width: 60%
+      height: 100%
+      background: radial-gradient(100% 96.29% at 100% 92.81%, #C4C4C4 0%, #E7ECF0 0.01%, #EAF0F3 56.88%, #E1E7EB 100%)
+      div
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 100%
+        height: 100%
+        img
+          margin: auto
+          position: absolute
+    &-dots
+      pointer-events: none
+      position: absolute
+      right: 5px
+      bottom: 5px
+@media (max-width: 600px)
+  .smm
+    text-align: center
+    .dots1
+      display: none
+    .ellipse2
+      left: 80px
+      top: 20%
+      transform: translateY(-20%)
+    .polygon
+      left: 50px
+      top: 18%
+      transform: translateY(-18%)

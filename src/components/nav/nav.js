@@ -19,7 +19,6 @@ import by from "../../images/nav/by.svg"
 
 import "./nav.css"
 import './nav-state.sass'
-import InternetPromotionPage from "../../pages/internet-promotion"
 
 export default ({ siteTitle }) => {
   const { state, dispatch } = useContext(StateContext)
@@ -94,6 +93,13 @@ export default ({ siteTitle }) => {
           return 'left-gray_right-white';
         } else return 'grayMenu'
         break;
+      case '/smm':
+        if (state.selectedSection === 3) {
+          return 'whiteMenu'
+        } else if (state.selectedSection === 0) {
+          return 'gray'
+        } else return 'grayMenu'
+        break;
       default:
         return 'grayMenu line-none'
     }
@@ -108,6 +114,9 @@ export default ({ siteTitle }) => {
         break;
       case '/design':
         return state.selectedSection === 0 ? whiteLogo : blueLogo
+        break;
+      case '/smm':
+        return state.selectedSection === 3 ? whiteLogo : blueLogo
         break;
       default:
         return blueLogo
@@ -133,7 +142,7 @@ export default ({ siteTitle }) => {
               <li><Link className={parth === '/web-dev' ? 'active': null} to="/web-dev">Веб-разработка</Link></li>
               <li><Link className={parth === '/internet-promotion' ? 'active': null} to="/internet-promotion">Продвижение</Link></li>
               <li><Link className={parth === '/design' ? 'active': null} to="/design">Дизайн</Link></li>
-              <li><Link to="/develop">SMM</Link></li>
+              <li><Link className={parth === '/smm' ? 'active': null} to="/smm">SMM</Link></li>
           </ul>
         </nav>
         <span ref={line} id="line" className="d-none d-md-block"/>

@@ -33,6 +33,10 @@ export default () => {
         if (state.selectedSection === 0 || state.selectedSection === 3) return lightBtn
         else return darkBtn
         break;
+      case '/smm':
+        if (state.selectedSection === 3) return lightBtn
+        else return darkBtn
+        break;
       default:
         return 'chatBtn'
     }
