@@ -1,5 +1,5 @@
 import React from "react"
-import { parallax, rippleEffect } from "../main"
+import { rippleEffect } from "../main"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDownload } from "@fortawesome/free-solid-svg-icons"
@@ -10,9 +10,8 @@ import z from "../../images/about/z.svg"
 import zz from "../../images/about/zz.svg"
 
 export default () => {
-  let semantis = document.querySelector("#Semantis")
   return (
-    <section role="article" onMouseMove={(e) => parallax(e, semantis)} className="about py-5">
+    <section role="article" className="about py-5">
       <div className="container p-0 d-flex justify-content-center align-items-center flex-wrap">
         <img className="dots d-none d-lg-block" src={dots} alt=""/>
         <img className="z d-none d-md-block" src={z} alt=""/>
@@ -31,8 +30,8 @@ export default () => {
             срок. Нам очень важно получать обратную связь от своих клиентов, поэтому на протяжении всего
             времени сотрудничества мы остаёмся на связи с нашими заказчиками. Так мы становимся надёжными
             партнёрами.</p>
-          <button className="mainBtn mt-4" onClick={rippleEffect}>
-            <FontAwesomeIcon icon={faDownload} className="pr-2" size="lg"/>Презентация
+          <button className="mainBtn mt-3" onClick={rippleEffect}>
+            <FontAwesomeIcon icon={faDownload} className="pr-2" size="lg"/>Скачать презентацию
           </button>
         </div>
         <div className="col-12 col-md-6 col-lg-4 my-5 my-md-0">

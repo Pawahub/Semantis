@@ -3,7 +3,7 @@ import { rippleEffect } from "../main"
 import { StateContext } from "../../state/stateCotext"
 
 import Modal from "../modal/modal"
-import Quiz from "../quiz/quiz"
+import Quiz from "../quiz"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHandHoldingUsd, faTimes } from "@fortawesome/free-solid-svg-icons"
@@ -54,9 +54,9 @@ export default () => {
             Узнать цену <FontAwesomeIcon icon={faHandHoldingUsd} className="pr-2" size="lg"/>
           </button>
           {state.show === "quiz" ?
-            <Modal className="w-50">
+            <Modal>
               <div className="modal-header">
-                <p className="m-0">Расскажите нам о своём проекте</p>
+                <h6 className="m-0">Расскажите нам о своём проекте</h6>
                 <FontAwesomeIcon icon={faTimes} size="lg" className="x" onClick={() => dispatch({ type: "close" })}/>
               </div>
               <Quiz/>

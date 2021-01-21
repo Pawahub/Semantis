@@ -4,7 +4,6 @@ import ReactPageScroller from "../react-page-scroller/src"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-
 import FirstSection from "../components/web-dev/first-section"
 import WeWillDo from "../components/web-dev/we-will-do"
 import StagesOfCreation from "../components/web-dev/stages-of-creation"

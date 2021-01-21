@@ -3,10 +3,9 @@ import { rippleEffect } from "../main"
 import { StateContext } from "../../state/stateCotext"
 
 import NumberFormat from "react-number-format"
-import Modal from "../modal/modal"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPaperPlane, faTimes } from "@fortawesome/free-solid-svg-icons"
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 import dotted from "../../images/contacts/dotted2.svg"
 import dottedgroup from "../../images/contacts/dottedgroup.svg"
 import zCircle from "../../images/contacts/zcircle.svg"
@@ -114,7 +113,7 @@ export default () => {
   const handleCheckbox = () => setFormData({ ...formData, copy: !formData.copy })
 
   const mail = async () => {
-    await fetch("https://semantis.by/mail.php", {
+    await fetch("https://semantis.by/email.php", {
       method: "POST",
       headers: {
         "Content-Type": "multipart/form-data"
@@ -128,7 +127,7 @@ export default () => {
     e.preventDefault()
     let { name, phone, email } = formData
     if (name.isValid && phone.isValid && email.isValid) {
-      mail.then((response) => response.json()).then((data) => console.log(data))
+      mail.then((response) => console.log(response))
       dispatch({ type: "open", payload: "success" })
       setFormData({
         name: {
@@ -233,7 +232,7 @@ export default () => {
                 onChange={handleCheckbox}/>
               <label htmlFor="copy">Отправить мне копию сообщения</label>
             </div>
-            <button type="submit" className="mainBtn" onClick={handleSubmit}>
+            <button className="mainBtn" onClick={handleSubmit}>
               <FontAwesomeIcon icon={faPaperPlane} className="pr-2" size="lg"/> Отправить
             </button>
           </form>
@@ -266,20 +265,6 @@ export default () => {
           </div>
         </div>
       </div>
-      {state.show === "success" ?
-        <Modal>
-          <div className="modal-header">
-            <p className="m-0">Спасибо :)</p>
-            <FontAwesomeIcon icon={faTimes} size="lg" className="x" onClick={() => dispatch({ type: "close" })}/>
-          </div>
-          <p className="text-center align-middle m-3">Ваше письмо успешно отправлено!<br/><br/>Мы обязательно свяжемся с
-            вами в ближайшее время.</p>
-          <button className="mainBtn my-3" onClick={() => dispatch({ type: "close" })}>
-            OK
-          </button>
-        </Modal>
-        : null
-      }
     </section>
   )
 }

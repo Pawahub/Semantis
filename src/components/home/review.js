@@ -1,33 +1,31 @@
 import React from "react"
 import Carousel from "react-bootstrap/Carousel"
-import { parallax } from "../main"
 
 import z from "../../images/review/z.svg"
 import zz from "../../images/about/zz.svg"
 import step1 from "../../images/how/1.png"
 
 export default () => {
-  let circles = document.querySelectorAll(".circle")
   return (
-    <section onMouseMove={(e) => parallax(e, circles)} className="review">
+    <section className="review">
       <img className="zz d-none d-md-block" src={zz} alt=""/>
       <img className="z3 d-none d-md-block" src={z} alt=""/>
-      <div className="circle circle1" data-translate="10">
+      <div className="circle circle1">
         <img src={step1} className="img-fluid" alt=""/>
       </div>
-      <div className="circle circle2" data-translate="5">
+      <div className="circle circle2">
         <img src={step1} className="img-fluid" alt=""/>
       </div>
-      <div className="circle circle3" data-translate="50">
+      <div className="circle circle3">
         <img src={step1} className="img-fluid" alt=""/>
       </div>
-      <div className="circle circle4" data-translate="7">
+      <div className="circle circle4">
         <img src={step1} className="img-fluid" alt=""/>
       </div>
-      <div className="circle circle5" data-translate="50">
+      <div className="circle circle5">
         <img src={step1} className="img-fluid" alt=""/>
       </div>
-      <div className="circle circle6" data-translate="10">
+      <div className="circle circle6">
         <img src={step1} className="img-fluid" alt=""/>
       </div>
       <div className="container py-5 d-flex justify-content-center align-items-center flex-wrap overflow-hidden">

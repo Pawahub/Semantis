@@ -12,6 +12,7 @@ import { StateContext } from "../state/stateCotext"
 import { Reducer } from "../state/stateReducer"
 
 import Nav from "./nav/nav"
+import ModalSuccess from "./modal/modalSuccess"
 
 import "../pages/index.css"
 
@@ -43,6 +44,7 @@ const Layout = ({ selectedSection, children }) => {
     <StateContext.Provider value={{ state, dispatch }}>
       <Nav Title={data.site.siteMetadata?.title || `Title`}/>
       <main>{children}</main>
+      {state.show === "success" ? <ModalSuccess/> : null}
     </StateContext.Provider>
   )
 }

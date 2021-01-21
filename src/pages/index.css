@@ -391,14 +391,27 @@ a, a:hover, a:active {
 
 .mainBtn {
     position: relative;
+    align-self: start;
     overflow: hidden;
-    width: 160px;
+    padding: 0 15px;
+    min-width: 120px;
     height: 40px;
     background: #085DDB;
     color: #F6FAFF;
     border: none;
     border-radius: 6px;
     box-shadow: none;
+}
+
+.prev {
+    background: none;
+    color: #085DDB;
+    border: 2px solid #085DDB;
+}
+
+.prev:hover {
+    background: #085DDB;
+    color: #F6FAFF;
 }
 
 .ripple {
@@ -464,10 +477,6 @@ a, a:hover, a:active {
     font-weight: bold;
     font-size: 1.250em;
     width: 24px;
-}
-
-form[name=quiz] {
-    min-width: 100%;
 }
 
 /*---------------------------------------------------*/
@@ -549,6 +558,8 @@ form[name=quiz] {
     background: #085DDB;
     border-radius: 6px;
     opacity: 0;
+    transform: scale3d(0, 0, 1);
+    transform-origin: bottom;
 }
 
 .step:after {
@@ -563,15 +574,6 @@ form[name=quiz] {
     margin-left: -20px;
 }
 
-.fade-enter {
-    opacity: 0;
-}
-
-.fade-enter-active, .fade-enter-done {
-    opacity: 1;
-    transition: opacity 500ms ease-out;
-}
-
 .step div {
     margin-left: 15px;
 }
@@ -582,6 +584,16 @@ form[name=quiz] {
     font-weight: bold;
     font-size: 1.250em;
     width: 24px;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active, .fade-enter-done {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+    transition: all 500ms ease-out;
 }
 
 .fade-enter-done img {
@@ -635,9 +647,11 @@ form[name=quiz] {
     transform: translateX(-50%);
     z-index: -1;
 }
+
 .step.fade-enter-done + .progressLine {
     color: #085ddb;
 }
+
 .step.fade-enter-done + .progressLine:after {
     transform: scaleX(1);
 }
@@ -807,7 +821,6 @@ input, textarea, .dropdown li {
     font-weight: 300;
     border: 1px solid #DCE4F0;
     border-radius: 2px;
-    margin-top: 0.2em;
     padding: 0.5em;
     color: #3B3F45;
 }
@@ -815,7 +828,6 @@ input, textarea, .dropdown li {
 .phone-group-mask {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.2em;
 }
 
 label {
@@ -823,7 +835,7 @@ label {
     cursor: pointer;
 }
 
-#phone {
+#phone, #phoneQuiz {
     width: 80%;
     border-radius: 0 2px 2px 0;
     margin: 0;
@@ -835,7 +847,7 @@ input::placeholder, textarea::placeholder {
     color: rgba(59, 63, 69, 0.5);
 }
 
-input:focus, textarea:focus, #copy:not(:checked) + label:hover::before, #copy:checked + label:hover::before {
+input:focus, textarea:focus, input[type=checkbox]:not(:checked) + label:hover::before, input[type=checkbox]:checked + label:hover::before {
     border: 1px solid #085DDB;
     box-shadow: 0 0 2px 2px rgba(51, 97, 255, 0.1);
 }
@@ -847,7 +859,7 @@ input.failed {
     animation: shake 1s linear both;
 }
 
-.chose-mask {
+.chose-mask, .chose-messenger {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -930,6 +942,7 @@ textarea {
     display: inline-flex;
     align-items: center;
     user-select: none;
+    color: #3B3F45;
     cursor: pointer;
 }
 
@@ -952,6 +965,14 @@ textarea {
     border-color: #085DDB;
     background-color: #085DDB;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.checkbox input:hover + label {
+    color: #085DDB;
+}
+
+.checkbox input:checked + label {
+    color: #085DDB;
 }
 
 .dotted2 {
@@ -979,6 +1000,60 @@ textarea {
     z-index: 2;
 }
 
+/*---------------------------------------------------*/
+/*                     Q U I Z                       */
+/*---------------------------------------------------*/
+.quiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: normal;
+    min-width: 100%;
+    max-width: 500px;
+    min-height: 300px;
+}
+
+.quiz .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #DCE4F0;
+    color: #085DDB;
+    text-align: center;
+    font-weight: 500;
+}
+
+.quiz.initSection {
+    justify-content: center;
+    align-items: start;
+}
+
+.quiz.initSection div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.quiz.initSection div:hover {
+    color: #085DDB;
+}
+
+.quiz .progressbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #085DDB;
+    transition: all 0.5s linear;
+    transform-origin: left;
+    transform: scaleX(0);
+}
 
 /*---------------------------------------------------*/
 /*                   M E D I A                       */
@@ -1047,6 +1122,10 @@ textarea {
 @media screen and (max-width: 575px) {
     body {
         font-size: 0.875em;
+    }
+
+    .mainBtn {
+        align-self: stretch;
     }
 
     .circle {

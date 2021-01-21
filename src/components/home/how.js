@@ -4,23 +4,23 @@ import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 import triangles from "../../images/how/triangles.svg"
 import zz from "../../images/how/zz.svg"
-import step1 from "../../images/how/1.png"
-import step2 from "../../images/how/2.png"
-import step3 from "../../images/how/3.png"
-import step4 from "../../images/how/4.png"
-import step5 from "../../images/how/5.png"
-import step6 from "../../images/how/6.png"
+import stage1 from "../../images/how/1.png"
+import stage2 from "../../images/how/2.png"
+import stage3 from "../../images/how/3.png"
+import stage4 from "../../images/how/4.png"
+import stage5 from "../../images/how/5.png"
+import stage6 from "../../images/how/6.png"
 
 export default () => {
   const { state } = useContext(StateContext)
 
-  const steps = [
-    { img: step1, text: "Формирование бизнес-логики" },
-    { img: step2, text: "Разработка функционала" },
-    { img: step3, text: "Разработка дизайна" },
-    { img: step4, text: "Вёртска сайта" },
-    { img: step5, text: "Наполнение контентом" },
-    { img: step6, text: "Публикация и оптимизация" }
+  const stages = [
+    { img: stage1, text: "Формирование бизнес-логики" },
+    { img: stage2, text: "Разработка функционала" },
+    { img: stage3, text: "Разработка дизайна" },
+    { img: stage4, text: "Вёртска сайта" },
+    { img: stage5, text: "Наполнение контентом" },
+    { img: stage6, text: "Публикация и оптимизация" }
   ]
 
   const delay = [500, 1000, 1500, 2000, 2500, 3000]
@@ -33,7 +33,7 @@ export default () => {
         <h2 className="text-white h1">Как мы работаем?</h2>
         <TransitionGroup className="row m-0 justify-content-center">
           {(state.selectedSection === 2 || /Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) ?
-            (steps.map(({ img, text }, index) => (
+            (stages.map(({ img, text }, index) => (
               <div className="col-12 col-md-4 m-0 p-0">
                 <CSSTransition
                   in={state.selectedSection === 2}
@@ -41,7 +41,7 @@ export default () => {
                   timeout={500}
                   classNames="fade"
                 >
-                  <div className="step" style={{ transitionDelay: delay[index] + "ms" }}>
+                  <div className={(/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) ? "step fade-enter-done" : "step"} style={{ transitionDelay: delay[index] + "ms" }}>
                     <img src={img} alt={text} className="rounded-circle"
                          style={{ animationDelay: delay[index] + "ms" }}/>
                     <div>
