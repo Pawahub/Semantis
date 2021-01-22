@@ -4,11 +4,11 @@ import ReactPageScroller from "../react-page-scroller/src"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-import Home from "../components/home/home"
-import About from "../components/home/about"
-import How from "../components/home/how"
-import Review from "../components/home/review"
-import Contacts from "../components/home/contacts"
+import Home from "../components/home-page/home"
+import About from "../components/home-page/about"
+import How from "../components/home-page/how"
+import Review from "../components/home-page/review"
+import Contacts from "../components/home-page/contacts"
 
 const IndexPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)

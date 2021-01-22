@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 import Case from "../components/web-dev/case"
-import Contacts from "../components/home/contacts"
+import Contacts from "../components/home-page/contacts"
 import FirstSectionIP from "../components/internet-promotion/first-section"
 import OptimizationSite from "../components/internet-promotion/optimization-site"
 import TargetedAdvertising from "../components/internet-promotion/targeted-advertising"

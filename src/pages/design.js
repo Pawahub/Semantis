@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 
-import Contacts from "../components/home/contacts"
+import Contacts from "../components/home-page/contacts"
 import FirstSectionDesign from "../components/design-page/first-section"
 import Identity from "../components/design-page/identity"
 import Presentations from "../components/design-page/presentations"

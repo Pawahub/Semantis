@@ -358,7 +358,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-a, a:hover, a:active {
+a, a:hover, a:active, a:focus, a:visited {
     text-decoration: none;
 }
 
@@ -392,15 +392,23 @@ a, a:hover, a:active {
 .mainBtn {
     position: relative;
     align-self: start;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0 15px;
     min-width: 120px;
     height: 40px;
-    background: #085DDB;
     color: #F6FAFF;
+    font-weight: normal;
+    background: #085DDB;
     border: none;
     border-radius: 6px;
     box-shadow: none;
+    overflow: hidden;
+}
+
+.mainBtn:hover, .mainBtn:active, .mainBtn:visited {
+    color: #F6FAFF;
 }
 
 .prev {

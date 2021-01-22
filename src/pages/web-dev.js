@@ -8,7 +8,7 @@ import FirstSection from "../components/web-dev/first-section"
 import WeWillDo from "../components/web-dev/we-will-do"
 import StagesOfCreation from "../components/web-dev/stages-of-creation"
 import Case from "../components/web-dev/case"
-import Contacts from "../components/home/contacts"
+import Contacts from "../components/home-page/contacts"
 
 const WebDevPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)

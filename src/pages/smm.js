@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 
-import Contacts from "../components/home/contacts"
+import Contacts from "../components/home-page/contacts"
 import FirstSectionSMM from "../components/smm-page/first-section"
 import Instacard from "../components/smm-page/instacard"
 import CaseInstagram from "../components/smm-page/case-instagram"
