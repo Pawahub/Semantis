@@ -691,12 +691,7 @@ a, a:hover, a:active, a:focus, a:visited {
     position: absolute;
     border-radius: 50%;
     overflow: hidden;
-    filter: grayscale(100%);
     z-index: 1;
-}
-
-.circle:hover {
-    filter: none;
 }
 
 .circle1 {

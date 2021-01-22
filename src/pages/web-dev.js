@@ -10,6 +10,7 @@ import StagesOfCreation from "../components/web-dev/stages-of-creation"
 import Case from "../components/web-dev/case"
 import Contacts from "../components/home-page/contacts"
 
+
 const WebDevPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {

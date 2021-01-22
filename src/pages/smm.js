@@ -5,11 +5,11 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 
-import Contacts from "../components/home-page/contacts"
 import FirstSectionSMM from "../components/smm-page/first-section"
 import Instacard from "../components/smm-page/instacard"
 import CaseInstagram from "../components/smm-page/case-instagram"
 import Case from "../components/web-dev/case"
+import Contacts from "../components/home-page/contacts"
 
 const SMM = () => {
   const [sectionNumber, setSectionNumber] = useState(0)

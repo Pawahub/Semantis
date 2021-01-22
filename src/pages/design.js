@@ -4,12 +4,12 @@ import ReactPageScroller from "../react-page-scroller/src"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-
-import Contacts from "../components/home-page/contacts"
 import FirstSectionDesign from "../components/design-page/first-section"
 import Identity from "../components/design-page/identity"
 import Presentations from "../components/design-page/presentations"
 import Logo from "../components/design-page/logo"
+import Contacts from "../components/home-page/contacts"
+
 
 const DesignPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)

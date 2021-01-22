@@ -4,12 +4,11 @@ import ReactPageScroller from "../react-page-scroller/src"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
-import Case from "../components/web-dev/case"
-import Contacts from "../components/home-page/contacts"
 import FirstSectionIP from "../components/internet-promotion/first-section"
 import OptimizationSite from "../components/internet-promotion/optimization-site"
 import TargetedAdvertising from "../components/internet-promotion/targeted-advertising"
 import ContextualAdvertising from "../components/internet-promotion/contextual-advertising"
+import Contacts from "../components/home-page/contacts"
 
 const InternetPromotionPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)

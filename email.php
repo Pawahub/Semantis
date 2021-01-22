@@ -1,8 +1,8 @@
 <?php
-$name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
+$name = $_GET['name'];
+$email = $_GET['email'];
+$phone = $_GET['phone'];
+$message = $_GET['message'];
 
 header('Content-Type: application/json');
 
@@ -14,7 +14,7 @@ $semantis = 'info@semantis.by';
 
 mail($semantis, $subject, $content, "Content-Type: text/plain; charset=\"utf-8\"\n From: $email") or die('Error!');
 
-if (isset($_POST['copy'])) {
+if (isset($_GET['copy'])) {
 mail($email, 'Копия письма Semantis', $copy, "Content-Type: text/plain; charset=\"utf-8\"\n From: $semantis") or die('Error!');
 }
 
