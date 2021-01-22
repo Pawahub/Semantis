@@ -11,7 +11,7 @@ import Logo from "../components/design-page/logo"
 import Contacts from "../components/home-page/contacts"
 
 
-const DesignPage = () => {
+const DesignPage = ({location}) => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {
     if (sectionNumber !== number) {
@@ -21,7 +21,7 @@ const DesignPage = () => {
 
   if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
     return (
-      <Layout>
+      <Layout location={location}>
         <SEO title="Разработка сайтов и веб-приложений"/>
         <FirstSectionDesign/>
         <Identity/>
@@ -31,7 +31,7 @@ const DesignPage = () => {
       </Layout>
     )
   } else return (
-    <Layout selectedSection={sectionNumber}>
+    <Layout selectedSection={sectionNumber} location={location}>
       <SEO title="Разработка сайтов и веб-приложений"/>
       <ReactPageScroller
         customPageNumber={sectionNumber}

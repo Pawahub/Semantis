@@ -11,7 +11,7 @@ import Case from "../components/web-dev/case"
 import Contacts from "../components/home-page/contacts"
 
 
-const WebDevPage = () => {
+const WebDevPage = ({location}) => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {
     if (sectionNumber !== number) {
@@ -21,7 +21,7 @@ const WebDevPage = () => {
 
   if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
     return (
-      <Layout>
+      <Layout location={location}>
         <SEO title="Разработка сайтов и веб-приложений"/>
         <FirstSection/>
         <WeWillDo/>
@@ -31,7 +31,7 @@ const WebDevPage = () => {
       </Layout>
     )
   } else return (
-    <Layout selectedSection={sectionNumber}>
+    <Layout selectedSection={sectionNumber} location={location}>
       <SEO title="Разработка сайтов и веб-приложений"/>
       <ReactPageScroller
         customPageNumber={sectionNumber}

@@ -9,12 +9,12 @@ import viber from "../../images/nav/viber.png"
 
 import "./chat.css"
 
-export default () => {
+export default ({location}) => {
   const { state, dispatch } = useContext(StateContext)
 
   let chatBtn
 
-  const parth = window.location.pathname;
+  const parth = location.pathname;
   const style = () => {
 
     const lightBtn = state.show === "messengers" ? "chatBtn chatBtnLightOpen" : "chatBtn chatBtnLight"
