@@ -30,25 +30,25 @@ const IndexPage = ({ location }) => {
           <Contacts/>
         </Layout>
       )
-    }
-  } else return (
-    <Layout selectedSection={sectionNumber} location={location}>
-      <SEO title="Разработка сайтов и веб-приложений"/>
-      <ReactPageScroller
-        customPageNumber={sectionNumber}
-        onBeforePageScroll={handleSectionChange}
-        renderAllPagesOnFirstRender
-        animationTimerBuffer={50}
-        animationTimer={750}
-      >
-        <Home/>
-        <About/>
-        <How/>
-        <Review/>
-        <Contacts/>
-      </ReactPageScroller>
-    </Layout>
-  )
+    } else return (
+      <Layout selectedSection={sectionNumber} location={location}>
+        <SEO title="Разработка сайтов и веб-приложений"/>
+        <ReactPageScroller
+          customPageNumber={sectionNumber}
+          onBeforePageScroll={handleSectionChange}
+          renderAllPagesOnFirstRender
+          animationTimerBuffer={50}
+          animationTimer={750}
+        >
+          <Home/>
+          <About/>
+          <How/>
+          <Review/>
+          <Contacts/>
+        </ReactPageScroller>
+      </Layout>
+    )
+  }
 }
 
 export default IndexPage
