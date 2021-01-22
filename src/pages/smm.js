@@ -11,7 +11,7 @@ import CaseInstagram from "../components/smm-page/case-instagram"
 import Case from "../components/web-dev/case"
 import Contacts from "../components/home-page/contacts"
 
-const SMM = ({location}) => {
+const SMM = ({ location }) => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {
     if (sectionNumber !== number) {
@@ -19,17 +19,19 @@ const SMM = ({location}) => {
     }
   }
 
-  if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
-    return (
-      <Layout location={location}>
-        <SEO title="Разработка сайтов и веб-приложений"/>
-        <FirstSectionSMM/>
-        <Instacard/>
-        <CaseInstagram/>
-        <Case/>
-        <Contacts/>
-      </Layout>
-    )
+  if (typeof window !== `undefined`) {
+    if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
+      return (
+        <Layout location={location}>
+          <SEO title="Разработка сайтов и веб-приложений"/>
+          <FirstSectionSMM/>
+          <Instacard/>
+          <CaseInstagram/>
+          <Case/>
+          <Contacts/>
+        </Layout>
+      )
+    }
   } else return (
     <Layout selectedSection={sectionNumber} location={location}>
       <SEO title="Разработка сайтов и веб-приложений"/>
