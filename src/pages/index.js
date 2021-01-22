@@ -48,7 +48,7 @@ const IndexPage = ({ location }) => {
         </ReactPageScroller>
       </Layout>
     )
-  }
+  } else return null
 }
 
 export default IndexPage
