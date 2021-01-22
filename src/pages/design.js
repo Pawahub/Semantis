@@ -11,25 +11,26 @@ import Logo from "../components/design-page/logo"
 import Contacts from "../components/home-page/contacts"
 
 
-const DesignPage = ({location}) => {
+const DesignPage = ({ location }) => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {
     if (sectionNumber !== number) {
       setSectionNumber(number)
     }
   }
-
-  if (document.documentElement.clientWidth <= 991) {
-    return (
-      <Layout location={location}>
-        <SEO title="Разработка сайтов и веб-приложений"/>
-        <FirstSectionDesign/>
-        <Identity/>
-        <Presentations/>
-        <Logo/>
-        <Contacts/>
-      </Layout>
-    )
+  if (typeof window !== `undefined`) {
+    if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
+      return (
+        <Layout location={location}>
+          <SEO title="Разработка сайтов и веб-приложений"/>
+          <FirstSectionDesign/>
+          <Identity/>
+          <Presentations/>
+          <Logo/>
+          <Contacts/>
+        </Layout>
+      )
+    }
   } else return (
     <Layout selectedSection={sectionNumber} location={location}>
       <SEO title="Разработка сайтов и веб-приложений"/>
