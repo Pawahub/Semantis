@@ -18,6 +18,9 @@ export default () => {
   let chatBtn
 
   const parth = window.location.pathname;
+<<<<<<< HEAD
+>>>>>>> parent of c8e9a0e... up
+=======
 >>>>>>> parent of c8e9a0e... up
   const style = () => {
 
