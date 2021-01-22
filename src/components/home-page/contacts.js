@@ -20,7 +20,7 @@ export default () => {
   const [showForm, setShowForm] = useState(false)
 
   useEffect(() => {
-    if (state.selectedSection === 4 || document.documentElement.clientWidth <= 991) {
+    if (state.selectedSection === 4 || /Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
       setShowForm(true)
     } else setShowForm(false)
   }, [state.selectedSection])
