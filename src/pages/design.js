@@ -18,6 +18,7 @@ const DesignPage = ({ location }) => {
       setSectionNumber(number)
     }
   }
+
   if (typeof window !== `undefined`) {
     if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
       return (
@@ -30,25 +31,25 @@ const DesignPage = ({ location }) => {
           <Contacts/>
         </Layout>
       )
-    }
-  } else return (
-    <Layout selectedSection={sectionNumber} location={location}>
-      <SEO title="Разработка сайтов и веб-приложений"/>
-      <ReactPageScroller
-        customPageNumber={sectionNumber}
-        onBeforePageScroll={handleSectionChange}
-        renderAllPagesOnFirstRender
-        animationTimerBuffer={50}
-        animationTimer={750}
-      >
-        <FirstSectionDesign/>
-        <Identity/>
-        <Presentations/>
-        <Logo/>
-        <Contacts/>
-      </ReactPageScroller>
-    </Layout>
-  )
+    } else return (
+      <Layout selectedSection={sectionNumber} location={location}>
+        <SEO title="Разработка сайтов и веб-приложений"/>
+        <ReactPageScroller
+          customPageNumber={sectionNumber}
+          onBeforePageScroll={handleSectionChange}
+          renderAllPagesOnFirstRender
+          animationTimerBuffer={50}
+          animationTimer={750}
+        >
+          <FirstSectionDesign/>
+          <Identity/>
+          <Presentations/>
+          <Logo/>
+          <Contacts/>
+        </ReactPageScroller>
+      </Layout>
+    )
+  } else return null
 }
 
 export default DesignPage
