@@ -6,7 +6,7 @@ export default function CardCase({content}) {
   return (
     <div className="card card__element">
       <div className="card-view">
-        <a href={content.pdf} target="_blank" rel="noreferrer">Подробнее</a>
+        <a href={content.pdf} target="_blank">Подробнее</a>
         <FontAwesomeIcon icon={faEllipsisV} color="#085DDB"/>
       </div>
       <div className="card-body">

@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { StateContext } from "../../state/stateCotext"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -9,19 +9,12 @@ import viber from "../../images/nav/viber.png"
 
 import "./chat.css"
 
-export default () => {
+export default ({location}) => {
   const { state, dispatch } = useContext(StateContext)
 
-<<<<<<< HEAD
-  const parth = location.pathname;
-=======
   let chatBtn
 
-  const parth = window.location.pathname;
-<<<<<<< HEAD
->>>>>>> parent of c8e9a0e... up
-=======
->>>>>>> parent of c8e9a0e... up
+  const parth = location.pathname;
   const style = () => {
 
     const lightBtn = state.show === "messengers" ? "chatBtn chatBtnLightOpen" : "chatBtn chatBtnLight"
@@ -31,18 +24,30 @@ export default () => {
       case '/':
         if (state.selectedSection === 2) return lightBtn
         else return darkBtn
+        break;
       case '/web-dev':
         if (state.selectedSection === 1 || state.selectedSection === 3) return lightBtn
         else return darkBtn
+        break;
       case '/design':
         if (state.selectedSection === 0 || state.selectedSection === 3) return lightBtn
         else return darkBtn
+        break;
       case '/smm':
         if (state.selectedSection === 3) return lightBtn
         else return darkBtn
+        break;
       default:
         return 'chatBtn'
     }
+  }
+
+  if (state.selectedSection === 2) {
+    if (state.show === "messengers") chatBtn = "chatBtn chatBtnLightOpen"
+    else chatBtn = "chatBtn chatBtnLight"
+  } else {
+    if (state.show === "messengers") chatBtn = "chatBtn chatBtnDarkOpen"
+    else chatBtn = "chatBtn"
   }
 
   const handlerMessengerMenu = () => {

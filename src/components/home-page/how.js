@@ -41,8 +41,7 @@ export default () => {
                   timeout={500}
                   classNames="fade"
                 >
-                  <div className={(/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) ? "step fade-enter-done" : "step"}
-                       style={{ transitionDelay: delay[index] + "ms" }}>
+                  <div className={(/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) ? "step fade-enter-done" : "step"} style={{ transitionDelay: delay[index] + "ms" }}>
                     <img src={img} alt={text} className="rounded-circle"
                          style={{ animationDelay: delay[index] + "ms" }}/>
                     <div>

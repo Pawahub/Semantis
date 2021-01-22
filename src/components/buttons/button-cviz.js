@@ -5,7 +5,7 @@ import { StateContext } from "../../state/stateCotext"
 import { rippleEffect } from "../main"
 
 export default function ButtonCviz() {
-  const { dispatch } = useContext(StateContext)
+  const { state, dispatch } = useContext(StateContext)
 
   const handleGetPrice = e => {
     rippleEffect(e)
