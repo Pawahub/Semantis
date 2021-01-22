@@ -142,7 +142,7 @@ export default ({ siteTitle }) => {
               <li><Link className={parth === '/web-dev' ? 'active': null} to="/web-dev">Веб-разработка</Link></li>
               <li><Link className={parth === '/internet-promotion' ? 'active': null} to="/internet-promotion">Продвижение</Link></li>
               <li><Link className={parth === '/design' ? 'active': null} to="/design">Дизайн</Link></li>
-              <li><Link className={parth === '/smm' ? 'active': null} to="/smm">SMM</Link></li>
+              <li><Link className={parth === '/develop' ? 'active': null} to="/develop">SMM</Link></li>
           </ul>
         </nav>
         <span ref={line} id="line" className="d-none d-md-block"/>
