@@ -27,10 +27,10 @@ export default function WeWillDo() {
       <div className="container we-will-do">
         <div className="row justify-content-md-start justify-content-sm-center">
           <div className="col-lg-5 col-md-6 col-sm-12">
-            <h1 className='h1'>Мы сделаем:</h1>
+            <h1 className='h1'>Вы можете у нас заказать сайт:</h1>
             <ul className="home-list">
-              {list(['Имиджевый сайт', 'Лендинг', 'Корпоративный сайт', 'Интернет-магазин',
-              'Интернет-магазин', 'Интернет-магазин', 'Интернет-магазин'])}
+              {list(['Имиджевый сайт', 'Промо-сайт', 'Корпоративный сайт', 'Сайт-визитку',
+              'Онлайн-сервис', 'Блог', 'Продающую страницу'])}
             </ul>
           </div>
         </div>

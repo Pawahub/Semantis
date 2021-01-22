@@ -82,7 +82,6 @@ export default () => {
             </Carousel.Item>
           </Carousel>
         </div>
-
       </div>
     </section>
   )
