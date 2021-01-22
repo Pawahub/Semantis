@@ -10,7 +10,7 @@ import TargetedAdvertising from "../components/internet-promotion/targeted-adver
 import ContextualAdvertising from "../components/internet-promotion/contextual-advertising"
 import Contacts from "../components/home-page/contacts"
 
-const InternetPromotionPage = ({location}) => {
+const InternetPromotionPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {
     if (sectionNumber !== number) {
@@ -20,7 +20,7 @@ const InternetPromotionPage = ({location}) => {
 
   if (document.documentElement.clientWidth <= 991) {
     return (
-      <Layout location={location}>
+      <Layout>
         <SEO title="Разработка сайтов и веб-приложений"/>
         <FirstSectionIP/>
         <OptimizationSite/>
@@ -30,7 +30,7 @@ const InternetPromotionPage = ({location}) => {
       </Layout>
     )
   } else return (
-    <Layout selectedSection={sectionNumber} location={location}>
+    <Layout selectedSection={sectionNumber}>
       <SEO title="Разработка сайтов и веб-приложений"/>
       <ReactPageScroller
         customPageNumber={sectionNumber}

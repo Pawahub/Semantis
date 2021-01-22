@@ -10,7 +10,7 @@ import How from "../components/home-page/how"
 import Review from "../components/home-page/review"
 import Contacts from "../components/home-page/contacts"
 
-const IndexPage = ({location}) => {
+const IndexPage = () => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {
     if (sectionNumber !== number) {
@@ -20,7 +20,7 @@ const IndexPage = ({location}) => {
 
   if (document.documentElement.clientWidth <= 991) {
     return (
-      <Layout location={location}>
+      <Layout>
         <SEO title="Разработка сайтов и веб-приложений"/>
         <Home/>
         <About/>
@@ -30,7 +30,7 @@ const IndexPage = ({location}) => {
       </Layout>
     )
   } else return (
-    <Layout selectedSection={sectionNumber} location={location}>
+    <Layout selectedSection={sectionNumber}>
       <SEO title="Разработка сайтов и веб-приложений"/>
       <ReactPageScroller
         customPageNumber={sectionNumber}

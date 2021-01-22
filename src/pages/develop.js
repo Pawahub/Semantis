@@ -5,9 +5,9 @@ import SEO from "../components/seo"
 import Develop from "../components/develop-page/develop"
 
 
-const IndexPage = ({location}) => {
+const IndexPage = () => {
   return (
-    <Layout location={location}>
+    <Layout>
       <SEO title="Страница в разработке"/>
       <Develop/>
     </Layout>

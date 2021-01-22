@@ -16,7 +16,7 @@ import ModalSuccess from "./modal/modalSuccess"
 
 import "../pages/index.css"
 
-const Layout = ({ selectedSection, children, location }) => {
+const Layout = ({ selectedSection, children }) => {
   const data = useStaticQuery(graphql`
       query SiteTitleQuery {
           site {
@@ -43,7 +43,7 @@ const Layout = ({ selectedSection, children, location }) => {
 
   return (
     <StateContext.Provider value={{ state, dispatch }}>
-      <Nav Title={data.site.siteMetadata?.title || `Title`} location={location}/>
+      <Nav Title={data.site.siteMetadata?.title || `Title`}/>
       <main>{children}</main>
       {state.show === "success" ? <ModalSuccess/> : null}
     </StateContext.Provider>

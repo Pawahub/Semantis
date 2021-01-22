@@ -20,7 +20,7 @@ import by from "../../images/nav/by.svg"
 import "./nav.css"
 import './nav-state.sass'
 
-export default ({ siteTitle, location }) => {
+export default ({ siteTitle }) => {
   const { state, dispatch } = useContext(StateContext)
 
   const [active, setActive] = useState({
@@ -64,7 +64,7 @@ export default ({ siteTitle, location }) => {
     }
   }, [])
 
-  const parth = location.pathname;
+  const parth = window.location.pathname;
 
   const styleMenu = () => {
     switch (parth) {
@@ -206,7 +206,7 @@ export default ({ siteTitle, location }) => {
         : ""
       }
       <Sidebar/>
-      <Button location={location}/>
+      <Button/>
     </header>
   )
 }
