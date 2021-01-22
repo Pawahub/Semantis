@@ -3,7 +3,12 @@ import Carousel from "react-bootstrap/Carousel"
 
 import z from "../../images/review/z.svg"
 import zz from "../../images/about/zz.svg"
-import step1 from "../../images/how/1.png"
+import astronaut from "../../images/review/astronaut.png"
+import lexor from "../../images/review/lexor.png"
+import citrus from "../../images/review/citrus.png"
+import rullex from "../../images/review/rullex.png"
+import vinokurova from "../../images/review/vinokurova.png"
+import mantashjan from "../../images/review/mantashjan.png"
 
 export default () => {
   return (
@@ -11,22 +16,22 @@ export default () => {
       <img className="zz d-none d-md-block" src={zz} alt=""/>
       <img className="z3 d-none d-md-block" src={z} alt=""/>
       <div className="circle circle1">
-        <img src={step1} className="img-fluid" alt=""/>
+        <img src={astronaut} className="img-fluid" alt=""/>
       </div>
       <div className="circle circle2">
-        <img src={step1} className="img-fluid" alt=""/>
+        <img src={vinokurova} className="img-fluid" alt=""/>
       </div>
       <div className="circle circle3">
-        <img src={step1} className="img-fluid" alt=""/>
+        <img src={lexor} className="img-fluid" alt=""/>
       </div>
       <div className="circle circle4">
-        <img src={step1} className="img-fluid" alt=""/>
+        <img src={citrus} className="img-fluid" alt=""/>
       </div>
       <div className="circle circle5">
-        <img src={step1} className="img-fluid" alt=""/>
+        <img src={rullex} className="img-fluid" alt=""/>
       </div>
       <div className="circle circle6">
-        <img src={step1} className="img-fluid" alt=""/>
+        <img src={mantashjan} className="img-fluid" alt=""/>
       </div>
       <div className="container py-5 d-flex justify-content-center align-items-center flex-wrap overflow-hidden">
         <h2 className="h1 text-md-center">Наши клиенты</h2>
@@ -34,13 +39,13 @@ export default () => {
           <Carousel className="col-12 col-md-8 col-lg-6" indicators={false}>
             <Carousel.Item>
               <div className="d-flex my-3">
-                <img src={step1} className="rounded-circle" alt=""/>
+                <img src={lexor} className="rounded-circle" alt=""/>
                 <div className="ml-3">
-                  <h5>Feodapdosapod Potusjdiotrd</h5>
-                  Lorem ipsum
+                  <h5>Юрий Козловский</h5>
+                  Генеральный директор компании Lexor
                 </div>
               </div>
-              <a href="">instagram.com</a>
+              <a href="https://lexor.spb.ru/" target="_blank">lexor.spb.ru</a>
               <p className="mt-3">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid commodi consectetur
                 consequuntur cum deserunt ducimus explicabo facilis ipsum laudantium libero molestiae necessitatibus
@@ -50,13 +55,13 @@ export default () => {
             </Carousel.Item>
             <Carousel.Item>
               <div className="d-flex my-3">
-                <img src={step1} className="rounded-circle" alt=""/>
+                <img src={astronaut} className="rounded-circle" alt=""/>
                 <div className="ml-3">
-                  <h5>Oplfdsf Potusjdiotrd</h5>
-                  Lorem ipsum
+                  <h5>Алексей Чирко</h5>
+                  Директор ООО "Астронавт"
                 </div>
               </div>
-              <a href="">instagram.com</a>
+              <a href="https://astronaut.by/">astronaut.by</a>
               <p className="mt-3">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid commodi consectetur
                 consequuntur cum deserunt ducimus explicabo facilis ipsum laudantium libero molestiae necessitatibus
@@ -66,7 +71,7 @@ export default () => {
             </Carousel.Item>
             <Carousel.Item>
               <div className="d-flex my-3">
-                <img src={step1} className="rounded-circle" alt=""/>
+                <img src={citrus} className="rounded-circle" alt=""/>
                 <div className="ml-3">
                   <h5>Romew Potusjdiotrd</h5>
                   Lorem ipsum
