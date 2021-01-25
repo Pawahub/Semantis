@@ -61,6 +61,9 @@ export default ({ siteTitle, location }) => {
   const parth = location.pathname;
 
   const styleMenu = () => {
+    if (!state.selectedSection) {
+      return 'grayMenu line-none'
+    }
     switch (parth) {
       case '/':
         return state.selectedSection === 2 ? 'whiteMenu' : 'grayMenu';
