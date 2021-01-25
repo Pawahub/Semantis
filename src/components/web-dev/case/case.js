@@ -38,29 +38,44 @@ export default function Case() {
     ]
   };
 
+  const caseList = (arr) => {
+    return arr.map(({ img, pdf, link, title, description  }, id) => {
+      return (
+        <CardCase key={id} content={{
+          img,
+          pdf,
+          link,
+          title,
+          description}}/>
+      )
+    })
+  }
 
+  const arr = [
+    {
+      img: img1,
+      pdf: '',
+      link: 'https://citruscleaning.ca',
+      title: 'Citrus Cleaning',
+      description: 'создать на существующем сайте интернет-магазин.' },
+    {
+      img: img2,
+      pdf: '',
+      link: 'https://citruscleaning.ca',
+      title: 'Gusiatin’s Handywork',
+      description: 'создание сайта-визитки под ключ.' },
+    {
+      img: img3,
+      pdf: '',
+      link: 'https://citruscleaning.ca',
+      title: 'Summermedia',
+      description: 'создание лендинга для компании, занимающейся SMM.' }
+  ]
 
 
   const slider = (
     <SliderSlick settings={settingsSlider}>
-      <CardCase content={{
-        img: img1,
-        pdf: '',
-        link: 'https://citruscleaning.ca',
-        title: 'Citrus Cleaning',
-        description: 'создать на существующем сайте интернет-магазин.' }}/>
-      <CardCase content={{
-        img: img2,
-        pdf: '',
-        link: 'https://citruscleaning.ca',
-        title: 'Gusiatin’s Handywork',
-        description: 'создание сайта-визитки под ключ.' }}/>
-      <CardCase content={{
-        img: img3,
-        pdf: '',
-        link: 'https://citruscleaning.ca',
-        title: 'Summermedia',
-        description: 'создание лендинга для компании, занимающейся SMM.' }}/>
+      {caseList(arr)}
     </SliderSlick>
   )
 

@@ -27,10 +27,10 @@ export default () => {
       </div>
       <ul role="navigation" onClick={setCurrentPage} onKeyDown={setCurrentPage}>
         <li><Link to="/" className="active">Главная</Link></li>
-        <li><Link to="/">Разработка сайтов</Link></li>
-        <li><Link to="/">Продвижение в интернете</Link></li>
-        <li><Link to="/">Дизайн</Link></li>
-        <li><Link to="/">SMM</Link></li>
+        <li><Link to="/web-dev">Разработка сайтов</Link></li>
+        <li><Link to="/smm">Продвижение в интернете</Link></li>
+        <li><Link to="/design">Дизайн</Link></li>
+        <li><Link to="/develop">SMM</Link></li>
       </ul>
       <div>
         <a href="https://www.instagram.com/semantis.online/" rel="noreferrer" target="_blank" className="mr-2">

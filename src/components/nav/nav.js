@@ -59,10 +59,9 @@ export default ({ siteTitle, location }) => {
   }, [])
 
   const parth = location.pathname;
-
   const styleMenu = () => {
-    if (!state.selectedSection) {
-      return 'grayMenu line-none'
+    if (!state.selectedSection && state.selectedSection !== 0) {
+      return 'gray line-none'
     }
     switch (parth) {
       case '/':
@@ -74,12 +73,12 @@ export default ({ siteTitle, location }) => {
         } else if (state.selectedSection === 3) {
           return 'whiteMenu';
         } else return 'grayMenu'
-      break;
+        break;
       case '/internet-promotion':
         if (state.selectedSection === 1) {
           return 'gray'
         } else return 'grayMenu'
-      break;
+        break;
       case '/develop':
         return 'greyMenu line-none'
         break;
