@@ -50,7 +50,7 @@
     right: 0
     width: 100%
     height: 100%
-    z-index: 1
+    z-index: 1 !important
     img
       z-index: 2
       position: absolute
@@ -109,5 +109,9 @@
         height: 156px
 
 @media screen and (max-width: 500px)
-  .none-found__content h1
-    font-size: 180px
+  .none-found
+    padding-bottom: 200px
+    padding-top: 70px
+  .none-found__content
+    h1
+      font-size: 180px

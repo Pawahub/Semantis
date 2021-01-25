@@ -38,7 +38,7 @@ export default ({location}) => {
         else return darkBtn
         break;
       default:
-        return 'chatBtn'
+        return lightBtn
     }
   }
 
