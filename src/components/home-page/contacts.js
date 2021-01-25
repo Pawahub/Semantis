@@ -127,7 +127,14 @@ export default () => {
     e.preventDefault()
     let { name, phone, email } = formData
     if (name.isValid && phone.isValid && email.isValid) {
-      mail(formData).then((response) => console.log(response))
+      const data = new FormData
+      data.append("name", name.value)
+      data.append("phone", phone.value)
+      data.append("email", email.value)
+      data.append("message", formData.message)
+      data.append("copy", formData.copy)
+      
+      mail(data).then((response) => console.log(response))
       dispatch({ type: "open", payload: "success" })
       setFormData({
         name: {
