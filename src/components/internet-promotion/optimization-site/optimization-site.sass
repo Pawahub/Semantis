@@ -1,6 +1,16 @@
 .optimization-site
   &.section50-left
     background-color: #0862ff
+    position: relative
+    width: 100%
+    min-height: auto
+    display: flex
+    z-index: 3
+    padding-top: 50px
+    padding-bottom: 50px
+    > div
+      margin: auto
+      z-index: 2
   &.section50-right
     display: flex
     background: linear-gradient(106.85deg, #FCFAF9 38.81%, #DFD9D9 100%)
@@ -14,6 +24,10 @@
     ul li:first-child .span-child
       color: #FFE342
       font-weight: 700
+@media screen and (min-width: 990px)
+  .optimization-site
+    &.section50-left
+      min-height: 100vh
 @media (max-width: 992px)
   .optimization-site
     &.section50-left
