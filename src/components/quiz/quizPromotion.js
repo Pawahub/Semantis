@@ -176,7 +176,7 @@ export default ({status}) => {
           <button type="button" className="mainBtn" onClick={(e) => handleQuiz(e, "next")}>Далее > </button>
         }
         {step === 1 ? null :
-          <button type="button" className="mainBtn prev mr-3" onClick={(e) => handleQuiz(e, "prev")}>Назад</button>
+          <button type="button" className="mainBtn whiteBtn mr-3" onClick={(e) => handleQuiz(e, "prev")}>Назад</button>
         }
       </div>
     </div>

@@ -48,7 +48,7 @@ const IndexPage = ({ location }) => {
         </ReactPageScroller>
       </Layout>
     )
-  } else return null
+  } else return <SEO title="Разработка сайтов и веб-приложений"/>
 }
 
 export default IndexPage
