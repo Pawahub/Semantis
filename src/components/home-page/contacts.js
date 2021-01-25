@@ -112,7 +112,7 @@ export default () => {
 
   const handleCheckbox = () => setFormData({ ...formData, copy: !formData.copy })
 
-  const mail = async () => {
+  const mail = async (formData) => {
     await fetch("https://semantis.by/email.php", {
       method: "POST",
       headers: {
