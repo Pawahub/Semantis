@@ -1,8 +1,8 @@
 <?php
-$name = $_GET['name'];
-$email = $_GET['email'];
-$phone = $_GET['phone'];
-$message = $_GET['message'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
 
 header('Content-Type: application/json');
 
