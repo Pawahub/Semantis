@@ -30,7 +30,7 @@ export default () => {
             наши клиенты получают не только желаемый результат, но и полную техническую и информационную поддержку по
             всем направлениям.
           </p>
-          <a href="/src/Semantis.pdf" target="_blank" className="mainBtn mt-md-3" onClick={rippleEffect}>
+          <a href="/src/Semantis.pdf" target="_blank" className="mainBtn align-self-start mt-md-3" onClick={rippleEffect}>
             <FontAwesomeIcon icon={faDownload} className="pr-2" size="lg"/> Пезентация pdf
           </a>
         </div>

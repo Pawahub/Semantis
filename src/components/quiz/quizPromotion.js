@@ -57,7 +57,7 @@ export default ({status}) => {
   const firstSection = (
     <div className="d-flex flex-column">
       <div className="input-group-main">
-        <label htmlFor="field">Какая у вас деятельности</label><br/>
+        <label htmlFor="field">Ваша сфера деятельности</label><br/>
         <input
           id="field"
           name="field"

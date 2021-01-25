@@ -391,7 +391,6 @@ a, a:hover, a:active, a:focus, a:visited {
 
 .mainBtn {
     position: relative;
-    align-self: start;
     display: flex;
     justify-content: center;
     align-items: center;

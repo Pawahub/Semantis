@@ -232,7 +232,7 @@ export default () => {
                 onChange={handleCheckbox}/>
               <label htmlFor="copy">Отправить мне копию сообщения</label>
             </div>
-            <button className="mainBtn" onClick={handleSubmit}>
+            <button className="mainBtn align-self-start" onClick={handleSubmit}>
               <FontAwesomeIcon icon={faPaperPlane} className="pr-2" size="lg"/> Отправить
             </button>
           </form>

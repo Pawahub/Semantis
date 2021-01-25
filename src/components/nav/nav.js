@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react"
+import React, { useContext, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import { currentPage } from "../main"
 import { StateContext } from "../../state/stateCotext"
@@ -22,12 +22,6 @@ import './nav-state.sass'
 
 export default ({ siteTitle, location }) => {
   const { state, dispatch } = useContext(StateContext)
-
-  const [active, setActive] = useState({
-    activeEl: null,
-    parth: null
-  })
-
 
   const line = useRef()
 
@@ -123,7 +117,6 @@ export default ({ siteTitle, location }) => {
     }
   }
 
-
   return (
     <header className={styleMenu()}>
       <div className="container d-flex justify-content-between align-items-center mt-3 mb-2"
@@ -194,11 +187,11 @@ export default ({ siteTitle, location }) => {
             <p className="m-0">Свяжитесь с нами</p>
             <FontAwesomeIcon icon={faTimes} size="lg" className="x" onClick={() => dispatch({ type: "close" })}/>
           </div>
-          <button className="mainBtn mt-3 justify-content-start" onClick={() => dispatch({ type: "close" })}>
+          <button className="mainBtn mx-3 mt-3 justify-content-start" onClick={() => dispatch({ type: "close" })}>
             <a href="tel:+79217750328"><FontAwesomeIcon icon={faMobileAlt} size="lg"
                                                         className="vibrate mr-1"/> +79217750328</a>
           </button>
-          <button className="mainBtn my-3 justify-content-start" onClick={() => dispatch({ type: "close" })}>
+          <button className="mainBtn m-3 justify-content-start" onClick={() => dispatch({ type: "close" })}>
             <a href="tel:+375292624063"><FontAwesomeIcon icon={faMobileAlt} size="lg"
                                                          className="vibrate mr-1"/> +375292624063</a>
           </button>
