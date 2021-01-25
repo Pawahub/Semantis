@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { StateContext } from "../../state/stateCotext"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -11,8 +11,6 @@ import "./chat.css"
 
 export default ({location}) => {
   const { state, dispatch } = useContext(StateContext)
-
-  let chatBtn
 
   const parth = location.pathname;
   const style = () => {
@@ -42,13 +40,6 @@ export default ({location}) => {
     }
   }
 
-  if (state.selectedSection === 2) {
-    if (state.show === "messengers") chatBtn = "chatBtn chatBtnLightOpen"
-    else chatBtn = "chatBtn chatBtnLight"
-  } else {
-    if (state.show === "messengers") chatBtn = "chatBtn chatBtnDarkOpen"
-    else chatBtn = "chatBtn"
-  }
 
   const handlerMessengerMenu = () => {
     state.show === "messengers" ? dispatch({ type: "close" }) : dispatch({ type: "open", payload: "messengers" })
