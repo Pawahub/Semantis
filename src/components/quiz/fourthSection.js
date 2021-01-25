@@ -35,7 +35,7 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
   }
 
   const mail = async (quizData) => {
-    await fetch("https://semantis.by/quiz.php", {
+    await fetch("https://semantis.by/email.php", {
       method: "POST",
       headers: {
         "Content-Type": "multipart/form-data"
@@ -45,7 +45,6 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
   }
 
   const submitQuiz = (quizData) => {
-    console.log(quizData)
     if (step4.name.isValid && step4.phone.isValid) {
       mail(quizData).then((response) => console.log(response))
       dispatch({ type: "open", payload: "success" })
