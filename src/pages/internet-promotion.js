@@ -22,7 +22,7 @@ const InternetPromotionPage = ({ location }) => {
     if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
       return (
         <Layout location={location}>
-          <SEO title="Разработка сайтов и веб-приложений"/>
+          <SEO title="Продвижение в интернете"/>
           <FirstSectionIP/>
           <OptimizationSite/>
           <TargetedAdvertising/>
@@ -32,7 +32,7 @@ const InternetPromotionPage = ({ location }) => {
       )
     } else return (
       <Layout selectedSection={sectionNumber} location={location}>
-        <SEO title="Разработка сайтов и веб-приложений"/>
+        <SEO title="Продвижение в интернете"/>
         <ReactPageScroller
           customPageNumber={sectionNumber}
           onBeforePageScroll={handleSectionChange}
@@ -48,7 +48,7 @@ const InternetPromotionPage = ({ location }) => {
         </ReactPageScroller>
       </Layout>
     )
-  } else return null
+  } else return <SEO title="Продвижение в интернете"/>
 }
 
 export default InternetPromotionPage

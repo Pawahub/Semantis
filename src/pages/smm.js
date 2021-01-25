@@ -23,7 +23,7 @@ const SMM = ({ location }) => {
     if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
       return (
         <Layout location={location}>
-          <SEO title="Разработка сайтов и веб-приложений"/>
+          <SEO title="Продвижение в социальных сетях"/>
           <FirstSectionSMM/>
           <Instacard/>
           <CaseInstagram/>
@@ -33,7 +33,7 @@ const SMM = ({ location }) => {
       )
     } else return (
       <Layout selectedSection={sectionNumber} location={location}>
-        <SEO title="Разработка сайтов и веб-приложений"/>
+        <SEO title="Продвижение в социальных сетях"/>
         <ReactPageScroller
           customPageNumber={sectionNumber}
           onBeforePageScroll={handleSectionChange}
@@ -49,7 +49,7 @@ const SMM = ({ location }) => {
         </ReactPageScroller>
       </Layout>
     )
-  } else return null
+  } else return <SEO title="Продвижение в социальных сетях"/>
 }
 
 export default SMM

@@ -23,7 +23,7 @@ const WebDevPage = ({ location }) => {
     if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
       return (
         <Layout location={location}>
-          <SEO title="Разработка сайтов и веб-приложений"/>
+          <SEO title="Создание сайтов"/>
           <FirstSection/>
           <WeWillDo/>
           <StagesOfCreation/>
@@ -33,7 +33,7 @@ const WebDevPage = ({ location }) => {
       )
     } else return (
       <Layout selectedSection={sectionNumber} location={location}>
-        <SEO title="Разработка сайтов и веб-приложений"/>
+        <SEO title="Создание сайтов"/>
         <ReactPageScroller
           customPageNumber={sectionNumber}
           onBeforePageScroll={handleSectionChange}
@@ -49,7 +49,7 @@ const WebDevPage = ({ location }) => {
         </ReactPageScroller>
       </Layout>
     )
-  } else return null
+  } else return <SEO title="Создание сайтов"/>
 }
 
 export default WebDevPage

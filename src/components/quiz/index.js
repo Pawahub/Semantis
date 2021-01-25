@@ -4,7 +4,9 @@ import QuizWebsite from "./quizWebsite"
 import QuizSEO from "./quizSEO"
 import QuizDesign from "./quizDesign"
 import QuizPromotion from "./quizPromotion"
-import './quiz.sass'
+
+import "./quiz.sass"
+
 export default () => {
   const [quiz, setQuiz] = useState("init")
 
@@ -19,14 +21,16 @@ export default () => {
       <div data-value="promotion"><span className="number">4</span>Продвижение в интернете</div>
     </div>
   )
-  const status = [0, 0.25, 0.5, 0.75, 1];
+
+  const status = [0, 0.25, 0.5, 0.75, 1]
+
   return (
     <form className="col-12 p-3 border-top align-items-center">
       {quiz === "init" ? initSection : null}
-      {quiz === "website" ? <QuizWebsite status={status} /> : null}
-      {quiz === "seo" ? <QuizSEO status={status} /> : null}
-      {quiz === "design" ? <QuizDesign status={status} /> : null}
-      {quiz === "promotion" ? <QuizPromotion status={status} /> : null}
+      {quiz === "website" ? <QuizWebsite status={status}/> : null}
+      {quiz === "seo" ? <QuizSEO status={status}/> : null}
+      {quiz === "design" ? <QuizDesign status={status}/> : null}
+      {quiz === "promotion" ? <QuizPromotion status={status}/> : null}
     </form>
   )
 }

@@ -389,6 +389,10 @@ a, a:hover, a:active, a:focus, a:visited {
     color: #085DDB;
 }
 
+.grey-color {
+    color: #3B3F45;
+}
+
 .mainBtn {
     position: relative;
     display: flex;
@@ -410,15 +414,16 @@ a, a:hover, a:active, a:focus, a:visited {
     color: #F6FAFF;
 }
 
-.prev {
-    background: none;
+.whiteBtn, .whiteBtn:visited {
+    background: #F6FAFF;
     color: #085DDB;
     border: 2px solid #085DDB;
 }
 
-.prev:hover {
+.whiteBtn:hover {
     background: #085DDB;
     color: #F6FAFF;
+    border: 2px solid #F6FAFF;
 }
 
 .ripple {

@@ -10,7 +10,6 @@ import Presentations from "../components/design-page/presentations"
 import Logo from "../components/design-page/logo"
 import Contacts from "../components/home-page/contacts"
 
-
 const DesignPage = ({ location }) => {
   const [sectionNumber, setSectionNumber] = useState(0)
   const handleSectionChange = number => {
@@ -23,7 +22,7 @@ const DesignPage = ({ location }) => {
     if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
       return (
         <Layout location={location}>
-          <SEO title="Разработка сайтов и веб-приложений"/>
+          <SEO title="Дизайн"/>
           <FirstSectionDesign/>
           <Identity/>
           <Presentations/>
@@ -33,7 +32,7 @@ const DesignPage = ({ location }) => {
       )
     } else return (
       <Layout selectedSection={sectionNumber} location={location}>
-        <SEO title="Разработка сайтов и веб-приложений"/>
+        <SEO title="Дизайн"/>
         <ReactPageScroller
           customPageNumber={sectionNumber}
           onBeforePageScroll={handleSectionChange}
@@ -49,7 +48,7 @@ const DesignPage = ({ location }) => {
         </ReactPageScroller>
       </Layout>
     )
-  } else return null
+  } else return <SEO title="Дизайн"/>
 }
 
 export default DesignPage
