@@ -133,7 +133,7 @@ export default () => {
       data.append("email", email.value)
       data.append("message", formData.message)
       data.append("copy", formData.copy)
-      
+
       mail(data).then((response) => console.log(response))
       dispatch({ type: "open", payload: "success" })
       setFormData({
