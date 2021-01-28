@@ -162,9 +162,10 @@ export default () => {
       <img className="dotted2 d-none d-lg-block" src={dotted} alt=""/>
       <img className="dottedgroup d-none d-md-block" src={dottedgroup} alt=""/>
       <img className="zCircle d-none d-lg-block" src={zCircle} alt=""/>
-      <div className="container">
+      <span className={showForm ? "bg-white show" : "bg-white"}/>
+      <div className="container py-5">
         <div className="row justify-content-center">
-          <div className={showForm ? "col-12 col-md-6 p-0 pt-md-5 form show" : "col-12 col-md-6 p-0 pt-md-5 form"}>
+          <div className={showForm ? "col-12 col-md-6 px-3 form show" : "col-12 col-md-6 form"}>
             <h2 className="h1">Оставьте заявку</h2>
             <form name="contactForm" className="mr-md-5">
               <div className="d-flex justify-content-between flex-wrap">
@@ -191,7 +192,8 @@ export default () => {
                       <span className={template.template.flag}/>
                       <span className="iti-arrow"/>
                     </button>
-                    <ul role="menu" className={!template.dropdown ? "dropdown" : "dropdown active"} onClick={selectMask}>
+                    <ul role="menu" className={!template.dropdown ? "dropdown" : "dropdown active"}
+                        onClick={selectMask}>
                       <li data-country="by"><span className="flag by"/>Беларусь +375</li>
                       <li data-country="ru"><span className="flag ru"/>Россия +7</li>
                     </ul>
@@ -255,7 +257,7 @@ export default () => {
               </button>
             </form>
           </div>
-          <div className="col-12 col-md-6 p-0 pt-5 pl-md-5">
+          <div className="col-12 col-md-6 px-3 pl-md-5">
             <h2 className="h1">Контакты</h2>
             <div className="mb-4"><h6>Наши телефоны</h6>
               <a href="tel:+375292624063">+375 (29) 2624063</a> <br/>

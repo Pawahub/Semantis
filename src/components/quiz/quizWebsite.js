@@ -61,8 +61,8 @@ export default ({ status }) => {
           name="recognizability"
           step="1"
           type="checkbox"
-          value="Надо повысить имидж и узнаваемость бренда. "
-          checked={step1.recognizability === "Надо повысить имидж и узнаваемость бренда. "}
+          value=" Надо повысить имидж и узнаваемость бренда."
+          checked={step1.recognizability === " Надо повысить имидж и узнаваемость бренда."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.1">Повысить имидж и узнаваемость бренда</label>
@@ -73,8 +73,8 @@ export default ({ status }) => {
           name="communication"
           step="1"
           type="checkbox"
-          value="Надо организровать связь между клиентами и компанией. "
-          checked={step1.communication === "Надо организровать связь между клиентами и компанией. "}
+          value=" Надо организровать связь между клиентами и компанией."
+          checked={step1.communication === " Надо организровать связь между клиентами и компанией."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.2">Организровать связь между клиентами и компанией</label>
@@ -85,8 +85,8 @@ export default ({ status }) => {
           name="loyalty"
           step="1"
           type="checkbox"
-          value="Надо повысить лояльность клиентов. "
-          checked={step1.loyalty === "Надо повысить лояльность клиентов. "}
+          value=" Надо повысить лояльность клиентов."
+          checked={step1.loyalty === " Надо повысить лояльность клиентов."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.3">Повысить лояльность клиентов</label>
@@ -97,8 +97,8 @@ export default ({ status }) => {
           name="customers"
           step="1"
           type="checkbox"
-          value="Надо привлечь новых клиентов. "
-          checked={step1.customers === "Надо привлечь новых клиентов. "}
+          value=" Надо привлечь новых клиентов."
+          checked={step1.customers === " Надо привлечь новых клиентов."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.4">Привлекать новых клиентов через интернет</label>
@@ -109,8 +109,8 @@ export default ({ status }) => {
           name="sales"
           step="1"
           type="checkbox"
-          value="С сайта необходимо осуществлять прямые продажи. "
-          checked={step1.sales === "С сайта необходимо осуществлять прямые продажи. "}
+          value=" С сайта необходимо осуществлять прямые продажи."
+          checked={step1.sales === " С сайта необходимо осуществлять прямые продажи."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.5">Осуществлять прямые продажи с сайта</label>
@@ -121,8 +121,8 @@ export default ({ status }) => {
           name="members"
           step="1"
           type="checkbox"
-          value="Надо привлечь публику для участия в мероприятии. "
-          checked={step1.members === "Надо привлечь публику для участия в мероприятии. "}
+          value=" Надо привлечь публику для участия в мероприятии."
+          checked={step1.members === " Надо привлечь публику для участия в мероприятии."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.6">Привлечь публику для участия в мероприятии</label>
@@ -139,8 +139,8 @@ export default ({ status }) => {
           name="template"
           step="2"
           type="checkbox"
-          value="Нужен индивидуальный дизайн для сайта. "
-          checked={step2.template === "Нужен индивидуальный дизайн для сайта. "}
+          value=" Нужен индивидуальный дизайн для сайта."
+          checked={step2.template === " Нужен индивидуальный дизайн для сайта."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.1.1">Да</label>
@@ -149,8 +149,8 @@ export default ({ status }) => {
           name="template"
           step="2"
           type="checkbox"
-          value="Монжо сделать сайт из шаблона. "
-          checked={step2.template === "Монжо сделать сайт из шаблона. "}
+          value=" Монжо сделать сайт из шаблона."
+          checked={step2.template === " Монжо сделать сайт из шаблона."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.1.2">Нет</label>
@@ -162,8 +162,8 @@ export default ({ status }) => {
           name="content"
           step="2"
           type="checkbox"
-          value="Контент для сайта есть. "
-          checked={step2.content === "Контент для сайта есть. "}
+          value=" Контент для сайта есть."
+          checked={step2.content === " Контент для сайта есть."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.2.1">Да</label>
@@ -172,8 +172,8 @@ export default ({ status }) => {
           name="content"
           step="2"
           type="checkbox"
-          value="Контента для сайта нет. "
-          checked={step2.content === "Контента для сайта нет. "}
+          value=" Контента для сайта нет."
+          checked={step2.content === " Контента для сайта нет."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.2.2">Нет</label>
@@ -182,8 +182,8 @@ export default ({ status }) => {
           name="content"
           step="2"
           type="checkbox"
-          value="Контент есть частично. "
-          checked={step2.content === "Контент есть частично. "}
+          value=" Материалы требуют доработки."
+          checked={step2.content === " Материалы требуют доработки."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.2.3">Частично</label>

@@ -24,7 +24,7 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
       isValid: false,
       failed: false
     },
-    description: "",
+    description: [],
     message: step3,
     whatsapp: "",
     telegram: "",
@@ -50,7 +50,6 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
       setSubmit()
       setQuizData({ ...quizData, phone: { value: quizData.phone.value, isValid: false, failed: true } })
     } else {
-      setQuizData({ ...quizData, description: stepsData })
       const data = new FormData()
       for (let key in quizData) {
         if (key === "name" || key === "phone") data.append(key, quizData[key].value)
@@ -62,6 +61,7 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
   }
 
   useEffect(() => {
+    setQuizData({ ...quizData, description: stepsData })
     if (submit) submitQuiz(quizData)
   }, [submit])
 

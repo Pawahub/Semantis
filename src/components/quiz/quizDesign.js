@@ -52,8 +52,8 @@ export default ({ status }) => {
           id="step1.1"
           name="logo"
           type="checkbox"
-          value="Интересует разработка логотипа. "
-          checked={step1.logo === "Интересует разработка логотипа. "}
+          value=" Интересует разработка логотипа."
+          checked={step1.logo === " Интересует разработка логотипа."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.1">Разработка логотипа</label>
@@ -63,8 +63,8 @@ export default ({ status }) => {
           id="step1.2"
           name="brand"
           type="checkbox"
-          value="Необходимо разработать айдентику. "
-          checked={step1.brand === "Необходимо разработать айдентику. "}
+          value=" Необходимо разработать айдентику."
+          checked={step1.brand === " Необходимо разработать айдентику."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.2">Создание уникального фирменного стиля</label>
@@ -74,8 +74,8 @@ export default ({ status }) => {
           id="step1.3"
           name="presentation"
           type="checkbox"
-          value="Необходимо создать презентацию. "
-          checked={step1.presentation === "Необходимо создать презентацию. "}
+          value=" Необходимо создать презентацию."
+          checked={step1.presentation === " Необходимо создать презентацию."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.3">Создание презентации</label>
@@ -85,8 +85,8 @@ export default ({ status }) => {
           id="step1.4"
           name="vector"
           type="checkbox"
-          value="Интересует создание рекламных баннеров или других изображений. "
-          checked={step1.vector === "Интересует создание рекламных баннеров или других изображений. "}
+          value=" Интересует создание рекламных баннеров или других изображений."
+          checked={step1.vector === " Интересует создание рекламных баннеров или других изображений."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.4">Создание рекламных баннеров или других изображений</label>
@@ -96,8 +96,8 @@ export default ({ status }) => {
           id="step1.5"
           name="social"
           type="checkbox"
-          value="Необходимо сделать дизайн для профиля в соц.сети. "
-          checked={step1.social === "Необходимо сделать дизайн для профиля в соц.сети. "}
+          value=" Необходимо сделать дизайн для профиля в соц.сети."
+          checked={step1.social === " Необходимо сделать дизайн для профиля в соц.сети."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.5">Оформление профиля в социальных сетях</label>
@@ -107,8 +107,8 @@ export default ({ status }) => {
           id="step1.6"
           name="webdesign"
           type="checkbox"
-          value="Необходимо разработать макет сайта. "
-          checked={step1.webdesign === "Необходимо разработать макет сайта. "}
+          value=" Необходимо разработать макет сайта."
+          checked={step1.webdesign === " Необходимо разработать макет сайта."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.6">Разработка макета сайта</label>
@@ -118,8 +118,8 @@ export default ({ status }) => {
           id="step1.7"
           name="other"
           type="checkbox"
-          value="Интересует услуга дизайн. "
-          checked={step1.other === "Интересует услуга дизайн. "}
+          value=" Интересует услуга дизайн."
+          checked={step1.other === " Интересует услуга дизайн."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.7">Другое</label>

@@ -83,8 +83,8 @@ export default ({ status }) => {
           id="step2.1"
           name="speed"
           type="checkbox"
-          value="Хотелось бы увеличить скорость загрузки сайта. "
-          checked={step2.speed === "Хотелось бы увеличить скорость загрузки сайта. "}
+          value=" Хотелось бы увеличить скорость загрузки сайта."
+          checked={step2.speed === " Хотелось бы увеличить скорость загрузки сайта."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.1">Увеличить скорость загрузки сайта</label>
@@ -94,8 +94,8 @@ export default ({ status }) => {
           id="step2.2"
           name="search"
           type="checkbox"
-          value="Нужно поднять рейтинг сайта в поисковой выдаче. "
-          checked={step2.search === "Нужно поднять рейтинг сайта в поисковой выдаче. "}
+          value=" Нужно поднять рейтинг сайта в поисковой выдаче."
+          checked={step2.search === " Нужно поднять рейтинг сайта в поисковой выдаче."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.2">Поднять рейтинг сайта в поисковой выдаче</label>
@@ -105,8 +105,8 @@ export default ({ status }) => {
           id="step2.3"
           name="visual"
           type="checkbox"
-          value="Нужен редизайн сайта. "
-          checked={step2.visual === "Нужен редизайн сайта. "}
+          value=" Нужен редизайн сайта."
+          checked={step2.visual === " Нужен редизайн сайта."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.3">Изменить дизайн сайта</label>
@@ -116,8 +116,8 @@ export default ({ status }) => {
           id="step2.4"
           name="functional"
           type="checkbox"
-          value="Необходимо исправить/добавить функционал. "
-          checked={step2.functional === "Необходимо исправить/добавить функционал. "}
+          value=" Необходимо исправить/добавить функционал."
+          checked={step2.functional === " Необходимо исправить/добавить функционал."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.4">Исправить/добавить функционал</label>
@@ -127,8 +127,8 @@ export default ({ status }) => {
           id="step2.5"
           name="errors"
           type="checkbox"
-          value="Необходимо исправить ошибки в коде сайта. "
-          checked={step2.errors === "Необходимо исправить ошибки в коде сайта. "}
+          value=" Необходимо исправить ошибки в коде сайта."
+          checked={step2.errors === " Необходимо исправить ошибки в коде сайта."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.5">Исправить общие ошибки в коде сайта</label>
@@ -138,8 +138,8 @@ export default ({ status }) => {
           id="step2.6"
           name="schema"
           type="checkbox"
-          value="Надо сделать микроразметку. "
-          checked={step2.schema === "Надо сделать микроразметку. "}
+          value=" Надо сделать микроразметку."
+          checked={step2.schema === " Надо сделать микроразметку."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.6">Добавить микроразметку</label>
@@ -149,8 +149,8 @@ export default ({ status }) => {
           id="step2.7"
           name="other"
           type="checkbox"
-          value="Надо провести аудит сайта. "
-          checked={step2.other === "Надо провести аудит сайта. "}
+          value=" Надо провести аудит сайта."
+          checked={step2.other === " Надо провести аудит сайта."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.7">Надо провести аудит сайта</label>
