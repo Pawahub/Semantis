@@ -7,14 +7,22 @@ import Quiz from "../quiz"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHandHoldingUsd, faTimes } from "@fortawesome/free-solid-svg-icons"
+import { faInstagram, faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import mouse from "../../images/home/mouse.svg"
-import fb from "../../images/home/fb.svg"
-import ig from "../../images/home/ig.svg"
-import ln from "../../images/home/in.svg"
-import dot from "../../images/home/dot.png"
 
 export default () => {
   const { state, dispatch } = useContext(StateContext)
+
+  const list = (arr) => {
+    return arr.map((el, idx) => {
+      return (
+        <li key={idx}>
+          <div className="number"><span>{idx < 10 ? "0" + (idx + 1) : idx + 1} </span><strong>&#8228;</strong></div>
+          <span>{el}</span>
+        </li>
+      )
+    })
+  }
 
   const handleGetPrice = e => {
     rippleEffect(e)
@@ -29,26 +37,7 @@ export default () => {
           <h6 className="blue-color m-0"><strong>веб-студия</strong></h6>
           <h1 className="h1">Семантис</h1>
           <ul className="home-list">
-            <li>
-              <div className="number">01</div>
-              <img src={dot} alt="Разработка сайтов" className="ml-2 mr-3 text"/>
-              Разработка сайтов
-            </li>
-            <li>
-              <div className="number">02</div>
-              <img src={dot} alt="Оптимизация сайтов" className="ml-2 mr-3 text"/>
-              Оптимизация сайтов
-            </li>
-            <li>
-              <div className="number">03</div>
-              <img src={dot} alt="Дизайн" className="ml-2 mr-3"/>
-              Дизайн
-            </li>
-            <li>
-              <div className="number">04</div>
-              <img src={dot} alt="Продвижение в интернете" className="ml-2 mr-3"/>
-              Продвижение в интернете
-            </li>
+            {list(["Разработка сайтов", "Оптимизация сайтов", "Дизайн", "Продвижение в интернете"])}
           </ul>
           <button className="mainBtn" onClick={handleGetPrice}>
             Узнать цену&nbsp;<FontAwesomeIcon icon={faHandHoldingUsd} className="pr-2" size="lg"/>
@@ -65,12 +54,16 @@ export default () => {
           }
         </div>
         <div className="offset-sm-4 offset-md-6 offset-lg-0 mt-5 social">
-          <a href="https://www.instagram.com/semantis.online/" rel="noreferrer"
-             target="_blank" className="my-2 mr-2"><img src={ig} alt="instagram"/></a>
-          <a href="https://www.facebook.com/semantis.online" rel="noreferrer"
-             target="_blank" className="my-2 mr-2"><img src={fb} alt="facebook"/></a>
-          <a href="https://www.linkedin.com/company/semantisonline/" rel="noreferrer"
-             target="_blank" className="my-2 mr-2"><img src={ln} alt="linkedin"/></a>
+          <a href="https://www.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank" className="my-2 mr-2">
+            <FontAwesomeIcon icon={faInstagram} size="lg" className="blue-color"/>
+          </a>
+          <a href="https://www.facebook.com/semantis.online/" rel="noreferrer noopener" target="_blank" className="my-2 mr-2">
+            <FontAwesomeIcon icon={faFacebook} size="lg" className="blue-color"/>
+          </a>
+          <a href="https://www.linkedin.com/company/semantisonline/" rel="noreferrer noopener" target="_blank"
+             className="my-2 mr-2">
+            <FontAwesomeIcon icon={faLinkedin} size="lg" className="blue-color"/>
+          </a>
         </div>
       </div>
       <div className="mouse d-lg-block d-none">

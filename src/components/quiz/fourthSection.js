@@ -3,83 +3,93 @@ import { StateContext } from "../../state/stateCotext"
 
 import NumberFormat from "react-number-format"
 
-import ok from "../../images/contacts/okblue.svg"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons"
 import whatsapp from "../../images/nav/whatsapp.png"
 import telegram from "../../images/nav/telegram.png"
 import viber from "../../images/nav/viber.png"
 
+
 export default ({ step1, step2, step3, submit, setSubmit }) => {
   const { dispatch } = useContext(StateContext)
 
-  const initialStep4 = {
+  const initialQuizData = {
     name: {
       value: "",
-      isValid: false
+      isValid: false,
+      failed: false
     },
     phone: {
       value: "",
-      isValid: false
+      isValid: false,
+      failed: false
     },
-    whatsapp: false,
-    telegram: false,
-    viber: false
+    description: "",
+    message: step3,
+    whatsapp: "",
+    telegram: "",
+    viber: ""
   }
 
-  const [step4, setStep4] = useState(initialStep4)
+  const [quizData, setQuizData] = useState(initialQuizData)
 
-  const quizData = {
-    step1,
-    step2,
-    step3,
-    ...step4
-  }
+  const stepsData = [step1, step2].map((item) => typeof item === "object" ? Object.values(item) : item).flat().filter((item) => item !== "")
 
   const mail = async (quizData) => {
     await fetch("https://semantis.by/email.php", {
       method: "POST",
-      headers: {
-        "Content-Type": "multipart/form-data"
-      },
-      body: JSON.stringify(quizData)
+      body: quizData
     })
   }
 
-  const submitQuiz = (quizData) => {
-    if (step4.name.isValid && step4.phone.isValid) {
-      mail(quizData).then((response) => console.log(response))
+  const submitQuiz = () => {
+    if (!quizData.name.isValid) {
+      setSubmit()
+      setQuizData({ ...quizData, name: { value: quizData.name.value, isValid: false, failed: true } })
+    } else if (!quizData.phone.isValid) {
+      setSubmit()
+      setQuizData({ ...quizData, phone: { value: quizData.phone.value, isValid: false, failed: true } })
+    } else {
+      setQuizData({ ...quizData, description: stepsData })
+      const data = new FormData()
+      for (let key in quizData) {
+        if (key === "name" || key === "phone") data.append(key, quizData[key].value)
+        else if (quizData[key]) data.append(key, quizData[key])
+      }
+      mail(data).then((response) => console.log(response))
       dispatch({ type: "open", payload: "success" })
-    } else setSubmit()
+    }
   }
 
   useEffect(() => {
-    if (submit) {
-      submitQuiz(quizData)
-    }
+    if (submit) submitQuiz(quizData)
   }, [submit])
 
-  const handleCheckbox = e => setStep4({ ...step4, [e.target.value]: !step4[e.target.value] })
+  const handleCheckbox = e => {
+    if (quizData[e.target.value] === "") setQuizData({ ...quizData, [e.target.value]: e.target.value })
+    else setQuizData({ ...quizData, [e.target.value]: "" })
+  }
 
   const focusInput = e => {
-    if (e.target.classList.contains("failed")) e.target.classList.remove("failed")
+    if (quizData[e.target.name].failed) setQuizData({
+      ...quizData,
+      [e.target.name]: { value: e.target.value, isValid: false, failed: false }
+    })
     if (e.target.name === "phone" && !e.target.value) setShowMask(true)
     if (template.dropdown) toggleSelect()
   }
 
-  const handleInput = e => setStep4({ ...step4, [e.target.name]: { value: e.target.value, isValid: false } })
+  const handleInput = e => setQuizData({
+    ...quizData,
+    [e.target.name]: { value: e.target.value, isValid: false, failed: false }
+  })
 
   const checkInput = (e, expression) => {
-    if (e.target.name === "phone") {
-      setShowMask(false)
-      setStep4({ ...step4, phone: { value: e.target.value, isValid: false } })
-    }
+    if (e.target.name === "phone") setShowMask(false)
+
     if (expression.test(e.target.value)) {
-      for (let key in step4) {
-        if (key === e.target.name) setStep4({
-          ...step4,
-          [key]: { value: e.target.value, isValid: true }
-        })
-      }
-    } else e.target.classList.add("failed")
+      setQuizData({ ...quizData, [e.target.name]: { value: e.target.value, isValid: true, failed: false } })
+    } else setQuizData({ ...quizData, [e.target.name]: { value: e.target.value, isValid: false, failed: true } })
   }
 
   const BY = {
@@ -106,7 +116,6 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
   const [showMask, setShowMask] = useState(false)
 
   const selectMask = e => {
-    document.getElementById("phoneQuiz").classList.remove("failed")
     if (e.target.dataset.country === "by") {
       setTemplate({
         template: BY,
@@ -118,7 +127,7 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
         dropdown: false
       })
     }
-    setStep4({ ...step4, phone: { value: "", isValid: false } })
+    setQuizData({ ...quizData, phone: { value: "", isValid: false, failed: false } })
   }
 
   return (
@@ -132,12 +141,15 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
             name="name"
             type="text"
             placeholder="Ваше имя"
-            value={step4.name.value}
+            value={quizData.name.value}
             onFocus={focusInput}
             onChange={handleInput}
             onBlur={(e) => checkInput(e, /^[а-яА-ЯёЁ\s]+|[a-zA-Z\s]+$/)}
+            className={quizData.name.failed ? "failed" : ""}
           />
-          <img className={step4.name.isValid ? "ok d-block" : "ok d-none"} src={ok} alt=""/>
+          <FontAwesomeIcon icon={faCheckCircle} size="lg"
+                           className={quizData.name.isValid ? "ok blue-color d-block" : "ok d-none"}
+          />
         </div>
         <div className="input-group-main">
           <label htmlFor="phoneQuiz">Ваш телефон</label><br/>
@@ -156,13 +168,15 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
               type="tel"
               placeholder={template.template.placeholder}
               format={template.template.format}
-              value={step4.phone.value}
+              value={quizData.phone.value}
               mask="_"
               allowEmptyFormatting={showMask}
               onFocus={focusInput}
               onBlur={(e) => checkInput(e, template.template.rexp)}
+              className={quizData.phone.failed ? "failed" : ""}
             />
-            <img className={step4.phone.isValid ? "ok d-block" : "ok d-none"} src={ok} alt=""/>
+            <FontAwesomeIcon icon={faCheckCircle} size="lg"
+                             className={quizData.phone.isValid ? "ok blue-color d-block" : "ok d-none"}/>
           </div>
         </div>
         <div className="d-flex flex-column">
@@ -173,7 +187,7 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
               step="4"
               type="checkbox"
               value="whatsapp"
-              checked={step4.whatsapp}
+              checked={quizData.whatsapp === "whatsapp"}
               onChange={handleCheckbox}
             />
             <label htmlFor="step4.1"><img src={whatsapp} alt="whatsapp" width="20px"/>&nbsp;WhatsApp</label>
@@ -184,7 +198,7 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
               step="4"
               type="checkbox"
               value="telegram"
-              checked={step4.telegram}
+              checked={quizData.telegram === "telegram"}
               onChange={handleCheckbox}
             />
             <label htmlFor="step4.2"><img src={telegram} alt="telegram" width="20px"/>&nbsp;Telegram</label>
@@ -195,7 +209,7 @@ export default ({ step1, step2, step3, submit, setSubmit }) => {
               step="4"
               type="checkbox"
               value="viber"
-              checked={step4.viber}
+              checked={quizData.viber === "viber"}
               onChange={handleCheckbox}
             />
             <label htmlFor="step4.3"><img src={viber} alt="viber" width="20px"/>&nbsp;Viber</label>

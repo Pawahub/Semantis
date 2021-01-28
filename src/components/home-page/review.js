@@ -45,7 +45,7 @@ export default () => {
                   Генеральный директор компании Lexor
                 </div>
               </div>
-              <a href="https://lexor.spb.ru/" target="_blank">lexor.spb.ru</a>
+              <a href="https://lexor.spb.ru/" target="_blank" rel="noreferrer noopener">lexor.spb.ru</a>
               <p className="mt-3">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid commodi consectetur
                 consequuntur cum deserunt ducimus explicabo facilis ipsum laudantium libero molestiae necessitatibus
@@ -61,7 +61,7 @@ export default () => {
                   Директор ООО "Астронавт"
                 </div>
               </div>
-              <a href="https://astronaut.by/">astronaut.by</a>
+              <a href="https://astronaut.by/" target="_blank" rel="noreferrer noopener">astronaut.by</a>
               <p className="mt-3">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid commodi consectetur
                 consequuntur cum deserunt ducimus explicabo facilis ipsum laudantium libero molestiae necessitatibus
@@ -77,7 +77,7 @@ export default () => {
                   Lorem ipsum
                 </div>
               </div>
-              <a href="">instagram.com</a>
+              <a href="" target="_blank" rel="noreferrer noopener">instagram.com</a>
               <p className="mt-3">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid commodi consectetur
                 consequuntur cum deserunt ducimus explicabo facilis ipsum laudantium libero molestiae necessitatibus

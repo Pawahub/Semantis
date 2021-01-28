@@ -28,7 +28,7 @@ export default () => {
       <ul role="navigation" onClick={setCurrentPage} onKeyDown={setCurrentPage}>
         <li><Link to="/" className="active">Главная</Link></li>
         <li><Link to="/web-dev">Разработка сайтов</Link></li>
-        <li><Link to="/smm">Продвижение в интернете</Link></li>
+        <li><Link to="/internet-promotion">Продвижение в интернете</Link></li>
         <li><Link to="/design">Дизайн</Link></li>
         <li><Link to="/develop">SMM</Link></li>
       </ul>

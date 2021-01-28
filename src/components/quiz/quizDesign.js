@@ -9,13 +9,13 @@ export default ({ status }) => {
   const [step, setStep] = useState(1)
 
   const initialStep1 = {
-    logo: false,
-    brand: false,
-    presentation: false,
-    vector: false,
-    social: false,
-    webdesign: false,
-    other: false
+    logo: "",
+    brand: "",
+    presentation: "",
+    vector: "",
+    social: "",
+    webdesign: "",
+    other: ""
   }
 
   const [step1, setStep1] = useState(initialStep1)
@@ -35,7 +35,10 @@ export default ({ status }) => {
     } else setStep(step - 1)
   }
 
-  const handleCheckbox = e => setStep1({ ...step1, [e.target.value]: !step1[e.target.value] })
+  const handleCheckbox = e => {
+    if (step1[e.target.name] === "") setStep1({ ...step1, [e.target.name]: e.target.value })
+    else setStep1({ ...step1, [e.target.name]: "" })
+  }
 
   const handleDate = date => setStep2(date)
 
@@ -47,10 +50,10 @@ export default ({ status }) => {
       <div className="checkbox mt-3">
         <input
           id="step1.1"
-          step="1"
+          name="logo"
           type="checkbox"
-          value="logo"
-          checked={step1.logo}
+          value="Интересует разработка логотипа. "
+          checked={step1.logo === "Интересует разработка логотипа. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.1">Разработка логотипа</label>
@@ -58,10 +61,10 @@ export default ({ status }) => {
       <div className="checkbox">
         <input
           id="step1.2"
-          step="1"
+          name="brand"
           type="checkbox"
-          value="brand"
-          checked={step1.brand}
+          value="Необходимо разработать айдентику. "
+          checked={step1.brand === "Необходимо разработать айдентику. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.2">Создание уникального фирменного стиля</label>
@@ -69,10 +72,10 @@ export default ({ status }) => {
       <div className="checkbox">
         <input
           id="step1.3"
-          step="1"
+          name="presentation"
           type="checkbox"
-          value="presentation"
-          checked={step1.presentation}
+          value="Необходимо создать презентацию. "
+          checked={step1.presentation === "Необходимо создать презентацию. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.3">Создание презентации</label>
@@ -80,10 +83,10 @@ export default ({ status }) => {
       <div className="checkbox">
         <input
           id="step1.4"
-          step="1"
+          name="vector"
           type="checkbox"
-          value="vector"
-          checked={step1.vector}
+          value="Интересует создание рекламных баннеров или других изображений. "
+          checked={step1.vector === "Интересует создание рекламных баннеров или других изображений. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.4">Создание рекламных баннеров или других изображений</label>
@@ -91,10 +94,10 @@ export default ({ status }) => {
       <div className="checkbox">
         <input
           id="step1.5"
-          step="1"
+          name="social"
           type="checkbox"
-          value="social"
-          checked={step1.social}
+          value="Необходимо сделать дизайн для профиля в соц.сети. "
+          checked={step1.social === "Необходимо сделать дизайн для профиля в соц.сети. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.5">Оформление профиля в социальных сетях</label>
@@ -102,31 +105,31 @@ export default ({ status }) => {
       <div className="checkbox">
         <input
           id="step1.6"
-          step="1"
+          name="webdesign"
           type="checkbox"
-          value="webdesign"
-          checked={step1.webdesign}
+          value="Необходимо разработать макет сайта. "
+          checked={step1.webdesign === "Необходимо разработать макет сайта. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.6">Разработка макета сайта</label>
       </div>
       <div className="checkbox">
         <input
-          id="step1.6"
-          step="1"
+          id="step1.7"
+          name="other"
           type="checkbox"
-          value="other"
-          checked={step1.other}
+          value="Интересует услуга дизайн. "
+          checked={step1.other === "Интересует услуга дизайн. "}
           onChange={handleCheckbox}
         />
-        <label htmlFor="step1.6">Другое</label>
+        <label htmlFor="step1.7">Другое</label>
       </div>
     </div>
   )
 
   const secondSection = (
     <div className="input-group-main">
-      <label htmlFor="step2" className="mb-2">Если есть конкретный дедлайн когда должна быть выполнена работа,
+      <label htmlFor="step2" className="mb-2">Если есть конкретный дедлайн, до которого работа должна быть выполнена,
         пожалуйста, укажите здесь</label><br/>
       <DatePicker
         selected={step2}
@@ -153,7 +156,7 @@ export default ({ status }) => {
   )
   return (
     <div className="quiz">
-      <span className="progressbar" style={{transform: `scaleX(${status[step]})`}}/>
+      <span className="progressbar" style={{ transform: `scaleX(${status[step]})` }}/>
       {step === 1 ? firstSection : null}
       {step === 2 ? secondSection : null}
       {step === 3 ? thirdSection : null}

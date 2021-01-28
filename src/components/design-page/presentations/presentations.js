@@ -1,11 +1,12 @@
 import React from "react"
-import './presentations.sass'
-import dots from '../../../images/design/dots.svg'
-import items from '../../../images/design/items.png'
-import cart1 from '../../../images/design/cart1.png'
-import cart2 from '../../../images/design/cart2.png'
-import cart3 from '../../../images/design/cart3.png'
-import sircle2 from '../../../images/design/sircle2.png'
+import "./presentations.sass"
+import dots from "../../../images/design/dots.svg"
+import items from "../../../images/design/items.png"
+import cart1 from "../../../images/design/cart1.png"
+import cart2 from "../../../images/design/cart2.png"
+import cart3 from "../../../images/design/cart3.png"
+import sircle2 from "../../../images/design/sircle2.png"
+
 export default function Presentations() {
   const elements = (
     <div className="presentations__elements">

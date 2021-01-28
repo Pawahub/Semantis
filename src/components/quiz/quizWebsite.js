@@ -3,21 +3,21 @@ import { rippleEffect } from "../main"
 
 import FourthSection from "./fourthSection"
 
-export default ({status}) => {
+export default ({ status }) => {
   const [step, setStep] = useState(1)
 
   const initialStep1 = {
-    recognizability: false,
-    communication: false,
-    loyalty: false,
-    customers: false,
-    sales: false,
-    members: false
+    recognizability: "",
+    communication: "",
+    loyalty: "",
+    customers: "",
+    sales: "",
+    members: ""
   }
 
   const initialStep2 = {
     template: "",
-    content: "",
+    content: ""
   }
 
   const [step1, setStep1] = useState(initialStep1)
@@ -40,10 +40,12 @@ export default ({status}) => {
   const handleCheckbox = e => {
     switch (e.target.step) {
       case "1":
-        setStep1({ ...step1, [e.target.value]: !step1[e.target.value] })
+        if (step1[e.target.name] === "") setStep1({ ...step1, [e.target.name]: e.target.value })
+        else setStep1({ ...step1, [e.target.name]: "" })
         break
       case "2":
-        setStep2({ ...step2, [e.target.name]: e.target.value })
+        if (step2[e.target.name] !== e.target.value) setStep2({ ...step2, [e.target.name]: e.target.value })
+        else setStep2({ ...step2, [e.target.name]: "" })
         break
     }
   }
@@ -56,10 +58,11 @@ export default ({status}) => {
       <div className="checkbox mt-3">
         <input
           id="step1.1"
+          name="recognizability"
           step="1"
           type="checkbox"
-          value="recognizability"
-          checked={step1.recognizability}
+          value="Надо повысить имидж и узнаваемость бренда. "
+          checked={step1.recognizability === "Надо повысить имидж и узнаваемость бренда. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.1">Повысить имидж и узнаваемость бренда</label>
@@ -67,10 +70,11 @@ export default ({status}) => {
       <div className="checkbox">
         <input
           id="step1.2"
+          name="communication"
           step="1"
           type="checkbox"
-          value="communication"
-          checked={step1.communication}
+          value="Надо организровать связь между клиентами и компанией. "
+          checked={step1.communication === "Надо организровать связь между клиентами и компанией. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.2">Организровать связь между клиентами и компанией</label>
@@ -78,10 +82,11 @@ export default ({status}) => {
       <div className="checkbox">
         <input
           id="step1.3"
+          name="loyalty"
           step="1"
           type="checkbox"
-          value="loyalty"
-          checked={step1.loyalty}
+          value="Надо повысить лояльность клиентов. "
+          checked={step1.loyalty === "Надо повысить лояльность клиентов. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.3">Повысить лояльность клиентов</label>
@@ -89,10 +94,11 @@ export default ({status}) => {
       <div className="checkbox">
         <input
           id="step1.4"
+          name="customers"
           step="1"
           type="checkbox"
-          value="customers"
-          checked={step1.customers}
+          value="Надо привлечь новых клиентов. "
+          checked={step1.customers === "Надо привлечь новых клиентов. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.4">Привлекать новых клиентов через интернет</label>
@@ -100,10 +106,11 @@ export default ({status}) => {
       <div className="checkbox">
         <input
           id="step1.5"
+          name="sales"
           step="1"
           type="checkbox"
-          value="sales"
-          checked={step1.sales}
+          value="С сайта необходимо осуществлять прямые продажи. "
+          checked={step1.sales === "С сайта необходимо осуществлять прямые продажи. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.5">Осуществлять прямые продажи с сайта</label>
@@ -111,10 +118,11 @@ export default ({status}) => {
       <div className="checkbox">
         <input
           id="step1.6"
+          name="members"
           step="1"
           type="checkbox"
-          value="members"
-          checked={step1.members}
+          value="Надо привлечь публику для участия в мероприятии. "
+          checked={step1.members === "Надо привлечь публику для участия в мероприятии. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step1.6">Привлечь публику для участия в мероприятии</label>
@@ -128,21 +136,21 @@ export default ({status}) => {
       <div className="checkbox d-flex flex-column">
         <input
           id="step2.1.1"
-          step="2"
           name="template"
+          step="2"
           type="checkbox"
-          value="Да"
-          checked={step2.template === "Да"}
+          value="Нужен индивидуальный дизайн для сайта. "
+          checked={step2.template === "Нужен индивидуальный дизайн для сайта. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.1.1">Да</label>
         <input
           id="step2.1.2"
-          step="2"
           name="template"
+          step="2"
           type="checkbox"
-          value="Нет"
-          checked={step2.template === "Нет"}
+          value="Монжо сделать сайт из шаблона. "
+          checked={step2.template === "Монжо сделать сайт из шаблона. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.1.2">Нет</label>
@@ -151,31 +159,31 @@ export default ({status}) => {
       <div className="checkbox d-flex flex-column">
         <input
           id="step2.2.1"
-          step="2"
           name="content"
+          step="2"
           type="checkbox"
-          value="Да"
-          checked={step2.content === "Да"}
+          value="Контент для сайта есть. "
+          checked={step2.content === "Контент для сайта есть. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.2.1">Да</label>
         <input
           id="step2.2.2"
-          step="2"
           name="content"
+          step="2"
           type="checkbox"
-          value="Нет"
-          checked={step2.content === "Нет"}
+          value="Контента для сайта нет. "
+          checked={step2.content === "Контента для сайта нет. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.2.2">Нет</label>
         <input
           id="step2.2.3"
-          step="2"
           name="content"
+          step="2"
           type="checkbox"
-          value="Частично"
-          checked={step2.content === "Частично"}
+          value="Контент есть частично. "
+          checked={step2.content === "Контент есть частично. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.2.3">Частично</label>
@@ -201,7 +209,7 @@ export default ({status}) => {
 
   return (
     <div className="quiz">
-      <span className="progressbar" style={{transform: `scaleX(${status[step]})`}}/>
+      <span className="progressbar" style={{ transform: `scaleX(${status[step]})` }}/>
       {step === 1 ? firstSection : null}
       {step === 2 ? secondSection : null}
       {step === 3 ? thirdSection : null}

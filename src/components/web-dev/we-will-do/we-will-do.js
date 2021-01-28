@@ -1,26 +1,25 @@
 import React from "react"
-import './we-will-do.sass'
+import "./we-will-do.sass"
 import SectionLeftRight from "../../section-left-right"
 import macBook3 from "../../../images/web-dev/macBook3.jpg"
 import macBook4 from "../../../images/web-dev/macBook4.jpg"
 import line1 from "../../../images/web-dev/line1.svg"
 import line2 from "../../../images/web-dev/line2.svg"
-import ellipse from '../../../images/web-dev/ellipse.svg'
-import polygon from '../../../images/web-dev/polygon.svg'
+import ellipse from "../../../images/web-dev/ellipse.svg"
+import polygon from "../../../images/web-dev/polygon.svg"
 
-export default function WeWillDo() {
+export default () => {
 
   const list = (arr) => {
     return arr.map((el, idx) => {
       return (
         <li key={idx}>
-          <div className="number"><span>{idx < 10 ? '0' + (idx + 1) : idx + 1} </span><strong>&#8228;</strong></div>
+          <div className="number"><span>{idx < 10 ? "0" + (idx + 1) : idx + 1} </span><strong>&#8228;</strong></div>
           <span>{el}</span>
         </li>
       )
     })
   }
-
 
   const left = (
     <>
@@ -29,8 +28,8 @@ export default function WeWillDo() {
           <div className="col-lg-5 col-md-6 col-sm-12">
             <h1 className='h1'>Вы можете у нас заказать сайт:</h1>
             <ul className="home-list">
-              {list(['Имиджевый сайт', 'Промо-сайт', 'Корпоративный сайт', 'Сайт-визитку',
-              'Онлайн-сервис', 'Блог', 'Продающую страницу'])}
+              {list(["Имиджевый сайт", "Промо-сайт", "Корпоративный сайт", "Сайт-визитку",
+                "Онлайн-сервис", "Интернет-магазин", "Продающую страницу"])}
             </ul>
           </div>
         </div>
@@ -46,7 +45,7 @@ export default function WeWillDo() {
           <img src={ellipse} alt="ellipse"/>
         </div>
       </div>
-   </>
+    </>
   )
 
   const right = (

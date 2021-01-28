@@ -10,7 +10,11 @@ import "./quiz.sass"
 export default () => {
   const [quiz, setQuiz] = useState("init")
 
-  const startQuiz = e => e.target.dataset.value ? setQuiz(e.target.dataset.value) : null
+  const startQuiz = e => {
+    if (e.target.dataset.value) setQuiz(e.target.dataset.value)
+    else if (e.target.parentNode.dataset.value) setQuiz(e.target.parentNode.dataset.value)
+    else return false
+  }
 
   const initSection = (
     <div className="quiz initSection" onClick={startQuiz}>

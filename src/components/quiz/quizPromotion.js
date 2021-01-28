@@ -3,7 +3,7 @@ import { rippleEffect } from "../main"
 
 import FourthSection from "./fourthSection"
 
-export default ({status}) => {
+export default ({ status }) => {
   const [step, setStep] = useState(1)
 
   const initialStep1 = {
@@ -11,15 +11,8 @@ export default ({status}) => {
     website: ""
   }
 
-  const initialStep2 = {
-    context: false,
-    targeting: false,
-    smm: false,
-    complex: false
-  }
-
   const [step1, setStep1] = useState(initialStep1)
-  const [step2, setStep2] = useState(initialStep2)
+  const [step2, setStep2] = useState("")
   const [step3, setStep3] = useState("")
   const [submit, setSubmit] = useState(false)
 
@@ -35,20 +28,11 @@ export default ({status}) => {
     } else setStep(step - 1)
   }
 
-  const handleCheckbox = e => setStep2({ ...step2, [e.target.value]: !step2[e.target.value] })
+  const handleCheckbox = e => step2 !== e.target.value ? setStep2(e.target.value) : setStep2("")
 
   const handleTextarea = e => setStep3(e.target.value)
 
-  const handleInput = e => {
-    switch (e.target.step) {
-      case "1":
-        setStep1({ ...step1, [e.target.name]: e.target.value })
-        break
-      case "2":
-        setStep2({ ...step2, [e.target.name]: e.target.value })
-        break
-    }
-  }
+  const handleInput = e => setStep1({ ...step1, [e.target.name]: e.target.value })
 
   const focusInput = e => e.target.classList.contains("failed") ? e.target.classList.remove("failed") : null
 
@@ -91,11 +75,10 @@ export default ({status}) => {
       <div className="checkbox mt-3">
         <input
           id="step2.1"
-          step="2"
           name="ads"
           type="checkbox"
-          value="context"
-          checked={step2.context}
+          value="Нужна настройка контекстной рекламы. "
+          checked={step2 === "Нужна настройка контекстной рекламы. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.1">Контекстная реклама</label>
@@ -103,11 +86,10 @@ export default ({status}) => {
       <div className="checkbox">
         <input
           id="step2.2"
-          step="2"
           name="ads"
           type="checkbox"
-          value="targeting"
-          checked={step2.targeting}
+          value="Нужна настройка таргетированной рекламы. "
+          checked={step2 === "Нужна настройка таргетированной рекламы. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.2">Таргетированная реклама</label>
@@ -115,11 +97,10 @@ export default ({status}) => {
       <div className="checkbox">
         <input
           id="step2.3"
-          step="2"
           name="ads"
           type="checkbox"
-          value="smm"
-          checked={step2.smm}
+          value="Интересует продвижение в соц.сетях. "
+          checked={step2 === "Интересует продвижение в соц.сетях. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.3">Продвижение в соц.сетях</label>
@@ -127,11 +108,10 @@ export default ({status}) => {
       <div className="checkbox">
         <input
           id="step2.4"
-          step="2"
           name="ads"
           type="checkbox"
-          value="complex"
-          checked={step2.complex}
+          value="Интересует комплексное продвижение. "
+          checked={step2 === "Интересует комплексное продвижение. "}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.4">Комплексное продвижение</label>
@@ -147,7 +127,7 @@ export default ({status}) => {
         name="message"
         rows="6"
         placeholder="Например:
-        - Увеличение обёмов реализации резиновой крошки.
+        - Увеличение обёмов реализации продукции.
         - Поиск потенциальных инвесторов для модернизации производста и увеличения мощностей.
         - ..."
         value={step3}
@@ -158,7 +138,7 @@ export default ({status}) => {
 
   return (
     <div className="quiz">
-      <span className="progressbar" style={{transform: `scaleX(${status[step]})`}}/>
+      <span className="progressbar" style={{ transform: `scaleX(${status[step]})` }}/>
       {step === 1 ? firstSection : null}
       {step === 2 ? secondSection : null}
       {step === 3 ? thirdSection : null}

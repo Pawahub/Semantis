@@ -18,7 +18,7 @@ import ru from "../../images/nav/ru.svg"
 import by from "../../images/nav/by.svg"
 
 import "./nav.css"
-import './nav-state.sass'
+import "./nav-state.sass"
 
 export default ({ siteTitle, location }) => {
   const { state, dispatch } = useContext(StateContext)
@@ -58,62 +58,62 @@ export default ({ siteTitle, location }) => {
     }
   }, [])
 
-  const parth = location.pathname;
+  const parth = location.pathname
   const styleMenu = () => {
     if (!state.selectedSection && state.selectedSection !== 0) {
-      return 'gray line-none'
+      return "gray line-none"
     }
     switch (parth) {
-      case '/':
-        return state.selectedSection === 2 ? 'whiteMenu' : 'grayMenu';
-        break;
-      case '/web-dev':
+      case "/":
+        return state.selectedSection === 2 ? "whiteMenu" : "grayMenu"
+        break
+      case "/web-dev":
         if (state.selectedSection === 1) {
-          return 'left-gray_right-white'
+          return "left-gray_right-white"
         } else if (state.selectedSection === 3) {
-          return 'whiteMenu';
-        } else return 'grayMenu'
-        break;
-      case '/internet-promotion':
+          return "whiteMenu"
+        } else return "grayMenu"
+        break
+      case "/internet-promotion":
         if (state.selectedSection === 1) {
-          return 'gray'
-        } else return 'grayMenu'
-        break;
-      case '/develop':
-        return 'greyMenu line-none'
-        break;
-      case '/design':
+          return "gray"
+        } else return "grayMenu"
+        break
+      case "/develop":
+        return "greyMenu line-none"
+        break
+      case "/design":
         if (state.selectedSection === 0) {
-          return 'whiteMenu'
+          return "whiteMenu"
         } else if (state.selectedSection === 3) {
-          return 'left-gray_right-white';
-        } else return 'grayMenu'
-        break;
-      case '/smm':
+          return "left-gray_right-white"
+        } else return "grayMenu"
+        break
+      case "/smm":
         if (state.selectedSection === 3) {
-          return 'whiteMenu'
+          return "whiteMenu"
         } else if (state.selectedSection === 0) {
-          return 'gray'
-        } else return 'grayMenu'
-        break;
+          return "gray"
+        } else return "grayMenu"
+        break
       default:
-        return 'grayMenu line-none'
+        return "grayMenu line-none"
     }
   }
   const styleImg = () => {
     switch (parth) {
-      case '/':
+      case "/":
         return state.selectedSection === 2 ? whiteLogo : blueLogo
-        break;
-      case '/web-dev':
+        break
+      case "/web-dev":
         return state.selectedSection === 3 ? whiteLogo : blueLogo
-        break;
-      case '/design':
+        break
+      case "/design":
         return state.selectedSection === 0 ? whiteLogo : blueLogo
-        break;
-      case '/smm':
+        break
+      case "/smm":
         return state.selectedSection === 3 ? whiteLogo : blueLogo
-        break;
+        break
       default:
         return blueLogo
     }
@@ -122,7 +122,7 @@ export default ({ siteTitle, location }) => {
   return (
     <header className={styleMenu()}>
       <div className="container d-flex justify-content-between align-items-center mt-3 mb-2"
-           >
+      >
         <div>
           <img src={styleImg()} alt={siteTitle} className="img-fluid"
                width="120px"/>
@@ -133,11 +133,12 @@ export default ({ siteTitle, location }) => {
             onMouseOver={spyLine}
             onMouseLeave={spyLine}
             onClick={(e) => currentPage(e, state.selectedSection)}>
-              <li><Link className={parth === '/' ? 'active': null} to="/">Главная</Link></li>
-              <li><Link className={parth === '/web-dev' ? 'active': null} to="/web-dev">Веб-разработка</Link></li>
-              <li><Link className={parth === '/internet-promotion' ? 'active': null} to="/internet-promotion">Продвижение</Link></li>
-              <li><Link className={parth === '/design' ? 'active': null} to="/design">Дизайн</Link></li>
-              <li><Link className={parth === '/develop' ? 'active': null} to="/develop">SMM</Link></li>
+            <li><Link className={parth === "/" ? "active" : null} to="/">Главная</Link></li>
+            <li><Link className={parth === "/web-dev" ? "active" : null} to="/web-dev">Веб-разработка</Link></li>
+            <li><Link className={parth === "/internet-promotion" ? "active" : null}
+                      to="/internet-promotion">Продвижение</Link></li>
+            <li><Link className={parth === "/design" ? "active" : null} to="/design">Дизайн</Link></li>
+            <li><Link className={parth === "/develop" ? "active" : null} to="/develop">SMM</Link></li>
           </ul>
         </nav>
         <span ref={line} id="line" className="d-none d-md-block"/>
@@ -161,8 +162,8 @@ export default ({ siteTitle, location }) => {
             <FontAwesomeIcon icon={faPhoneAlt} size="lg"/>
           </button>
           <button role="menu"
-            className={state.show === "messengers" ? "chatTop d-flex d-sm-none mr-2 open" : "chatTop d-flex d-sm-none mr-2"}
-            onClick={handlerMessengerMenu}>
+                  className={state.show === "messengers" ? "chatTop d-flex d-sm-none mr-2 open" : "chatTop d-flex d-sm-none mr-2"}
+                  onClick={handlerMessengerMenu}>
             <FontAwesomeIcon icon={faComments} size="lg"/>
             <div className={state.show === "messengers" ? "chat d-sm-none active" : "chat d-sm-none"}>
               <a href="https://wa.me/79217750328" className="m-2">
