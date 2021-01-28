@@ -77,8 +77,8 @@ export default ({ status }) => {
           id="step2.1"
           name="ads"
           type="checkbox"
-          value="Нужна настройка контекстной рекламы. "
-          checked={step2 === "Нужна настройка контекстной рекламы. "}
+          value=" Нужна настройка контекстной рекламы."
+          checked={step2 === " Нужна настройка контекстной рекламы."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.1">Контекстная реклама</label>
@@ -88,8 +88,8 @@ export default ({ status }) => {
           id="step2.2"
           name="ads"
           type="checkbox"
-          value="Нужна настройка таргетированной рекламы. "
-          checked={step2 === "Нужна настройка таргетированной рекламы. "}
+          value=" Нужна настройка таргетированной рекламы."
+          checked={step2 === " Нужна настройка таргетированной рекламы."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.2">Таргетированная реклама</label>
@@ -99,8 +99,8 @@ export default ({ status }) => {
           id="step2.3"
           name="ads"
           type="checkbox"
-          value="Интересует продвижение в соц.сетях. "
-          checked={step2 === "Интересует продвижение в соц.сетях. "}
+          value=" Интересует продвижение в соц.сетях."
+          checked={step2 === " Интересует продвижение в соц.сетях."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.3">Продвижение в соц.сетях</label>
@@ -110,8 +110,8 @@ export default ({ status }) => {
           id="step2.4"
           name="ads"
           type="checkbox"
-          value="Интересует комплексное продвижение. "
-          checked={step2 === "Интересует комплексное продвижение. "}
+          value=" Интересует комплексное продвижение."
+          checked={step2 === " Интересует комплексное продвижение."}
           onChange={handleCheckbox}
         />
         <label htmlFor="step2.4">Комплексное продвижение</label>
