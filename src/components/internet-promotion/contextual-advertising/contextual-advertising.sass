@@ -1,6 +1,5 @@
 .contextual-advertising
   background: #F6FAFF
-
   position: relative
   width: 100%
   min-height: 100vh
@@ -8,32 +7,38 @@
   z-index: 3
   padding-top: 50px
   padding-bottom: 50px
+  overflow: hidden
+
   > div
     margin: auto
     z-index: 2
+
   &__elements
     display: none
-  .h1
+
+  h2
     span
       display: block
       padding-left: 180px
+
   p
     margin-top: 50px
+
   ul
     margin-top: 30px
 
 @media screen and (max-width: 990px)
-  .contextual-advertising .h1 span
-    padding-left: 0px
+  .contextual-advertising h2 span
+    padding-left: 0
+
 @media screen and (max-width: 500px)
   .contextual-advertising
     height: auto
     min-height: auto
-    .h1
-      text-align: center
-      font-size: 35px
+
     p
       margin-top: 20px
+
 @media (min-width: 990px)
   .contextual-advertising__elements
     display: block
@@ -42,20 +47,24 @@
     height: 100%
     top: 0
     left: 0
+
     .sircl,
     .laptop,
     .dots
       position: absolute
+
     .sircl
       z-index: 2
       left: 80px
       top: 80%
       transform: translateY(-80%)
+
     .laptop
       z-index: 3
       right: 50px
       top: 50%
       transform: translateY(-50%)
+
     .dots
       z-index: 1
       left: 50px

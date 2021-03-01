@@ -1,5 +1,7 @@
 import React from "react"
+
 import './card.sass'
+
 export default function Card({content}) {
   return (
     <div className="card card__element">

@@ -9,32 +9,35 @@ import viber from "../../images/nav/viber.png"
 
 import "./chat.css"
 
-export default ({location}) => {
+export default ({ location }) => {
   const { state, dispatch } = useContext(StateContext)
 
-  const parth = location.pathname;
+  const parth = location.pathname
   const style = () => {
 
     const lightBtn = state.show === "messengers" ? "chatBtn chatBtnLightOpen" : "chatBtn chatBtnLight"
     const darkBtn = state.show === "messengers" ? "chatBtn chatBtnDarkOpen" : "chatBtn"
 
     switch (parth) {
-      case '/':
+      case "/":
         if (state.selectedSection === 2) return lightBtn
         else return darkBtn
-        break;
-      case '/web-dev':
+        break
+      case "/web-dev/":
         if (state.selectedSection === 1 || state.selectedSection === 3) return lightBtn
         else return darkBtn
-        break;
-      case '/design':
+        break
+      case "/internet-promotion/":
+        return darkBtn
+        break
+      case "/design/":
         if (state.selectedSection === 0 || state.selectedSection === 3) return lightBtn
         else return darkBtn
-        break;
-      case '/smm':
+        break
+      case "/smm/":
         if (state.selectedSection === 3) return lightBtn
         else return darkBtn
-        break;
+        break
       default:
         return lightBtn
     }

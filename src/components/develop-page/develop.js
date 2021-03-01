@@ -14,7 +14,7 @@ export default function Develop() {
             <div className="develop__container">
               <h2 className="text-center">Мы работаем
                 над этой страницей</h2>
-              <p>К сожалению, страница пока в разработке, но мы скоро ее опубликуем. </p>
+              <p className="text-center">Дання страница пока в разработке, мы скоро ее опубликуем.</p>
               <button className="mainBtn mt-4">
                 <a href="/">На главную</a>
               </button>

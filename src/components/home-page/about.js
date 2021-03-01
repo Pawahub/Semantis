@@ -17,7 +17,7 @@ export default () => {
         <img className="z d-none d-md-block" src={z} alt=""/>
         <img className="zz d-none d-md-block" src={zz} alt=""/>
         <div className="d-flex flex-column col-12 col-md-6 col-lg-7">
-          <h2 className="h1">О нас</h2>
+          <h2>Почему мы?</h2>
           <h6 className="blue-color p-0 mt-4">Наша команда помогает бизнесу достигать новых высот благодаря правильному
             позиционированию в интернете</h6>
           <p className="we p-0 mt-2">

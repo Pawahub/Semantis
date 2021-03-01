@@ -1,2 +1,2 @@
-import ButtonCviz from './button-cviz'
-export {ButtonCviz}
+import QuizBtn from './quizBtn'
+export {QuizBtn}

@@ -1,63 +1,59 @@
-.vibrate {
-  -webkit-animation: shake 5s linear infinite both;
-  animation: shake 5s linear infinite both;
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 49;
 }
 
 .modal {
-  position: relative;
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #F6FAFF;
-  background-clip: padding-box;
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  overflow: visible;
-  transition: 0.3s ease-out;
-  transform: translateY(-100%);
-  z-index: 50;
+    position: relative;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F6FAFF;
+    background-clip: padding-box;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    overflow: visible;
+    z-index: 50;
 }
 
-.modal.open {
-  transform: translateY(0);
-  opacity: 1;
+.modal-appear {
+    transform: translateY(-100%);
+}
+
+.modal-appear-active, .modal-appear-done {
+    transform: translateY(0);
+    transition: all 500ms ease-out;
 }
 
 .modal-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  color: #3B3F45;
-  background: #F6FAFF;
-  border: none;
-  border-radius: 0;
-  font-family: Gotham Pro, sans-serif;
-  font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #3B3F45;
+    background: #F6FAFF;
+    border: none;
+    border-radius: 0;
+    font-family: Gotham Pro, sans-serif;
+    font-weight: 500;
 }
 
 .modal-header .x {
-  margin-left: 0.5em;
-  color: #3B3F45;
-  opacity: 0.7;
+    margin-left: 0.5em;
+    color: #3B3F45;
+    opacity: 0.7;
 }
 
 .modal a, .modal a:hover {
-  color: #F6FAFF;
-  text-decoration: none;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 49;
+    color: #F6FAFF;
+    text-decoration: none;
 }

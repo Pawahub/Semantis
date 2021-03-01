@@ -12,8 +12,6 @@ import probusiness from "../../images/review/probusiness.png"
 import yuri from "../../images/review/yuri.png"
 import alex from "../../images/review/alex.png"
 import mantashjan from "../../images/review/mantashjan.png"
-import reviewLexor from "../../images/review/reviewLexor.png"
-import reviewAstronaut from "../../images/review/reviewAstronaut.png"
 
 export default () => {
   return (
@@ -39,46 +37,52 @@ export default () => {
         <img src={rullex} className="img-fluid" alt="rullex"/>
       </div>
       <div className="container py-5 overflow-hidden">
-        <div className="row flex-column align-items-center pt-md-5">
-          <h2 className="h1">Наши клиенты</h2>
+        <div className="row flex-column align-items-center pt-md-5 m-0">
+          <h2>Наши клиенты</h2>
           <Carousel className="col-12 col-md-8 col-lg-6" indicators={false}>
             <Carousel.Item>
               <div className="d-flex my-3">
-                <img src={yuri} className="rounded-circle" alt="Отзывы клиентов"/>
+                <div>
+                  <img src={yuri} className="rounded-circle" alt="Отзывы клиентов"/>
+                </div>
                 <div className="ml-3">
                   <h5>Юрий Козловский</h5>
                   <div>Генеральный директор ООО "Лексор"</div>
-                  <a href="https://lexor.spb.ru/" target="_blank" rel="noreferrer noopener">lexor.spb.ru</a>
                 </div>
               </div>
+              <a href="https://lexor.spb.ru/" target="_blank" rel="noreferrer noopener">lexor.spb.ru</a>
               <p className="mt-3">
-                <img src={reviewLexor} className="w-100" alt="Отзыв Лексор"/>
+                Приятно иметь делао с ваешй компанией. Сервис на высоте и поддержка по всем направлениям.
               </p>
             </Carousel.Item>
             <Carousel.Item>
               <div className="d-flex my-3">
-                <img src={alex} className="rounded-circle" alt="Отзывы клиентов"/>
+                <div>
+                  <img src={alex} className="rounded-circle" alt="Отзывы клиентов"/>
+                </div>
                 <div className="ml-3">
                   <h5>Алексей Чирко</h5>
                   <div>Директор ООО "Астронавт"</div>
-                  <a href="https://astronaut.by/" target="_blank" rel="noreferrer noopener">astronaut.by</a>
                 </div>
               </div>
+              <a href="https://astronaut.by/" target="_blank" rel="noreferrer noopener">astronaut.by</a>
               <p className="mt-3">
-                <img src={reviewAstronaut} className="w-100" alt="Отзыв Астронавт"/>
+                Команда настоящих профессионалов. Свою работу выполняют качественно и точно в срок.
               </p>
             </Carousel.Item>
             <Carousel.Item>
               <div className="d-flex my-3">
-                <img src={mantashjan} className="rounded-circle" alt="Отзывы клиентов"/>
+                <div>
+                  <img src={mantashjan} className="rounded-circle" alt="Отзывы клиентов"/>
+                </div>
                 <div className="ml-3">
                   <h5>Ани Манташян</h5>
                   <div>Директор юридической компании</div>
-                  <a href="https://uk-am.com/" target="_blank" rel="noreferrer noopener">uk-am.com</a>
                 </div>
               </div>
+              <a href="https://uk-am.com/" target="_blank" rel="noreferrer noopener">uk-am.com</a>
               <p className="mt-3">
-                Очень порадовал ваш профессионлаьный подход к созданию сайта и в целом. Благодоря вам теперь знаю как
+                Очень порадовал ваш профессиональный подход к созданию сайта и в целом. Благодоря вам теперь знаю как
                 это всё работает. Очень рада что обратилась к вам. Спасибо!
               </p>
             </Carousel.Item>

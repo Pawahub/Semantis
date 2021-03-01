@@ -4,11 +4,12 @@
   width: 100%
   display: flex
   z-index: 3
-  padding-top: 30px
-  padding-bottom: 80px
+  overflow: hidden
+
   > div
     margin: auto
     z-index: 2
+
   &:after
     content: ''
     position: absolute
@@ -18,18 +19,20 @@
     height: 162px
     clip-path: polygon(100% 0, 0 0, 0 100%)
     background: #085DDB
-  .description
-    margin-top: 50px
+
   h3, ul
     margin-top: 30px
+
   &__slider
     position: relative
-    margin-top: 200px
+    margin-top: 100px
     display: flex
     justify-content: center
     align-items: center
+
     &-item
       position: relative
+
       &.active,
       &.prev,
       &.next
@@ -38,25 +41,31 @@
           height: 100%
           object-fit: cover
           position: relative
+
       &.active
         z-index: 4
         width: 210px
         height: 208px
+
       &.prev
         z-index: 2
         bottom: -50px
         left: 0
+
         .arrow
           left: 10px
           bottom: 15px
           transform: rotate(180deg)
+
       &.next
         z-index: 3
         top: -50px
         right: 0
+
         .arrow
           right: 10px
           top: 15px
+
       &.prev,
       &.next
         position: absolute
@@ -64,16 +73,19 @@
         width: 130px
         height: 131px
         cursor: pointer
+
         .arrow
           width: 38px
           height: 38px
           position: absolute
           z-index: 2
           pointer-events: none
+
           img
             width: 100%
             height: 100%
             object-fit: cover
+
         &::after
           content: ''
           position: absolute
@@ -86,12 +98,12 @@
           height: 100%
           opacity: 0.8
           background: linear-gradient(0deg, rgba(8, 93, 219, 0.8), rgba(8, 93, 219, 0.8))
-@media screen and (max-width: 780px)
+
+@media screen and (max-width: 767px)
   .targeted-advertising__slider
     margin-top: 50px
-@media screen and (max-width: 500px)
+
+@media screen and (max-width: 575px)
   .targeted-advertising
-    .h1
-      font-size: 30px
     &:after
       display: none

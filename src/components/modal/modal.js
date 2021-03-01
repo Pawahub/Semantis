@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { StateContext } from "../../state/stateCotext"
+import { CSSTransition } from "react-transition-group"
 
 import "./modal.css"
 
@@ -12,9 +13,16 @@ export default ({ children }) => {
 
   return (
     <div role="dialog" className="overlay" onClick={modalClose}>
-      <div className="modal open">
-        {children}
-      </div>
+      <CSSTransition
+        in={children !== ""}
+        appear={children !== ""}
+        timeout={500}
+        classNames="modal"
+      >
+        <div className="modal">
+          {children}
+        </div>
+      </CSSTransition>
     </div>
   )
 }

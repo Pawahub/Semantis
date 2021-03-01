@@ -20,7 +20,7 @@ export default () => {
   }
 
   return (
-    <div id="sidebar" className={state.show === "sidebar" ? "px-4 open" : "px-4"}>
+    <div id="sidebar" className={state.show === "sidebar" ? "open" : ""}>
       <div className="d-flex justify-content-between">
         <img className="img-fluid" src={whiteLogo} alt="Semantis"/>
         <FontAwesomeIcon icon={faTimes} size="lg" className="x" onClick={() => dispatch({ type: "close" })}/>
@@ -32,21 +32,21 @@ export default () => {
         <li><Link to="/design">Дизайн</Link></li>
         <li><Link to="/develop">SMM</Link></li>
       </ul>
-      <div>
-        <a href="https://www.instagram.com/semantis.online/" rel="noreferrer" target="_blank" className="mr-2">
-          <FontAwesomeIcon icon={faInstagram} size="lg"/>
-        </a>
-        <a href="https://www.facebook.com/semantis.online" rel="noreferrer" target="_blank" className="mr-2">
-          <FontAwesomeIcon icon={faFacebook} size="lg"/>
-        </a>
-        <a href="https://www.linkedin.com/company/semantisonline/" rel="noreferrer" target="_blank" className="mr-2">
-          <FontAwesomeIcon icon={faLinkedin} size="lg"/>
-        </a>
-      </div>
       <div className="contact">
         <a href="tel:+375292624063">+375 (29) 2624063</a>
         <a href="tel:+79217750328">+7 (921) 7750328</a>
         <a href="mailto:info@semantis.by">info@semantis.by</a>
+      </div>
+      <div className="pt-5">
+        <a href="https://www.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank">
+          <FontAwesomeIcon icon={faInstagram} size="lg"/>
+        </a>
+        <a href="https://www.facebook.com/semantis.online" rel="noreferrer noopener" target="_blank">
+          <FontAwesomeIcon icon={faFacebook} size="lg"/>
+        </a>
+        <a href="https://www.linkedin.com/company/semantisonline/" rel="noreferrer noopener" target="_blank">
+          <FontAwesomeIcon icon={faLinkedin} size="lg"/>
+        </a>
       </div>
     </div>
   )

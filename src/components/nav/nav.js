@@ -8,7 +8,7 @@ import Sidebar from "../sidebar/sidebar"
 import Button from "../chat/chat"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPhoneAlt, faComments, faBars, faTimes, faMobileAlt } from "@fortawesome/free-solid-svg-icons"
+import { faPhoneAlt, faComments, faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import blueLogo from "../../images/nav/logo.png"
 import whiteLogo from "../../images/nav/logo-white.svg"
 import whatsapp from "../../images/nav/whatsapp.png"
@@ -22,6 +22,8 @@ import "./nav-state.sass"
 
 export default ({ siteTitle, location }) => {
   const { state, dispatch } = useContext(StateContext)
+
+  const parth = location.pathname
 
   const line = useRef()
 
@@ -56,9 +58,9 @@ export default ({ siteTitle, location }) => {
     return () => {
       window.removeEventListener("resize", spyLine)
     }
-  }, [])
+  }, [parth])
 
-  const parth = location.pathname
+
   const styleMenu = () => {
     if (!state.selectedSection && state.selectedSection !== 0) {
       return "gray line-none"
@@ -67,29 +69,29 @@ export default ({ siteTitle, location }) => {
       case "/":
         return state.selectedSection === 2 ? "whiteMenu" : "grayMenu"
         break
-      case "/web-dev":
+      case "/web-dev/":
         if (state.selectedSection === 1) {
           return "left-gray_right-white"
         } else if (state.selectedSection === 3) {
           return "whiteMenu"
         } else return "grayMenu"
         break
-      case "/internet-promotion":
+      case "/internet-promotion/":
         if (state.selectedSection === 1) {
           return "gray"
         } else return "grayMenu"
         break
-      case "/develop":
+      case "/develop/":
         return "greyMenu line-none"
         break
-      case "/design":
+      case "/design/":
         if (state.selectedSection === 0) {
           return "whiteMenu"
         } else if (state.selectedSection === 3) {
           return "left-gray_right-white"
         } else return "grayMenu"
         break
-      case "/smm":
+      case "/smm/":
         if (state.selectedSection === 3) {
           return "whiteMenu"
         } else if (state.selectedSection === 0) {
@@ -105,13 +107,13 @@ export default ({ siteTitle, location }) => {
       case "/":
         return state.selectedSection === 2 ? whiteLogo : blueLogo
         break
-      case "/web-dev":
+      case "/web-dev/":
         return state.selectedSection === 3 ? whiteLogo : blueLogo
         break
-      case "/design":
+      case "/design/":
         return state.selectedSection === 0 ? whiteLogo : blueLogo
         break
-      case "/smm":
+      case "/smm/":
         return state.selectedSection === 3 ? whiteLogo : blueLogo
         break
       default:
@@ -134,11 +136,11 @@ export default ({ siteTitle, location }) => {
             onMouseLeave={spyLine}
             onClick={(e) => currentPage(e, state.selectedSection)}>
             <li><Link className={parth === "/" ? "active" : null} to="/">Главная</Link></li>
-            <li><Link className={parth === "/web-dev" ? "active" : null} to="/web-dev">Веб-разработка</Link></li>
-            <li><Link className={parth === "/internet-promotion" ? "active" : null}
-                      to="/internet-promotion">Продвижение</Link></li>
-            <li><Link className={parth === "/design" ? "active" : null} to="/design">Дизайн</Link></li>
-            <li><Link className={parth === "/develop" ? "active" : null} to="/develop">SMM</Link></li>
+            <li><Link className={parth === "/web-dev/" ? "active" : null} to="/web-dev/">Веб-разработка</Link></li>
+            <li><Link className={parth === "/internet-promotion/" ? "active" : null}
+                      to="/internet-promotion/">Продвижение</Link></li>
+            <li><Link className={parth === "/design/" ? "active" : null} to="/design/">Дизайн</Link></li>
+            <li><Link className={parth === "/develop/" ? "active" : null} to="/develop/">SMM</Link></li>
           </ul>
         </nav>
         <span ref={line} id="line" className="d-none d-md-block"/>
@@ -190,16 +192,14 @@ export default ({ siteTitle, location }) => {
             <p className="m-0">Свяжитесь с нами</p>
             <FontAwesomeIcon icon={faTimes} size="lg" className="x" onClick={() => dispatch({ type: "close" })}/>
           </div>
-          <button className="mainBtn mx-3 mt-3 justify-content-start" onClick={() => dispatch({ type: "close" })}>
-            <a href="tel:+79217750328"><FontAwesomeIcon icon={faMobileAlt} size="lg"
-                                                        className="vibrate mr-1"/> +79217750328</a>
+          <button className="mainBtn mx-3 mt-3 justify-content-center" onClick={() => dispatch({ type: "close" })}>
+            <a href="tel:+79217750328">+7 921 7750328</a>
           </button>
-          <button className="mainBtn m-3 justify-content-start" onClick={() => dispatch({ type: "close" })}>
-            <a href="tel:+375292624063"><FontAwesomeIcon icon={faMobileAlt} size="lg"
-                                                         className="vibrate mr-1"/> +375292624063</a>
+          <button className="mainBtn m-3 justify-content-center" onClick={() => dispatch({ type: "close" })}>
+            <a href="tel:+375292624063">+375 29 2624063</a>
           </button>
         </Modal>
-        : ""
+        : null
       }
       <Sidebar/>
       <Button location={location}/>

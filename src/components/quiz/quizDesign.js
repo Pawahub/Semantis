@@ -166,6 +166,7 @@ export default ({ status }) => {
         step3={step3}
         submit={submit}
         setSubmit={cancelSubmit}
+        header="Почти готово"
       /> : null}
 
       <div className="d-flex justify-content-between flex-row-reverse">

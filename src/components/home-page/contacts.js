@@ -5,17 +5,14 @@ import { StateContext } from "../../state/stateCotext"
 import NumberFormat from "react-number-format"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPaperPlane, faCheckCircle } from "@fortawesome/free-solid-svg-icons"
+import { faPaperPlane, faCheckCircle, faCaretDown } from "@fortawesome/free-solid-svg-icons"
 import { faInstagram, faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import dotted from "../../images/contacts/dotted2.svg"
 import dottedgroup from "../../images/contacts/dottedgroup.svg"
 import zCircle from "../../images/contacts/zcircle.svg"
 
-
 export default () => {
   const { state, dispatch } = useContext(StateContext)
-
-  const [showForm, setShowForm] = useState(false)
 
   useEffect(() => {
     if (state.selectedSection === 4 || /Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (document.documentElement.clientWidth <= 991)) {
@@ -23,28 +20,9 @@ export default () => {
     } else setShowForm(false)
   }, [state.selectedSection])
 
-  const BY = {
-    format: "+375 (##) ### ## ##",
-    placeholder: "+375 (29) 262 40 63",
-    flag: "flag by",
-    rexp: /^(\+375)\s\((29|25|44|33)\)\s(\d{3})\s(\d{2})\s(\d{2})$/
-  }
+  const [showForm, setShowForm] = useState(false)
 
-  const RU = {
-    format: "+7 (###) ### ## ##",
-    placeholder: "+7 (921) 775 03 28",
-    flag: "flag ru",
-    rexp: /^(\+7)\s\((\d{3})\)\s(\d{3})\s(\d{2})\s(\d{2})$/
-  }
-
-  const [template, setTemplate] = useState({
-    template: BY,
-    dropdown: false
-  })
-
-  const toggleSelect = () => setTemplate({ ...template, dropdown: !template.dropdown })
-
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     name: {
       value: "",
       isValid: false,
@@ -62,7 +40,30 @@ export default () => {
     },
     message: "",
     copy: false
+  }
+
+  const [formData, setFormData] = useState(initialFormData)
+
+  const BY = {
+    format: "+375 (##) ### ## ##",
+    placeholder: "+375 (29) 262 40 63",
+    flag: "flag by",
+    rexp: /^(\+375)\s\((29|25|44|33)\)\s(\d{3})\s(\d{2})\s(\d{2})$/
+  }
+
+  const RU = {
+    format: "+7 (###) ### ## ##",
+    placeholder: "+7 (921) 775 03 28",
+    flag: "flag ru",
+    rexp: /^(\+7)\s\((\d{3})\)\s(\d{3})\s(\d{2})\s(\d{2})$/
+  }
+
+  const [template, setTemplate] = useState({
+    template: RU,
+    dropdown: false
   })
+
+  const toggleSelect = () => setTemplate({ ...template, dropdown: !template.dropdown })
 
   const selectMask = e => {
     if (e.target.dataset.country === "by") {
@@ -158,7 +159,7 @@ export default () => {
   }
 
   return (
-    <section className="contacts">
+    <section id="contacts" className="contacts">
       <img className="dotted2 d-none d-lg-block" src={dotted} alt=""/>
       <img className="dottedgroup d-none d-md-block" src={dottedgroup} alt=""/>
       <img className="zCircle d-none d-lg-block" src={zCircle} alt=""/>
@@ -166,7 +167,7 @@ export default () => {
       <div className="container py-5">
         <div className="row justify-content-center">
           <div className={showForm ? "col-12 col-md-6 px-3 form show" : "col-12 col-md-6 form"}>
-            <h2 className="h1">Оставьте заявку</h2>
+            <h2>Есть вопрос?</h2>
             <form name="contactForm" className="mr-md-5">
               <div className="d-flex justify-content-between flex-wrap">
                 <div className="input-group-main w-45 mr-xl-3">
@@ -190,7 +191,7 @@ export default () => {
                   <div className="phone-group-mask">
                     <button type="button" className="chose-mask" onClick={toggleSelect}>
                       <span className={template.template.flag}/>
-                      <span className="iti-arrow"/>
+                      <FontAwesomeIcon icon={faCaretDown} className="ml-2"/>
                     </button>
                     <ul role="menu" className={!template.dropdown ? "dropdown" : "dropdown active"}
                         onClick={selectMask}>
@@ -231,7 +232,7 @@ export default () => {
                 <FontAwesomeIcon icon={faCheckCircle} size="lg"
                                  className={formData.email.isValid ? "ok blue-color d-block" : "ok d-none"}/>
               </div>
-              <sub>Вы не будете получать рассылку на указанный E-mail.</sub>
+              <sub>Вы не будете получать автоматическую рассылку на указанный E-mail</sub>
               <div className="input-group-main">
                 <label htmlFor="message">Опишите в двух словах ваш вопрос</label><br/>
                 <textarea
@@ -255,24 +256,26 @@ export default () => {
               <button className="mainBtn align-self-md-start" onClick={handleSubmit}>
                 <FontAwesomeIcon icon={faPaperPlane} className="pr-2" size="lg"/> Отправить
               </button>
+              <sub className="pt-2">нажимая кнопку "Отправить" Вы даёте своё согласие на обработку персональных данных</sub>
             </form>
           </div>
-          <div className="col-12 col-md-6 px-3 pl-md-5">
-            <h2 className="h1">Контакты</h2>
-            <div className="mb-4"><h6>Наши телефоны</h6>
-              <a href="tel:+375292624063">+375 (29) 2624063</a> <br/>
+          <div className="col-12 col-md-6 px-3 pl-md-5 pt-5 pt-md-0">
+            <h2>Контакты</h2>
+            <div className="mb-4"><h6>Телефоны</h6>
               <a href="tel:+79217750328">+7 (921) 7750328</a>
+              <br/>
+              <a href="tel:+375292624063">+375 (29) 2624063</a>
             </div>
-            <div className="mb-4"><h6>Наш E-mail</h6>
-              <a href="mailto:info@semantis.by">info@semantis.by</a>
+            <div className="mb-4"><h6>E-mail</h6>
+              <a href="mailto:mail@semantis.online">mail@semantis.online</a>
             </div>
-            <div className="mb-4"><h6>Наш адрес</h6>
+            <div className="mb-4"><h6>Адрес</h6>
               <a href="https://goo.gl/maps/jPtF6GyeSa6DTf178" rel="noreferrer noopener" target="_blank">
                 Беларусь, Гродно, ул. Урицкого, 12, офис 306
               </a>
             </div>
             <div>
-              <h6>Мы в соцсетях:</h6>
+              <h6>Новости компании</h6>
               <a href="https://www.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank"
                  className="mr-2">
                 <FontAwesomeIcon icon={faInstagram} size="lg" className="blue-color"/>

@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://www.semantis.online`,
     title: `Semantis`,
     description: `Разработка сайтов и веб-приложений. Продвижение в интернете. Дизайн.`,
-    author: `Semantis.by`
+    author: `Semantis`
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -27,7 +28,9 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/icon-192x192.png` // This path is relative to the root of the site.
       }
-    }
+    },
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-sitemap`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -24,14 +24,6 @@ header {
     color: inherit;
 }
 
-.menu a.active {
-    color: #085DDB;
-}
-
-.menu a.activeWhite {
-    color: white;
-}
-
 #line {
     position: absolute;
     border-color: #085DDB;

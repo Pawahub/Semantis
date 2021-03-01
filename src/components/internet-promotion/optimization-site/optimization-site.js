@@ -1,16 +1,21 @@
 import React from "react"
+
 import SectionLeftRight from "../../section-left-right"
-import './optimization-site.sass'
-import seo from '../../../images/internet-promotion/seo.png'
 import List from "../../list"
+
+import seo from "../../../images/internet-promotion/seo.png"
+
+import "./optimization-site.sass"
+
 export default function OptimizationSite() {
   const listArr = [
-    'Регистрация в каталогах поисковых систем',
-    'Создание микроразметк',
-    'Создание сниппетов',
-    'Создание внешних ссылок',
-    'Оптимизация тегов и мета-тегов',
-    'Работа над контентом'];
+    "Регистрация в каталогах поисковых систем",
+    "Добавление микроразметки",
+    "Создание сниппетов",
+    "Наращивание ссылочной массы",
+    "Оптимизация тегов и мета-тегов",
+    "Работа над контентом"
+  ]
 
   const left = (
     <div className="optimization-site section50 section50-left">
@@ -18,7 +23,7 @@ export default function OptimizationSite() {
         <div className="row justify-content-lg-start justify-content-center">
           <div className="col-lg-5 col-md-8">
             <div className="optimization-site__content">
-              <h2 className="h1">Оптимизация сайта!</h2>
+              <h2>Оптимизация сайта!</h2>
               <p>SEO (Search Engine Optimization) — комплекс мер по оптимизации сайта для
                 улучшения позиции в выдаче поисковых систем по определённым запросам и
                 увеличения скорости его работы, а именно:

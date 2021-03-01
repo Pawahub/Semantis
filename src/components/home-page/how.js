@@ -30,7 +30,7 @@ export default () => {
       <div className="container py-5 d-flex justify-content-center align-items-center flex-wrap">
         <img className="triangles d-none d-md-block" src={triangles} alt=""/>
         <img className="zz2 d-none d-lg-block" src={zz} alt=""/>
-        <h2 className="text-white h1">Как мы работаем?</h2>
+        <h2 className="text-white">Как мы работаем?</h2>
         <TransitionGroup className="row m-0 justify-content-center">
           {(state.selectedSection === 2 || /Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) ?
             (stages.map(({ img, text }, index) => (

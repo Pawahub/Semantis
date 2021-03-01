@@ -368,11 +368,13 @@ a, a:hover, a:active, a:focus, a:visited {
     display: block;
 }
 
-.h1 {
+h1, h2 {
     font-family: Gotham Pro, sans-serif;
     font-style: normal;
-    font-weight: bold;
     font-size: 3.75em;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
 }
 
 .x {
@@ -404,6 +406,7 @@ a, a:hover, a:active, a:focus, a:visited {
     color: #F6FAFF;
     font-weight: normal;
     background: #085DDB;
+    cursor: pointer;
     border: none;
     border-radius: 6px;
     box-shadow: none;
@@ -414,7 +417,7 @@ a, a:hover, a:active, a:focus, a:visited {
     color: #F6FAFF;
 }
 
-.whiteBtn, .whiteBtn:visited {
+.whiteBtn, .whiteBtn:active, .whiteBtn:visited {
     background: #F6FAFF;
     color: #085DDB;
     border: 2px solid #085DDB;
@@ -423,7 +426,6 @@ a, a:hover, a:active, a:focus, a:visited {
 .whiteBtn:hover {
     background: #085DDB;
     color: #F6FAFF;
-    border: 2px solid #F6FAFF;
 }
 
 .ripple {
@@ -877,6 +879,7 @@ input.failed {
     align-items: center;
     justify-content: center;
     width: 20%;
+    color: #3B3F45;
     background: #e5edf9;
     border: 1px solid #DCE4F0;
     border-right: none;
@@ -898,15 +901,6 @@ input.failed {
 
 .ru {
     background-image: url(../images/nav/ru.svg);
-}
-
-.iti-arrow {
-    width: 0;
-    height: 0;
-    margin-left: 0.2em;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    border-top: 4px solid #3B3F45;
 }
 
 .dropdown {
@@ -1123,6 +1117,11 @@ textarea {
 @media screen and (max-width: 575px) {
     body {
         font-size: 0.875em;
+    }
+
+    h1, h2 {
+        text-align: center;
+        font-size: 3em;
     }
 
     .mainBtn {
