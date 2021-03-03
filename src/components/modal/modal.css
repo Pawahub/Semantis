@@ -14,6 +14,7 @@
 .modal {
     position: relative;
     width: auto;
+    max-width: 400px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -41,7 +42,6 @@
     width: 100%;
     color: #3B3F45;
     background: #F6FAFF;
-    border: none;
     border-radius: 0;
     font-family: Gotham Pro, sans-serif;
     font-weight: 500;

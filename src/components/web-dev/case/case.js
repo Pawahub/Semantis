@@ -113,14 +113,14 @@ export default function Case() {
     },
     {
       img: Chinahelp,
-      pdf: "/src/chinahelp.pdf",
+      pdf: "",
       link: "http://Chinahelp.by",
       title: "Chinahelp",
       description: "Лендинг для привлечения клиентов"
     },
     {
       img: Handyman,
-      pdf: "/src/handyman.pdf",
+      pdf: "",
       link: "http://torontohandymen.ca",
       title: "Gusiatin's Handyworks",
       description: "Одностраничный сайт-визитка"

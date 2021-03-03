@@ -7,6 +7,7 @@ import laptop from "../../../images/design/laptop.png"
 
 import "./first-section.sass"
 
+
 export default function FirstSectionDesign() {
   const { dispatch } = useContext(StateContext)
 
@@ -24,16 +25,16 @@ export default function FirstSectionDesign() {
     <section className="first-section-design">
       {window.innerWidth >= 990 ? elements : null}
       <div className="container">
-        <div className="row justify-content-center justify-content-lg-start">
-          <div className="col-12 col-md-8 col-lg-6">
-            <h1 className="h1">Дизайн сайта</h1>
+        <div className="row justify-content-start">
+          <div className="col-12 col-md-8 col-lg-6 d-flex flex-column">
+            <h1>Дизайн сайта</h1>
             <p>Сайт компании выглядит не современно и похож на множество других?
               Снизилось количество посетителей? Оптимальное решение — сделать редизайн сайта.
               Это возможность улучшить образ и имидж компании в глазах клиента,
               привлечь новых посетителей и удержать старых, открыть компанию с новой
               стороны.</p>
-            <button className="mainBtn whiteBtn" onClick={() => dispatch({ type: "open", payload: "lead" })}>
-              Оставить заявку
+            <button className="mainBtn whiteBtn align-self-md-start" onClick={() => dispatch({ type: "open", payload: "lead" })}>
+              Получить предложение
             </button>
           </div>
         </div>

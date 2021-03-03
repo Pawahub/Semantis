@@ -1,13 +1,8 @@
-import React, { useState } from "react"
-import { rippleEffect } from "../main"
-
+import React, { useEffect, useState } from "react"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
-import FourthSection from "./fourthSection"
 
-export default ({ status }) => {
-  const [step, setStep] = useState(1)
-
+export default ({ step, desc, mess }) => {
   const initialStep1 = {
     logo: "",
     brand: "",
@@ -20,33 +15,20 @@ export default ({ status }) => {
 
   const [step1, setStep1] = useState(initialStep1)
   const [step2, setStep2] = useState(new Date())
-  const [step3, setStep3] = useState("")
-  const [submit, setSubmit] = useState(false)
-
-  const cancelSubmit = () => setSubmit(false)
-
-  const handleQuiz = (e, direction) => {
-    if (!direction) {
-      rippleEffect(e)
-      setTimeout(() => setSubmit(true), 500)
-    } else if (direction === "next") {
-      rippleEffect(e)
-      setTimeout(() => setStep(step + 1), 500)
-    } else setStep(step - 1)
-  }
 
   const handleCheckbox = e => {
     if (step1[e.target.name] === "") setStep1({ ...step1, [e.target.name]: e.target.value })
     else setStep1({ ...step1, [e.target.name]: "" })
   }
 
-  const handleDate = date => setStep2(date)
+  useEffect(() => {
+    const stepsData = [step1, step2].map((item) => typeof item === "object" ? Object.values(item) : item).flat().filter((item) => item !== "")
+    desc(stepsData)
+  }, [step === 3])
 
-  const handleTextarea = e => setStep3(e.target.value)
-
-  const firstSection = (
+  if (step === 1) return (
     <div className="d-flex flex-column">
-      <span className="mb-2">Что именно вас интересует?</span>
+      <span className="mb-2">Что именно Вас интересует?</span>
       <div className="checkbox mt-3">
         <input
           id="step1.1"
@@ -126,58 +108,30 @@ export default ({ status }) => {
       </div>
     </div>
   )
-
-  const secondSection = (
-    <div className="input-group-main">
-      <label htmlFor="step2" className="mb-2">Если есть конкретный дедлайн, до которого работа должна быть выполнена,
-        пожалуйста, укажите здесь</label><br/>
+  else if (step === 2) return (
+    <div className="input-group-main text-center">
+      <label htmlFor="step2" className="mb-2">Если есть конкретный дедлайн, пожалуйста, укажите его здесь</label><br/>
       <DatePicker
         selected={step2}
-        onChange={handleDate}
+        onChange={date => setStep2(date)}
         dateFormat="dd.MM.yyyy"
-      />
+      /><br/>
+      <sub className="p-0">если нет, просто пропустите этот шаг</sub>
     </div>
   )
-
-  const thirdSection = (
+  else if (step === 3) return (
     <div className="input-group-main">
-      <label htmlFor="step3" className="mb-2">Если у вас есть особенные пожелания, которые необходимо учесть,
-        пожалуйста, укажите их здесь. Также можно указать ссылку на референс.</label>
+      <label htmlFor="step3" className="mb-2">Если у Вас есть особенные пожелания, которые необходимо учесть,
+        пожалуйста, укажите их здесь</label>
       <textarea
         id="step3"
         name="message"
         rows="6"
-        placeholder="Например:
-        Нравиться стилистика оформления блока с карточками на этом сайте https://example.com/"
-        value={step3}
-        onChange={handleTextarea}
+        placeholder="Нравиться стилистика оформления блока с карточками, как на этом сайте https://example.com/"
+        onChange={mess}
       />
+      <sub className="pt-3">в качестве примера можно прикрепить ссылки на другие сайты</sub>
     </div>
   )
-  return (
-    <div className="quiz">
-      <span className="progressbar" style={{ transform: `scaleX(${status[step]})` }}/>
-      {step === 1 ? firstSection : null}
-      {step === 2 ? secondSection : null}
-      {step === 3 ? thirdSection : null}
-      {step === 4 ? <FourthSection
-        step1={step1}
-        step2={step2}
-        step3={step3}
-        submit={submit}
-        setSubmit={cancelSubmit}
-        header="Почти готово"
-      /> : null}
-
-      <div className="d-flex justify-content-between flex-row-reverse">
-        {step === 4 ?
-          <button type="button" className="mainBtn" onClick={handleQuiz}>Узнать цену</button> :
-          <button type="button" className="mainBtn" onClick={(e) => handleQuiz(e, "next")}>Далее > </button>
-        }
-        {step === 1 ? null :
-          <button type="button" className="mainBtn whiteBtn mr-3" onClick={(e) => handleQuiz(e, "prev")}>Назад</button>
-        }
-      </div>
-    </div>
-  )
+  else return null
 }

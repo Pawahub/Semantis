@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react"
 import { StateContext } from "../../../state/stateCotext"
 import { rippleEffect } from "../../main"
-
 import List from "../../list"
 
 import img1 from "../../../images/internet-promotion/slider/img1.png"
@@ -28,9 +27,11 @@ export default function TargetedAdvertising() {
       else setState(state + 1)
     }
   }
+
   const handleClick = e => {
     rippleEffect(e)
     dispatch({ type: "open", payload: "lead" })
+
   }
   const listArr = [
     "Охват только целевой аудитории",
@@ -38,6 +39,7 @@ export default function TargetedAdvertising() {
     "Четкий измеримый результат (все данные о рекламных кампаниях качественно предоставляются в личных " +
     "рекламных кабинетах, выгружаются в удобных форматах)"
   ]
+
   return (
     <section className="targeted-advertising py-5">
       <div className="container">
@@ -62,7 +64,8 @@ export default function TargetedAdvertising() {
             <div className="targeted-advertising__slider" onClick={sliderHandler}>
               <div className="targeted-advertising__slider-item prev">
                 <div className="arrow"><img src={arrow} alt="arrow"/></div>
-                <img src={sliderItems[state - 1] ? sliderItems[state - 1] : sliderItems[sliderItems.length -1]} alt="Продвижение"/>
+                <img src={sliderItems[state - 1] ? sliderItems[state - 1] : sliderItems[sliderItems.length - 1]}
+                     alt="Продвижение"/>
               </div>
               <div className="targeted-advertising__slider-item active">
                 <img src={sliderItems[state]} alt="Продвижение"/>

@@ -1,6 +1,8 @@
-import React from "react"
-import "./logo.sass"
+import React, { useContext } from "react"
+import { StateContext } from "../../../state/stateCotext"
+import { rippleEffect } from "../../main"
 import List from "../../list"
+
 import dots1 from "../../../images/design/dots1.svg"
 import fon from "../../../images/design/fon.png"
 import polygon from "../../../images/design/polygon.png"
@@ -9,8 +11,17 @@ import ellipse1 from "../../../images/design/ellipse1.png"
 import ellipse2 from "../../../images/design/ellipse2.png"
 import spin from "../../../images/design/spin.svg"
 
+import "./logo.sass"
+
 
 export default function Logo() {
+  const { dispatch } = useContext(StateContext)
+
+  const handleClick = e => {
+    rippleEffect(e)
+    dispatch({ type: "open", payload: "lead" })
+  }
+
   const listArr = [
     "Простым и понятным для потребителя",
     "Выделяться и закрепляться в памяти с первого взгляда",
@@ -35,15 +46,15 @@ export default function Logo() {
         {window.innerWidth >= 990 ? elements : null}
       </div>
       <div className="container">
-        <div className="row justify-content-center justify-content-lg-start">
-          <div className="col-md-8 col-lg-6">
-            <h2 className="h1">Логотипы</h2>
+        <div className="row justify-content-start">
+          <div className="col-md-8 col-lg-6 d-flex flex-column">
+            <h2>Логотипы</h2>
             <p>Логотип — уникальный символ компании. Он раскрывает целостный образ бренда,
               его идеи, философию и имидж.
             </p>
-            <strong className='description'>Мы создадим для вас эффективный логотип, который будет</strong>
+            <strong className="description">Мы создадим для вас эффективный логотип, который будет</strong>
             <List listArr={listArr}/>
-            {/*//todo(добавить кнопку)*/}
+            <button className="mainBtn mt-3 align-self-md-start" onClick={handleClick}>Получить предложение</button>
           </div>
         </div>
       </div>

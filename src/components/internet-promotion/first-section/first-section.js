@@ -1,5 +1,7 @@
 import React from "react"
 import SectionLeftRight from "../../section-left-right"
+import QuizBtn from "../../buttons/quizBtn"
+
 import dots from "../../../images/internet-promotion/dots.png"
 import mac from "../../../images/internet-promotion/mac2.png"
 import ellipse1 from "../../../images/internet-promotion/ellipse1.png"
@@ -44,6 +46,7 @@ export default function FirstSectionIP() {
             <ul className="home-list">
               {list(["Оптимизация сайта", "Контекстная реклама", "Таргетированная реклама"])}
             </ul>
+            <QuizBtn/>
           </div>
         </div>
       </div>

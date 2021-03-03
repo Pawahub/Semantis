@@ -1,5 +1,5 @@
 import React from "react"
-import './list.sass'
+
 export default function List({ listArr }) {
   const list = (arr) => {
     return arr.map((el, idx) => {

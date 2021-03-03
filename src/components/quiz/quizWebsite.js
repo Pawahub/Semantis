@@ -1,11 +1,6 @@
-import React, { useState } from "react"
-import { rippleEffect } from "../main"
+import React, { useEffect, useState } from "react"
 
-import FourthSection from "./fourthSection"
-
-export default ({ status }) => {
-  const [step, setStep] = useState(1)
-
+export default ({ step, desc, mess }) => {
   const initialStep1 = {
     recognizability: "",
     communication: "",
@@ -14,7 +9,6 @@ export default ({ status }) => {
     sales: "",
     members: ""
   }
-
   const initialStep2 = {
     template: "",
     content: ""
@@ -22,20 +16,11 @@ export default ({ status }) => {
 
   const [step1, setStep1] = useState(initialStep1)
   const [step2, setStep2] = useState(initialStep2)
-  const [step3, setStep3] = useState("")
-  const [submit, setSubmit] = useState(false)
 
-  const cancelSubmit = () => setSubmit(false)
-
-  const handleQuiz = (e, direction) => {
-    if (!direction) {
-      rippleEffect(e)
-      setTimeout(() => setSubmit(true), 500)
-    } else if (direction === "next") {
-      rippleEffect(e)
-      setTimeout(() => setStep(step + 1), 500)
-    } else setStep(step - 1)
-  }
+  useEffect(() => {
+    const stepsData = [step1, step2].map((item) => typeof item === "object" ? Object.values(item) : item).flat().filter((item) => item !== "")
+    desc(stepsData)
+  }, [step === 3])
 
   const handleCheckbox = e => {
     switch (e.target.step) {
@@ -50,9 +35,7 @@ export default ({ status }) => {
     }
   }
 
-  const handleTextarea = e => setStep3(e.target.value)
-
-  const firstSection = (
+  if (step === 1) return (
     <div className="d-flex flex-column">
       <span className="mb-2">Какие задачи вы хоите решать с помощью сайта?</span>
       <div className="checkbox mt-3">
@@ -129,8 +112,7 @@ export default ({ status }) => {
       </div>
     </div>
   )
-
-  const secondSection = (
+  else if (step === 2) return (
     <div className="d-flex flex-column">
       <span className="mb-2">Для сайта необходим индивидуальный дизайн?</span>
       <div className="checkbox d-flex flex-column">
@@ -190,47 +172,19 @@ export default ({ status }) => {
       </div>
     </div>
   )
-
-  const thirdSection = (
+  else if (step === 3) return (
     <div className="input-group-main">
-      <label htmlFor="step3" className="mb-2">Если у вас есть конкретные требования к сайту, которые необходимо учесть,
-        пожалуйста, укажите их здесь. Также можно указать в качестве примера ссылки на другие сайты.</label>
+      <label htmlFor="step3" className="mb-2">Если у Вас есть требования к сайту, которые необходимо учесть,
+        пожалуйста, укажите их здесь</label>
       <textarea
         id="step3"
         name="message"
         rows="6"
-        placeholder="Например:
-        На сайте необходимо разместить калькулятор стоимости заказа как здесь https://example.com/calculator"
-        value={step3}
-        onChange={handleTextarea}
+        placeholder="На сайте необходимо реализовать калькулятор стоимости заказа как здесь https://example.com/calculator"
+        onChange={mess}
       />
+      <sub className="pt-3">в качестве примера можно прикрепить ссылки на другие сайты</sub>
     </div>
   )
-
-  return (
-    <div className="quiz">
-      <span className="progressbar" style={{ transform: `scaleX(${status[step]})` }}/>
-      {step === 1 ? firstSection : null}
-      {step === 2 ? secondSection : null}
-      {step === 3 ? thirdSection : null}
-      {step === 4 ? <FourthSection
-        step1={step1}
-        step2={step2}
-        step3={step3}
-        submit={submit}
-        setSubmit={cancelSubmit}
-        header="Почти готово"
-      /> : null}
-
-      <div className="d-flex justify-content-between flex-row-reverse">
-        {step === 4 ?
-          <button type="button" className="mainBtn" onClick={handleQuiz}>Узнать цену</button> :
-          <button type="button" className="mainBtn" onClick={(e) => handleQuiz(e, "next")}>Далее > </button>
-        }
-        {step === 1 ? null :
-          <button type="button" className="mainBtn whiteBtn mr-3" onClick={(e) => handleQuiz(e, "prev")}>Назад</button>
-        }
-      </div>
-    </div>
-  )
+  else return null
 }

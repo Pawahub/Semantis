@@ -3,14 +3,15 @@ import React, { useState } from "react"
 import NumberFormat from "react-number-format"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCaretDown, faCheckCircle, faPaperPlane } from "@fortawesome/free-solid-svg-icons"
-import whatsapp from "../../images/nav/whatsapp.png"
-import telegram from "../../images/nav/telegram.png"
-import viber from "../../images/nav/viber.png"
+import { faCaretDown, faCheckCircle } from "@fortawesome/free-solid-svg-icons"
+import whatsapp from "../images/nav/whatsapp.png"
+import telegram from "../images/nav/telegram.png"
+import viber from "../images/nav/viber.png"
 
-//todo сделать универсальный компонент формы
-export default (initialFormData) => {
+export default ({ initialFormData }) => {
   const [formData, setFormData] = useState(initialFormData)
+
+  console.log(formData)
 
   const BY = {
     format: "+375 (##) ### ## ##",
@@ -60,8 +61,7 @@ export default (initialFormData) => {
   }
 
   const handleInput = e => {
-    if (e.target.id === "message") setFormData({ ...formData, message: e.target.value })
-    else setFormData({ ...formData, [e.target.id]: { value: e.target.value, isValid: false, failed: false } })
+    setFormData({ ...formData, [e.target.id]: { value: e.target.value, isValid: false, failed: false } })
   }
 
   const checkInput = (e, expression) => {
@@ -72,101 +72,91 @@ export default (initialFormData) => {
     } else setFormData({ ...formData, [e.target.name]: { value: e.target.value, isValid: false, failed: true } })
   }
 
-  const mail = async (formData) => {
-    await fetch("https://semantis.by/email.php", {
-      method: "POST",
-      body: formData
-    })
+  const handleCheckbox = e => {
+    if (formData[e.target.value] === "") setFormData({ ...formData, [e.target.value]: e.target.value })
+    else setFormData({ ...formData, [e.target.value]: "" })
   }
 
   return (
-    <div className="quiz">
-      <form className="d-flex flex-column p-3">
-        <div className="input-group-main">
-          <label htmlFor="nameQuiz">Ваше имя</label><br/>
-          <input
-            id="nameQuiz"
-            name="name"
-            type="text"
-            placeholder="Ваше имя"
-            value={formData.name.value}
+    <div className="d-flex flex-column">
+      <div className="input-group-main">
+        <label htmlFor="name">Ваше имя</label><br/>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Ваше имя"
+          value={formData.name.value}
+          onFocus={focusInput}
+          onChange={handleInput}
+          onBlur={(e) => checkInput(e, /^[а-яА-ЯёЁ\s]+|[a-zA-Z\s]+$/)}
+          className={formData.name.failed ? "failed" : ""}
+        />
+        <FontAwesomeIcon icon={faCheckCircle} size="lg"
+                         className={formData.name.isValid ? "ok blue-color d-block" : "ok d-none"}
+        />
+      </div>
+      <div className="input-group-main">
+        <label htmlFor="phone">Ваш телефон</label><br/>
+        <div className="phone-group-mask">
+          <button type="button" className="chose-mask" onClick={toggleSelect}>
+            <span className={template.template.flag}/>
+            <FontAwesomeIcon icon={faCaretDown} className="ml-2"/>
+          </button>
+          <ul role="menu" className={!template.dropdown ? "dropdown" : "dropdown active"} onClick={selectMask}>
+            <li data-country="by"><span className="flag by"/>Беларусь +375</li>
+            <li data-country="ru"><span className="flag ru"/>Россия +7</li>
+          </ul>
+          <NumberFormat
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder={template.template.placeholder}
+            format={template.template.format}
+            value={formData.phone.value}
+            mask="_"
+            allowEmptyFormatting={showMask}
             onFocus={focusInput}
-            onChange={handleInput}
-            onBlur={(e) => checkInput(e, /^[а-яА-ЯёЁ\s]+|[a-zA-Z\s]+$/)}
-            className={formData.name.failed ? "failed" : ""}
+            onBlur={(e) => checkInput(e, template.template.rexp)}
+            className={formData.phone.failed ? "failed" : ""}
           />
           <FontAwesomeIcon icon={faCheckCircle} size="lg"
-                           className={formData.name.isValid ? "ok blue-color d-block" : "ok d-none"}
+                           className={formData.phone.isValid ? "ok blue-color d-block" : "ok d-none"}/>
+        </div>
+      </div>
+      <div className="d-flex flex-column">
+        В каком мессенджере с вами можно связаться?
+        <div className="checkbox mt-3">
+          <input
+            id="whatsapp"
+            type="checkbox"
+            value="whatsapp"
+            checked={formData.whatsapp === "whatsapp"}
+            onChange={handleCheckbox}
           />
+          <label htmlFor="whatsapp"><img src={whatsapp} alt="whatsapp" width="20px"/>&nbsp;WhatsApp</label>
         </div>
-        <div className="input-group-main">
-          <label htmlFor="phoneQuiz">Ваш телефон</label><br/>
-          <div className="phone-group-mask">
-            <button type="button" className="chose-mask" onClick={toggleSelect}>
-              <span className={template.template.flag}/>
-              <FontAwesomeIcon icon={faCaretDown} className="ml-2"/>
-            </button>
-            <ul role="menu" className={!template.dropdown ? "dropdown" : "dropdown active"} onClick={selectMask}>
-              <li data-country="by"><span className="flag by"/>Беларусь +375</li>
-              <li data-country="ru"><span className="flag ru"/>Россия +7</li>
-            </ul>
-            <NumberFormat
-              id="phoneQuiz"
-              name="phone"
-              type="tel"
-              placeholder={template.template.placeholder}
-              format={template.template.format}
-              value={formData.phone.value}
-              mask="_"
-              allowEmptyFormatting={showMask}
-              onFocus={focusInput}
-              onBlur={(e) => checkInput(e, template.template.rexp)}
-              className={formData.phone.failed ? "failed" : ""}
-            />
-            <FontAwesomeIcon icon={faCheckCircle} size="lg"
-                             className={formData.phone.isValid ? "ok blue-color d-block" : "ok d-none"}/>
-          </div>
+        <div className="checkbox">
+          <input
+            id="telegram"
+            type="checkbox"
+            value="telegram"
+            checked={formData.telegram === "telegram"}
+            onChange={handleCheckbox}
+          />
+          <label htmlFor="telegram"><img src={telegram} alt="telegram" width="20px"/>&nbsp;Telegram</label>
         </div>
-        <div className="d-flex flex-column">
-          В каком мессенджере с вами можно связаться?
-          <div className="checkbox mt-3">
-            <input
-              id="step4.1"
-              step="4"
-              type="checkbox"
-              value="whatsapp"
-              checked={formData.whatsapp === "whatsapp"}
-              onChange={handleCheckbox}
-            />
-            <label htmlFor="step4.1"><img src={whatsapp} alt="whatsapp" width="20px"/>&nbsp;WhatsApp</label>
-          </div>
-          <div className="checkbox">
-            <input
-              id="step4.2"
-              step="4"
-              type="checkbox"
-              value="telegram"
-              checked={formData.telegram === "telegram"}
-              onChange={handleCheckbox}
-            />
-            <label htmlFor="step4.2"><img src={telegram} alt="telegram" width="20px"/>&nbsp;Telegram</label>
-          </div>
-          <div className="checkbox">
-            <input
-              id="step4.3"
-              step="4"
-              type="checkbox"
-              value="viber"
-              checked={formData.viber === "viber"}
-              onChange={handleCheckbox}
-            />
-            <label htmlFor="step4.3"><img src={viber} alt="viber" width="20px"/>&nbsp;Viber</label>
-          </div>
+        <div className="checkbox">
+          <input
+            id="viber"
+            type="checkbox"
+            value="viber"
+            checked={formData.viber === "viber"}
+            onChange={handleCheckbox}
+          />
+          <label htmlFor="viber"><img src={viber} alt="viber" width="20px"/>&nbsp;Viber</label>
         </div>
-        <button className="mainBtn align-self-md-start" onClick={handleSubmit}>
-          <FontAwesomeIcon icon={faPaperPlane} className="pr-2" size="lg"/> Отправить
-        </button>
-      </form>
+      </div>
     </div>
   )
 }

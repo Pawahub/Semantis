@@ -1,4 +1,6 @@
 .first-section-IP
+  padding-bottom: 50px
+
   &__elements
     display: none
 
@@ -24,15 +26,14 @@
     p, ul
       padding-left: 80px
 
-    ul li:first-child
-      .span-child
-        color: #0862ff
-        font-weight: 700
-
 @media (max-width: 440px)
   .first-section-IP
     &__content
+      display: flex
+      flex-direction: column
+
       h1
+        font-size: 35px
         padding-top: 100px
 
         span
@@ -69,3 +70,6 @@
         top: 35%
         left: 50%
         transform: translate(-50%)
+
+    .mainBtn
+      margin-left: 80px

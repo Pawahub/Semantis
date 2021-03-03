@@ -1,11 +1,6 @@
-import React, { useState } from "react"
-import { rippleEffect } from "../main"
+import React, { useEffect, useState } from "react"
 
-import FourthSection from "./fourthSection"
-
-export default ({ status }) => {
-  const [step, setStep] = useState(1)
-
+export default ({ step, desc, mess }) => {
   const initialStep1 = {
     field: "",
     website: ""
@@ -13,24 +8,13 @@ export default ({ status }) => {
 
   const [step1, setStep1] = useState(initialStep1)
   const [step2, setStep2] = useState("")
-  const [step3, setStep3] = useState("")
-  const [submit, setSubmit] = useState(false)
 
-  const cancelSubmit = () => setSubmit(false)
-
-  const handleQuiz = (e, direction) => {
-    if (!direction) {
-      rippleEffect(e)
-      setTimeout(() => setSubmit(true), 500)
-    } else if (direction === "next") {
-      rippleEffect(e)
-      setTimeout(() => setStep(step + 1), 500)
-    } else setStep(step - 1)
-  }
+  useEffect(() => {
+    const stepsData = [step1, step2].map((item) => typeof item === "object" ? Object.values(item) : item).flat().filter((item) => item !== "")
+    desc(stepsData)
+  }, [step === 3])
 
   const handleCheckbox = e => step2 !== e.target.value ? setStep2(e.target.value) : setStep2("")
-
-  const handleTextarea = e => setStep3(e.target.value)
 
   const handleInput = e => setStep1({ ...step1, [e.target.name]: e.target.value })
 
@@ -38,7 +22,7 @@ export default ({ status }) => {
 
   const checkInput = (e, expression) => expression.test(e.target.value) ? null : e.target.classList.add("failed")
 
-  const firstSection = (
+  if (step === 1) return (
     <div className="d-flex flex-column">
       <div className="input-group-main">
         <label htmlFor="field">Ваша сфера деятельности</label><br/>
@@ -68,10 +52,9 @@ export default ({ status }) => {
       </div>
     </div>
   )
-
-  const secondSection = (
+  else if (step === 2) return (
     <div className="d-flex flex-column">
-      <span className="mb-2">Какой вид продвижения вас интересует?</span>
+      <span className="mb-2">Какой вид продвижения Вас интересует?</span>
       <div className="checkbox mt-3">
         <input
           id="step2.1"
@@ -118,48 +101,19 @@ export default ({ status }) => {
       </div>
     </div>
   )
-
-  const thirdSection = (
+  else if (step === 3) return (
     <div className="input-group-main">
-      <label htmlFor="goal" className="mb-2">Опишите кратко ваши цели продвижения в интеренте.</label>
+      <label htmlFor="goal" className="mb-2">Опишите кратко Ваши цели продвижения в интеренте</label>
       <textarea
         id="goal"
         name="message"
         rows="6"
-        placeholder="Например:
-        - Увеличение обёмов реализации продукции.
-        - Поиск потенциальных инвесторов для модернизации производста и увеличения мощностей.
-        - ..."
-        value={step3}
-        onChange={handleTextarea}
+        placeholder=" 1) увеличение обёмов реализации продукции;
+        2) поиск потенциальных инвесторов для модернизации производста;
+        3) ..."
+        onChange={mess}
       />
     </div>
   )
-
-  return (
-    <div className="quiz">
-      <span className="progressbar" style={{ transform: `scaleX(${status[step]})` }}/>
-      {step === 1 ? firstSection : null}
-      {step === 2 ? secondSection : null}
-      {step === 3 ? thirdSection : null}
-      {step === 4 ? <FourthSection
-        step1={step1}
-        step2={step2}
-        step3={step3}
-        submit={submit}
-        setSubmit={cancelSubmit}
-        header="Почти готово"
-      /> : null}
-
-      <div className="d-flex justify-content-between flex-row-reverse">
-        {step === 4 ?
-          <button type="button" className="mainBtn" onClick={handleQuiz}>Узнать цену</button> :
-          <button type="button" className="mainBtn" onClick={(e) => handleQuiz(e, "next")}>Далее > </button>
-        }
-        {step === 1 ? null :
-          <button type="button" className="mainBtn whiteBtn mr-3" onClick={(e) => handleQuiz(e, "prev")}>Назад</button>
-        }
-      </div>
-    </div>
-  )
+  else return null
 }

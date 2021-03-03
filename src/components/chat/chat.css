@@ -1,4 +1,4 @@
-@-webkit-keyframes wave {
+@-webkit-keyframes splash-blue {
     from {
         box-shadow: 0 0 0 0 rgba(8, 93, 219, 0.05);
     }
@@ -7,7 +7,7 @@
     }
 }
 
-@keyframes wave {
+@keyframes splash-blue {
     from {
         box-shadow: 0 0 0 0 rgba(8, 93, 219, 0.05);
     }
@@ -16,7 +16,7 @@
     }
 }
 
-@-webkit-keyframes wave2 {
+@-webkit-keyframes splash-white {
     from {
         box-shadow: 0 0 0 0 rgba(246, 250, 255, 0.05);
     }
@@ -25,7 +25,7 @@
     }
 }
 
-@keyframes wave2 {
+@keyframes splash-white {
     from {
         box-shadow: 0 0 0 0 rgba(246, 250, 255, 0.05);
     }
@@ -59,14 +59,14 @@
     color: #085DDB;
     background: rgba(8, 93, 219, 0.1);
     z-index: 12;
-    animation: wave 1s ease-in-out infinite;
+    animation: splash-blue 1s ease-in-out infinite;
     transition: 0.3s;
 }
 
 .chatBtnLight {
     color: #F6FAFF;
     background: rgba(246, 250, 255, 0.1);
-    animation: wave2 1s ease-in-out infinite;
+    animation: splash-white 1s ease-in-out infinite;
 }
 
 .chatBtn:hover {
@@ -77,13 +77,13 @@
 .chatBtnDarkOpen {
     color: #F6FAFF;
     background: linear-gradient(#085DDB, #0862ff);
-    animation: wave 1s ease-in-out infinite;
+    animation: splash-blue 1s ease-in-out infinite;
 }
 
 .chatBtnLightOpen {
     color: #085DDB;
     background: #F6FAFF;
-    animation: wave2 1s ease-in-out infinite;
+    animation: splash-white 1s ease-in-out infinite;
 }
 
 .btnContainer a {

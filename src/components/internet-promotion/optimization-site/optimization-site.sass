@@ -2,7 +2,7 @@
   overflow: hidden
 
   &.section50-left
-    background-color: #0862ff
+    background: linear-gradient(rgba(8, 98, 255, 1), rgba(8, 93, 219, 1))
     position: relative
     width: 100%
     min-height: auto
@@ -25,13 +25,18 @@
 
   &__content
     color: white
+    display: flex
+    flex-direction: column
 
     .home-list li .number strong
       color: #FFE342
 
-    ul li:first-child .span-child
-      color: #FFE342
-      font-weight: 700
+  .whiteBtn
+    border: none
+
+    &:hover
+      background: #F6FAFF
+      color: #085DDB
 
 @media screen and (min-width: 992px)
   .optimization-site

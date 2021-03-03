@@ -37,7 +37,7 @@ const Layout = ({ selectedSection, children, location }) => {
   const changeState = () => {
     return {
       selectedSection: 0,
-      show: false
+      show: false,
     }
   }
 
@@ -57,7 +57,7 @@ const Layout = ({ selectedSection, children, location }) => {
             <h6 className="m-0">Расскажите нам о своём проекте</h6>
             <FontAwesomeIcon icon={faTimes} size="lg" className="x" onClick={() => dispatch({ type: "close" })}/>
           </div>
-          <Quiz/>
+          <Quiz init={location.pathname}/>
         </Modal> : null
       }
       {state.show === "lead" ?

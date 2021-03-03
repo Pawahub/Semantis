@@ -117,7 +117,7 @@ export default () => {
   const handleCheckbox = () => setFormData({ ...formData, copy: !formData.copy })
 
   const mail = async (formData) => {
-    await fetch("https://semantis.by/email.php", {
+    await fetch("https://semantis.online/email.php", {
       method: "POST",
       body: formData
     })
@@ -134,26 +134,27 @@ export default () => {
       data.append("email", email.value)
       data.append("message", formData.message)
       data.append("copy", formData.copy)
-      mail(data).then((response) => console.log(response))
-      dispatch({ type: "open", payload: "success" })
-      setFormData({
-        name: {
-          value: "",
-          isValid: false,
-          failed: false
-        },
-        phone: {
-          value: "",
-          isValid: false,
-          failed: false
-        },
-        email: {
-          value: "",
-          isValid: false,
-          failed: false
-        },
-        message: "",
-        copy: false
+      mail(data).then(() => {
+        dispatch({ type: "open", payload: "success" })
+        setFormData({
+          name: {
+            value: "",
+            isValid: false,
+            failed: false
+          },
+          phone: {
+            value: "",
+            isValid: false,
+            failed: false
+          },
+          email: {
+            value: "",
+            isValid: false,
+            failed: false
+          },
+          message: "",
+          copy: false
+        })
       })
     }
   }
@@ -167,7 +168,7 @@ export default () => {
       <div className="container py-5">
         <div className="row justify-content-center">
           <div className={showForm ? "col-12 col-md-6 px-3 form show" : "col-12 col-md-6 form"}>
-            <h2>Есть вопрос?</h2>
+            <h2 className="mb-4">Есть вопрос?</h2>
             <form name="contactForm" className="mr-md-5">
               <div className="d-flex justify-content-between flex-wrap">
                 <div className="input-group-main w-45 mr-xl-3">
@@ -239,7 +240,7 @@ export default () => {
                   id="message"
                   name="message"
                   rows="3"
-                  placeholder='Например: "Какой выбрать тип сайта в рамках заданного бюджета?"'
+                  placeholder="А что вообще необходимо для сайта? Какие материалы?"
                   value={formData.message}
                   onChange={handleInput}
                   onBlur={checkMessage}/>
@@ -256,11 +257,12 @@ export default () => {
               <button className="mainBtn align-self-md-start" onClick={handleSubmit}>
                 <FontAwesomeIcon icon={faPaperPlane} className="pr-2" size="lg"/> Отправить
               </button>
-              <sub className="pt-2">нажимая кнопку "Отправить" Вы даёте своё согласие на обработку персональных данных</sub>
+              <sub className="pt-2">нажимая кнопку "Отправить" Вы даёте своё согласие на обработку персональных
+                данных</sub>
             </form>
           </div>
           <div className="col-12 col-md-6 px-3 pl-md-5 pt-5 pt-md-0">
-            <h2>Контакты</h2>
+            <h2 className="mb-4">Контакты</h2>
             <div className="mb-4"><h6>Телефоны</h6>
               <a href="tel:+79217750328">+7 (921) 7750328</a>
               <br/>
