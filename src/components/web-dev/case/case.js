@@ -4,8 +4,6 @@ import { StateContext } from "../../../state/stateCotext"
 
 import { CardCase } from "../../card"
 
-import LineWithDot from "../../../images/web-dev/line-with-dot.svg"
-import Line from "../../../images/web-dev/line3.svg"
 import Citrus from "../../../images/web-dev/case/citruscleaning.jpg"
 import Lexor from "../../../images/web-dev/case/lexor.jpg"
 import Consigliere from "../../../images/web-dev/case/consigliere.jpg"
@@ -19,8 +17,7 @@ import Handyman from "../../../images/web-dev/case/handyman.jpg"
 import "./case.sass"
 
 export default function Case() {
-  const globalState = useContext(StateContext)
-  const section = globalState.state.selectedSection
+  const { state } = useContext(StateContext)
 
   const settingsSlider = {
     dots: true,
@@ -40,6 +37,7 @@ export default function Case() {
       {
         breakpoint: 767,
         settings: {
+          arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1
         }
@@ -134,7 +132,7 @@ export default function Case() {
   )
 
   return (
-    <section className={section === 3 ? "case active" : "case"}>
+    <section className={state.selectedSection === 3 ? "case active" : "case"}>
       <div className="container">
         <div className="row justify-content-center">
           <h2 className="text-center">Кейсы</h2>
@@ -143,14 +141,6 @@ export default function Case() {
           <div className="col-12">
             {slider}
           </div>
-        </div>
-      </div>
-      <div className="case__items">
-        <div className="item1">
-          <img src={LineWithDot} alt="LineWithDot"/>
-        </div>
-        <div className="item2">
-          <img src={Line} alt="LineWithDot"/>
         </div>
       </div>
     </section>

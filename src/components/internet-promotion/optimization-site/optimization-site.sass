@@ -1,19 +1,14 @@
 .optimization-site
-  overflow: hidden
-
   &.section50-left
     background: linear-gradient(rgba(8, 98, 255, 1), rgba(8, 93, 219, 1))
-    position: relative
-    width: 100%
+    color: white
     min-height: auto
     display: flex
-    z-index: 3
-    padding-top: 50px
-    padding-bottom: 50px
+    padding: 50px
+    z-index: 2 !important
 
     > div
       margin: auto
-      z-index: 2
 
   &.section50-right
     display: flex
@@ -24,7 +19,6 @@
       display: block
 
   &__content
-    color: white
     display: flex
     flex-direction: column
 
@@ -40,18 +34,21 @@
 
 @media screen and (min-width: 992px)
   .optimization-site
-    &.section50-left
-      min-height: 100vh
+    h2
+      color: #F6FAFF
+      min-width: max-content
+
+      span
+        color: #3B3F45
 
 @media (max-width: 991px)
   .optimization-site
+    overflow: hidden
+
     &.section50-left
+      position: relative
       width: 100%
+      padding: 50px 15px
 
     &.section50-right
       display: none
-
-@media (max-width: 370px)
-  .optimization-site
-    &__content
-      overflow: hidden

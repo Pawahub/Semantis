@@ -53,7 +53,7 @@ export default () => {
   }
 
   return (
-    <form className="quiz">
+    <form className="quiz p-3">
       <Form initialFormData={formData}/>
       <button className="mainBtn align-self-md-start" onClick={handleSubmit}>
         <FontAwesomeIcon icon={faPaperPlane} className="pr-2" size="lg"/> Получить предложение

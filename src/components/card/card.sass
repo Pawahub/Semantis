@@ -1,10 +1,15 @@
 .card__element
+  display: flex
+  flex-direction: column
+  justify-content: space-between
   height: 100%
-  box-shadow: 0px 10px 30px rgba(36, 67, 176, 0.1)
+  min-height: 300px
+  box-shadow: 0 10px 30px rgba(36, 67, 176, 0.5)
   border-radius: 2px
   background: #FFFFFF
   border: none
   padding: 15px
+
   .card
     &-view
       position: absolute
@@ -19,6 +24,7 @@
       justify-content: center
       align-items: center
       transition: 0.3s linear all
+
       svg
         height: 20px
         width: 15px
@@ -26,36 +32,65 @@
         top: 15px
         right: 16px
         pointer-events: none
+
       a
         text-align: center
         font-size: 18px
         color: #085DDB
         display: none
         font-weight: 500
+
       &:hover
         a
           display: block
+
         svg
           display: none
-        width: 100%
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
-    &-body
-    &-title
-      font-weight: 700
-      font-size: 20px
-      line-height: 20px
-      margin-top: 20px
+          width: 100%
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+
     &-header
+      background: none
       border-bottom: none
-      background-color: transparent
+      padding: 0
+
+    &-title
+      font-family: "Gotham Pro", sans-serif
+      font-weight: 500
+      font-size: 18px
+      line-height: 24px
+
+    &-body
       padding: 0
       display: flex
-      justify-content: space-between
-      align-items: center
-      img
-        //width: 40px
-        //height: 46px
-      strong
+      flex-direction: column
+      justify-content: flex-end
+
+      .description
+        display: flex
+        align-items: center
+        flex-wrap: nowrap
+        color: #085DDB
+        font-weight: 400
+
+      .oldPrice
+        color: lightgrey
+        text-decoration: line-through
+        font-weight: 400
+        font-size: 18px
+        margin-bottom: 0.5em
+
+      .price
         font-weight: 700
-        font-size: 20px
+        font-size: 18px
         line-height: 24px
+
+      .discount
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%)
+        background: #E9EFF8
+        color: #085DDB
+        margin-right: -15px
+        margin-bottom: 1em
+        text-align: center
+        font-size: 18px
+        font-weight: 500

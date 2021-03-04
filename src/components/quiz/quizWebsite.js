@@ -175,12 +175,12 @@ export default ({ step, desc, mess }) => {
   else if (step === 3) return (
     <div className="input-group-main">
       <label htmlFor="step3" className="mb-2">Если у Вас есть требования к сайту, которые необходимо учесть,
-        пожалуйста, укажите их здесь</label>
+        пожалуйста, укажите их здесь:</label>
       <textarea
         id="step3"
         name="message"
         rows="6"
-        placeholder="На сайте необходимо реализовать калькулятор стоимости заказа как здесь https://example.com/calculator"
+        placeholder="На сайте необходимо реализовать калькулятор стоимости заказа как здесь: https://example.com/calculator"
         onChange={mess}
       />
       <sub className="pt-3">в качестве примера можно прикрепить ссылки на другие сайты</sub>

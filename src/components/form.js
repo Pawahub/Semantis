@@ -11,8 +11,6 @@ import viber from "../images/nav/viber.png"
 export default ({ initialFormData }) => {
   const [formData, setFormData] = useState(initialFormData)
 
-  console.log(formData)
-
   const BY = {
     format: "+375 (##) ### ## ##",
     placeholder: "+375 (29) 262 40 63",

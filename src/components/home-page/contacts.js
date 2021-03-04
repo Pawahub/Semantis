@@ -9,7 +9,6 @@ import { faPaperPlane, faCheckCircle, faCaretDown } from "@fortawesome/free-soli
 import { faInstagram, faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import dotted from "../../images/contacts/dotted2.svg"
 import dottedgroup from "../../images/contacts/dottedgroup.svg"
-import zCircle from "../../images/contacts/zcircle.svg"
 
 export default () => {
   const { state, dispatch } = useContext(StateContext)
@@ -161,9 +160,8 @@ export default () => {
 
   return (
     <section id="contacts" className="contacts">
-      <img className="dotted2 d-none d-lg-block" src={dotted} alt=""/>
-      <img className="dottedgroup d-none d-md-block" src={dottedgroup} alt=""/>
-      <img className="zCircle d-none d-lg-block" src={zCircle} alt=""/>
+      <img className="dotted2 d-none d-lg-block" src={dotted} alt="background"/>
+      <img className="dottedgroup d-none d-md-block" src={dottedgroup} alt="background"/>
       <span className={showForm ? "bg-white show" : "bg-white"}/>
       <div className="container py-5">
         <div className="row justify-content-center">
@@ -233,7 +231,7 @@ export default () => {
                 <FontAwesomeIcon icon={faCheckCircle} size="lg"
                                  className={formData.email.isValid ? "ok blue-color d-block" : "ok d-none"}/>
               </div>
-              <sub>Вы не будете получать автоматическую рассылку на указанный E-mail</sub>
+              <sub>Вы не будете получать от нас рассылку на указанный E-mail</sub>
               <div className="input-group-main">
                 <label htmlFor="message">Опишите в двух словах ваш вопрос</label><br/>
                 <textarea
@@ -276,8 +274,7 @@ export default () => {
                 Беларусь, Гродно, ул. Урицкого, 12, офис 306
               </a>
             </div>
-            <div>
-              <h6>Новости компании</h6>
+            <div className="text-center text-md-left pt-3">
               <a href="https://www.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank"
                  className="mr-2">
                 <FontAwesomeIcon icon={faInstagram} size="lg" className="blue-color"/>

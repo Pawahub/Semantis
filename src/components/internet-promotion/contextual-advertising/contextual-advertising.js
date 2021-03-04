@@ -39,7 +39,7 @@ export default function ContextualAdvertising() {
           <img src={dots} className="dots" alt="dots"/>
         ) : null}
         <div className="row justify-content-center justify-content-lg-end">
-          <div className="col-md-8 col-lg-6 d-flex flex-column">
+          <div className="col-md-8 col-lg-6 d-flex flex-column justify-content-between">
             <h2>Контекстная <span>реклама</span></h2>
             <p>
               Показывается пользователям, которые уже ищут рекламируемый товар.
@@ -48,7 +48,7 @@ export default function ContextualAdvertising() {
               Тем самым контекстная реклама даёт нужный результат вашему бизнесу.
             </p>
             <List listArr={listArr}/>
-            <button className="mainBtn align-self-md-start mt-3" onClick={handleClick}>Мне подходит</button>
+            <button className="mainBtn align-self-md-start" onClick={handleClick}>Мне подходит</button>
           </div>
         </div>
       </div>

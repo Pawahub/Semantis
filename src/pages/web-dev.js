@@ -5,9 +5,9 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 import FirstSection from "../components/web-dev/first-section"
+import Case from "../components/web-dev/case"
 import WeWillDo from "../components/web-dev/we-will-do"
 import StagesOfCreation from "../components/web-dev/stages-of-creation"
-import Case from "../components/web-dev/case"
 import Contacts from "../components/home-page/contacts"
 
 
@@ -25,9 +25,9 @@ const WebDevPage = ({ location }) => {
         <Layout location={location}>
           <SEO title="Разработка сайтов и веб-приложений"/>
           <FirstSection/>
+          <Case/>
           <WeWillDo/>
           <StagesOfCreation/>
-          <Case/>
           <Contacts/>
         </Layout>
       )
@@ -42,15 +42,15 @@ const WebDevPage = ({ location }) => {
           animationTimer={750}
         >
           <FirstSection/>
+          <Case/>
           <WeWillDo/>
           <StagesOfCreation/>
-          <Case/>
           <Contacts/>
         </ReactPageScroller>
       </Layout>
     )
   } else return (
-    <>
+    <mains style={{opacity: 0}}>
       <SEO title="Разработка сайтов и веб-приложений"
            description="Создание работающих сайтов. Разработка веб-приложений. Техническая поддержка уже существующих проектов."
       />
@@ -96,7 +96,7 @@ const WebDevPage = ({ location }) => {
         Мы осуществляем индивидуальный подход к каждому клиенту. Поэтому еще до начала работы над проектом мы собираем
         данные и детально прорабатываем все вопросы, связанные с видом деятельности заказчика.
       </p>
-    </>
+    </mains>
   )
 }
 

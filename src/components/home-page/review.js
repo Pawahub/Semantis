@@ -1,8 +1,6 @@
 import React from "react"
 import Carousel from "react-bootstrap/Carousel"
 
-import z from "../../images/review/z.svg"
-import zz from "../../images/about/zz.svg"
 import astronaut from "../../images/review/astronaut.png"
 import lexor from "../../images/review/lexor.png"
 import citrus from "../../images/review/citrus.png"
@@ -16,8 +14,6 @@ import mantashjan from "../../images/review/mantashjan.png"
 export default () => {
   return (
     <section className="review">
-      <img className="zz d-none d-md-block" src={zz} alt="zz"/>
-      <img className="z3 d-none d-md-block" src={z} alt="z"/>
       <div className="circle circle1">
         <img src={astronaut} className="img-fluid" alt="astronaut"/>
       </div>
@@ -52,7 +48,8 @@ export default () => {
               </div>
               <a href="https://lexor.spb.ru/" target="_blank" rel="noreferrer noopener">lexor.spb.ru</a>
               <p className="mt-3">
-                Приятно иметь делао с ваешй компанией. Сервис на высоте и поддержка по всем направлениям.
+                Если хотите найти исполнителя для конкретной задачи, то знайте, что здесь Вы найдёте ещё надежного
+                партнёра и профессионального подрядчика по всем направлениям.
               </p>
             </Carousel.Item>
             <Carousel.Item>
@@ -67,7 +64,7 @@ export default () => {
               </div>
               <a href="https://astronaut.by/" target="_blank" rel="noreferrer noopener">astronaut.by</a>
               <p className="mt-3">
-                Команда настоящих профессионалов. Свою работу выполняют качественно и точно в срок.
+                Приятно иметь дело с такой командой. Свою работу выполняют качественно и точно в срок. Сервис на высоте.
               </p>
             </Carousel.Item>
             <Carousel.Item>
@@ -82,8 +79,8 @@ export default () => {
               </div>
               <a href="https://uk-am.com/" target="_blank" rel="noreferrer noopener">uk-am.com</a>
               <p className="mt-3">
-                Очень порадовал ваш профессиональный подход к созданию сайта и в целом. Благодоря вам теперь знаю как
-                это всё работает. Очень рада что обратилась к вам. Спасибо!
+                Очень порадовал подход к созданию сайта и к разработке стратегии для продвижения. Благодоря вам теперь знаю как
+                это всё работает. Очень рада, что обратилась к вам. Спасибо!
               </p>
             </Carousel.Item>
           </Carousel>

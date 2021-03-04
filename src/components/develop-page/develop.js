@@ -6,7 +6,7 @@ export default function Develop() {
   return (
     <section className="develop">
       <div className="container">
-        <div className="row">
+        <div className="row mt-5">
           <div className="col-md-6">
             <img className="img-responsive" src={develop} alt="develop"/>
           </div>

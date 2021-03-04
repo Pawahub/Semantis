@@ -1,61 +1,34 @@
-import React from "react"
-import { Card } from "../../card"
+import React, { useContext } from "react"
+import { StateContext } from "../../../state/stateCotext"
+import { CSSTransition, TransitionGroup } from "react-transition-group"
 
-import brif from "../../../images/web-dev/brif.svg"
-import dev from "../../../images/web-dev/dev.svg"
-import create from "../../../images/web-dev/create.svg"
-import result from "../../../images/web-dev/result.svg"
 import dots from "../../../images/web-dev/dots.svg"
 import treangls from "../../../images/web-dev/treangls.svg"
+import stage1 from "../../../images/web-dev/1.png"
+import stage2 from "../../../images/web-dev/2.png"
+import stage3 from "../../../images/web-dev/3.png"
+import stage4 from "../../../images/web-dev/4.png"
+import stage5 from "../../../images/web-dev/5.png"
+import stage6 from "../../../images/web-dev/6.png"
 
 import "./stages-of-creation.sass"
 
 export default function StagesOfCreation() {
+  const { state } = useContext(StateContext)
+
+  const stages = [
+    { img: stage1, text: "Формирование бизнес-логики" },
+    { img: stage2, text: "Разработка дизайна" },
+    { img: stage3, text: "Разработка функционала" },
+    { img: stage4, text: "Вёртска сайта" },
+    { img: stage5, text: "Наполнение контентом" },
+    { img: stage6, text: "Оптимизация и публикация" }
+  ]
+
+  const delay = [500, 1000, 1500, 2000, 2500, 3000]
+
   return (
     <section className="stages-of-creation">
-      <div className="container">
-        <div className="row justify-content-center">
-          <h2 className="text-center mx-3">Этапы создания</h2>
-        </div>
-        <div className="row justify-content-center mt-5">
-          <div className="col-lg-3 col-md-6 col-10">
-            <Card content={{
-              img: brif,
-              nomer: "01",
-              title: "Брифинг",
-              description: "Мы получаем от вас заявку и отправляем вам для заполнения бриф. " +
-                "Обрабатываем полученные данные и формируем для вас предложение."
-            }}/>
-          </div>
-          <div className="col-lg-3 col-md-6 col-10">
-            <Card content={{
-              img: dev,
-              nomer: "02",
-              title: "Разработка",
-              description: "После сбора всей необходимой информации " +
-                "мы приступаем к разработке прототипов и предоставляем их вам для внесения правок и согласования."
-            }}/>
-          </div>
-          <div className="col-lg-3 col-md-6 col-10">
-            <Card content={{
-              img: create,
-              nomer: "03",
-              title: "Создание",
-              description: "После согласования мы получаем от вас все необходимые материалы, " +
-                "оговариваем другие важные моменты и приступаем к созданию сайта."
-            }}/>
-          </div>
-          <div className="col-lg-3 col-md-6 col-10">
-            <Card content={{
-              img: result,
-              nomer: "04",
-              title: "Результат",
-              description: "Вы получаете адаптивный под все виды устройств и оптимизированный для " +
-                "дальнейшего продвижения в интернете сайт точно в срок."
-            }}/>
-          </div>
-        </div>
-      </div>
       <div className="stages-of-creation__items">
         <div className="item1">
           <img src={dots} alt="dots"/>
@@ -63,7 +36,34 @@ export default function StagesOfCreation() {
         <div className="item2">
           <img src={treangls} alt="treangls"/>
         </div>
-
+      </div>
+      <div className="container py-5 d-flex justify-content-center align-items-center flex-wrap">
+        <h2>Как мы работаем?</h2>
+        <TransitionGroup className="row m-0 justify-content-center">
+          {(state.selectedSection === 3 || /Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) ?
+            (stages.map(({ img, text }, index) => (
+              <div className="col-12 col-md-4 m-0 p-0">
+                <CSSTransition
+                  in={state.selectedSection === 3}
+                  key={index}
+                  timeout={500}
+                  classNames="fade"
+                >
+                  <div className={(/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) ? "step fade-enter-done" : "step"} style={{ transitionDelay: delay[index] + "ms" }}>
+                    <img src={img} alt={text} className="rounded-circle"
+                         style={{ animationDelay: delay[index] + "ms" }}/>
+                    <div>
+                      <div className="d-md-none d-flex number">{index + 1}
+                        <strong>&#8228;</strong>
+                      </div>
+                      <h6>{text}</h6>
+                    </div>
+                  </div>
+                </CSSTransition>
+                <div className="progressLine" style={{ transitionDelay: delay[index] - 450 + "ms" }}>{index + 1}</div>
+              </div>
+            ))) : null}
+        </TransitionGroup>
       </div>
     </section>
   )

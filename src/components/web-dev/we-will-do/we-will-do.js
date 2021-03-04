@@ -1,14 +1,12 @@
 import React, { useContext, useState } from "react"
 import { StateContext } from "../../../state/stateCotext"
-import { CSSTransition, TransitionGroup } from "react-transition-group"
+import { CSSTransition, SwitchTransition } from "react-transition-group"
 import { rippleEffect } from "../../main"
 
 import SectionLeftRight from "../../section-left-right"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons"
-import line1 from "../../../images/web-dev/line1.svg"
-import line2 from "../../../images/web-dev/line2.svg"
+import { faAngleDown, faAngleUp, faCaretRight } from "@fortawesome/free-solid-svg-icons"
 import ellipse from "../../../images/web-dev/ellipse.svg"
 import polygon from "../../../images/web-dev/polygon.svg"
 
@@ -45,16 +43,18 @@ export default () => {
               </span>
             </div>
             <div className="text">
-              <TransitionGroup component={null}>
+              <SwitchTransition>
                 <CSSTransition
-                  in={currentText === idx}
+                  addEndListener={(node, done) => {
+                    node.addEventListener("transitionend", done, false);
+                  }}
                   key={currentText}
                   timeout={0}
                   classNames="toggle"
                 >
                   {text[idx]}
                 </CSSTransition>
-              </TransitionGroup>
+              </SwitchTransition>
               <button className="mainBtn whiteBtn my-3" onClick={() => dispatch({ type: "open", payload: "lead" })}>Мне
                 подходит
               </button>
@@ -64,6 +64,7 @@ export default () => {
       } else {
         return (
           <li key={idx} className={currentText === idx ? "active" : null} data-index={idx}>
+            {currentText === idx ? <FontAwesomeIcon icon={faCaretRight} size="lg" className="curret"/> : null}
             <div className="number"><span>{idx < 10 ? "0" + (idx + 1) : idx + 1} </span><strong>&#8228;</strong></div>
             <span>{el}</span>
           </li>
@@ -130,54 +131,40 @@ export default () => {
   ]
 
   const left = (
-    <>
-      <div className="container we-will-do">
-        <div className="row justify-content-md-start justify-content-sm-center">
-          <div className="col-lg-5 col-md-6 col-sm-12">
-            <h2>Мы делаем:</h2>
-            <ul className="home-list m-0 py-2" onClick={handleList}>
-              {list(["Имиджевые сайты", "Корпоративные сайты", "Интернет-магазины", "Сайты-визитки",
-                "Онлайн-сервисы", "Промосайты", "Лендинги"])}
-            </ul>
-            и другие типы сайтов...
-          </div>
+    <div className="container we-will-do">
+      <div className="row justify-content-md-start justify-content-sm-center">
+        <div className="col-lg-5 col-md-6 col-sm-12">
+          <h2>Мы делаем:</h2>
+          <ul className="home-list m-0 py-2" onClick={handleList}>
+            {list(["Имиджевые сайты", "Корпоративные сайты", "Интернет-магазины", "Сайты-визитки",
+              "Онлайн-сервисы", "Промосайты", "Лендинги"])}
+          </ul>
+          и другие типы сайтов...
         </div>
       </div>
-      <div className="we-will-do__left">
-        <div className="we-will-do__left-img1">
-          <img src={ellipse} alt="ellipse"/>
-        </div>
-        <div className="we-will-do__left-img2">
-          <img src={polygon} alt="polygon"/>
-        </div>
-        <div className="we-will-do__left-img3">
-          <img src={ellipse} alt="ellipse"/>
-        </div>
-      </div>
-    </>
+      <img src={ellipse} alt="ellipse"/>
+      <img src={polygon} alt="polygon"/>
+    </div>
   )
 
   const right = (
     <div className="section50 section50-right we-will-do__right">
       <div className="text">
-        <TransitionGroup component={null}>
+        <SwitchTransition>
           <CSSTransition
-            in={currentText === 0}
             key={currentText}
+            addEndListener={(node, done) => {
+              node.addEventListener("transitionend", done, false);
+            }}
             timeout={0}
             classNames="fade"
           >
             {text[currentText]}
           </CSSTransition>
-        </TransitionGroup>
+        </SwitchTransition>
         <button className="mainBtn mt-3" onClick={handleClick}>Мне подходит</button>
       </div>
-      <div className="we-will-do__right-line1">
-        <img src={line1} alt="line1"/>
-      </div>
-      <div className="we-will-do__right-line2">
-        <img src={line2} alt="line2"/>
-      </div>
+
     </div>
   )
 

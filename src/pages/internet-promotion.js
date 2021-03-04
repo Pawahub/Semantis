@@ -6,8 +6,8 @@ import Layout from "../components/layout"
 
 import FirstSectionIP from "../components/internet-promotion/first-section"
 import OptimizationSite from "../components/internet-promotion/optimization-site"
-import TargetedAdvertising from "../components/internet-promotion/targeted-advertising"
 import ContextualAdvertising from "../components/internet-promotion/contextual-advertising"
+import TargetedAdvertising from "../components/internet-promotion/targeted-advertising"
 import Contacts from "../components/home-page/contacts"
 
 const InternetPromotionPage = ({ location }) => {
@@ -25,8 +25,8 @@ const InternetPromotionPage = ({ location }) => {
           <SEO title="Продвижение в интернете"/>
           <FirstSectionIP/>
           <OptimizationSite/>
-          <TargetedAdvertising/>
           <ContextualAdvertising/>
+          <TargetedAdvertising/>
           <Contacts/>
         </Layout>
       )
@@ -42,14 +42,14 @@ const InternetPromotionPage = ({ location }) => {
         >
           <FirstSectionIP/>
           <OptimizationSite/>
-          <TargetedAdvertising/>
           <ContextualAdvertising/>
+          <TargetedAdvertising/>
           <Contacts/>
         </ReactPageScroller>
       </Layout>
     )
   } else return (
-    <>
+    <main style={{opacity: 0}}>
       <SEO title="Продвижение в интернете"
            description="Контекстная реклама. Таргетированная реклама. Оптимизация сайта. Продвижение сайта в Google. Продвижение сайта в Яндекс. Продвижение в социальных сетях."
       />
@@ -93,7 +93,7 @@ const InternetPromotionPage = ({ location }) => {
 
         Продвижение в соцсетях SMM Гарантируем положительную динамику уже в первый месяц работы с нами.
       </p>
-    </>
+    </main>
   )
 }
 

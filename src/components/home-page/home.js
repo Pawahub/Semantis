@@ -45,7 +45,7 @@ export default () => {
         </div>
       </div>
       <div className="mouse d-lg-block d-none">
-        <img src={mouse} alt=""/>
+        <img src={mouse} alt="scrolldown"/>
       </div>
     </section>
   )

@@ -33,7 +33,6 @@ const IndexPage = ({ location }) => {
     } else return (
       <Layout selectedSection={sectionNumber} location={location}>
         <SEO title="Веб-студия"
-
         />
         <ReactPageScroller
           customPageNumber={sectionNumber}
@@ -51,7 +50,7 @@ const IndexPage = ({ location }) => {
       </Layout>
     )
   } else return (
-    <>
+    <main style={{opacity: 0}}>
       <SEO title="Веб-студия"
            description="Разработка сайтов и веб-приложений. Оптимизация, поддержка и продвижение сайтов. Дизайн. Продвижение в соц.сетях."
       />
@@ -73,7 +72,7 @@ const IndexPage = ({ location }) => {
         постоянно информируем о прогрессе на наиболее важных этапах. Строго соблюдаем условия о неразглашении
         коммерческой тайны. И выполняем свою работу точно в срок.
       </p>
-    </>
+    </main>
   )
 }
 

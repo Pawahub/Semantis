@@ -52,15 +52,15 @@ export default function TargetedAdvertising() {
               Мы настроим её на вашу целевую аудиторию по заданным параметрам: пол, возраст, геолокация и т.д.,
               что позволит большинству потенциальных клиентов прийти именно к вам.
             </p>
-            <button className="mainBtn align-self-md-start mt-3" onClick={handleClick}>Мне подходит</button>
           </div>
         </div>
         <div className="row justify-content-center">
-          <div className="col-12 col-md-6 col-lg-8">
+          <div className="col-12 col-md-6 col-lg-8 d-flex flex-column justify-content-between">
             <h3>Преимущества таргетированной рекламы:</h3>
             <List listArr={listArr}/>
+            <button className="mainBtn align-self-md-start" onClick={handleClick}>Мне подходит</button>
           </div>
-          <div className="col-12 col-sm-8 col-md-6 col-lg-4">
+          <div className="col-12 col-sm-8 col-md-6 col-lg-4 mt-5">
             <div className="targeted-advertising__slider" onClick={sliderHandler}>
               <div className="targeted-advertising__slider-item prev">
                 <div className="arrow"><img src={arrow} alt="arrow"/></div>

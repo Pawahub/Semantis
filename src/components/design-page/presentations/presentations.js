@@ -49,7 +49,7 @@ export default function Presentations() {
             </p>
             <p>С помощью презентации мы подчеркнём вашу экспертность, выделим ваши сильные стороны, сосредоточим
               внимание клиента на выгодах от сотрудничества с вами, повысим лояльность к вашему продукту.</p>
-            <button className="mainBtn mt-3" onClick={handleClick}>Получить предложение</button>
+            <button className="mainBtn mt-3 align-self-md-start" onClick={handleClick}>Получить предложение</button>
           </div>
         </div>
       </div>

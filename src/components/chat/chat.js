@@ -24,7 +24,7 @@ export default ({ location }) => {
         else return darkBtn
         break
       case "/web-dev/":
-        if (state.selectedSection === 1 || state.selectedSection === 3) return lightBtn
+        if (state.selectedSection === 1 || state.selectedSection === 2) return lightBtn
         else return darkBtn
         break
       case "/internet-promotion/":
@@ -39,7 +39,7 @@ export default ({ location }) => {
         else return darkBtn
         break
       default:
-        return lightBtn
+        return darkBtn
     }
   }
 

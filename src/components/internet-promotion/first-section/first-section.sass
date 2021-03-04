@@ -1,20 +1,10 @@
 .first-section-IP
   padding-bottom: 50px
 
-  &__elements
-    display: none
-
-  .ellipse1
-    position: absolute
-    right: 5%
-    bottom: 15%
-    pointer-events: none
-
+  &__elements,
+  .ellipse1,
   .ellipse2
-    pointer-events: none
-    position: absolute
-    right: 3%
-    bottom: 30%
+    display: none
 
   &__content
     position: relative
@@ -25,6 +15,7 @@
 
     p, ul
       padding-left: 80px
+      margin-bottom: 30px
 
 @media (max-width: 440px)
   .first-section-IP
@@ -41,12 +32,6 @@
 
       p, ul
         padding-left: 0
-
-    .ellipse1
-      bottom: 5%
-
-    .ellipse2
-      bottom: 15%
 
 @media (min-width: 768px)
   .first-section-IP
@@ -70,6 +55,20 @@
         top: 35%
         left: 50%
         transform: translate(-50%)
+
+    .ellipse1
+      display: block
+      pointer-events: none
+      position: absolute
+      right: 15%
+      bottom: 20%
+
+    .ellipse2
+      display: block
+      pointer-events: none
+      position: absolute
+      right: 13%
+      bottom: 35%
 
     .mainBtn
       margin-left: 80px

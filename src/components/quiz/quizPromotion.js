@@ -23,9 +23,9 @@ export default ({ step, desc, mess }) => {
   const checkInput = (e, expression) => expression.test(e.target.value) ? null : e.target.classList.add("failed")
 
   if (step === 1) return (
-    <div className="d-flex flex-column">
+    <div className="d-flex flex-column align-self-start w-100">
       <div className="input-group-main">
-        <label htmlFor="field">Ваша сфера деятельности</label><br/>
+        <label htmlFor="field">Ваша сфера деятельности:</label><br/>
         <input
           id="field"
           name="field"
@@ -38,7 +38,7 @@ export default ({ step, desc, mess }) => {
         />
       </div>
       <div className="input-group-main">
-        <label htmlFor="website">Укажите ссылку на ваш сайт</label><br/>
+        <label htmlFor="website">Ссылка на Ваш сайт:</label><br/>
         <input
           id="website"
           name="website"
@@ -103,7 +103,7 @@ export default ({ step, desc, mess }) => {
   )
   else if (step === 3) return (
     <div className="input-group-main">
-      <label htmlFor="goal" className="mb-2">Опишите кратко Ваши цели продвижения в интеренте</label>
+      <label htmlFor="goal" className="mb-2">Опишите кратко Ваши цели продвижения в интеренте:</label>
       <textarea
         id="goal"
         name="message"

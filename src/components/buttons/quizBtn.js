@@ -15,7 +15,7 @@ export default function QuizBtn() {
 
   return (
     <button className="mainBtn" onClick={handleGetPrice}>
-      Узнать цену&nbsp;<FontAwesomeIcon icon={faHandHoldingUsd} className="pr-2" size="lg"/>
+      Оценить проект&nbsp;<FontAwesomeIcon icon={faHandHoldingUsd} className="pr-2" size="lg"/>
     </button>
   )
 }

@@ -70,9 +70,9 @@ export default ({ siteTitle, location }) => {
         return state.selectedSection === 2 ? "whiteMenu" : "grayMenu"
         break
       case "/web-dev/":
-        if (state.selectedSection === 1) {
+        if (state.selectedSection === 2) {
           return "left-gray_right-white"
-        } else if (state.selectedSection === 3) {
+        } else if (state.selectedSection === 1) {
           return "whiteMenu"
         } else return "grayMenu"
         break
@@ -108,7 +108,7 @@ export default ({ siteTitle, location }) => {
         return state.selectedSection === 2 ? whiteLogo : blueLogo
         break
       case "/web-dev/":
-        return state.selectedSection === 3 ? whiteLogo : blueLogo
+        return state.selectedSection === 1 ? whiteLogo : blueLogo
         break
       case "/design/":
         return state.selectedSection === 0 ? whiteLogo : blueLogo

@@ -41,8 +41,8 @@ export default ({ step, desc, mess }) => {
   }
 
   if (step === 1) return (
-    <div className="input-group-main">
-      <label htmlFor="website" className="mb-2">Укажите ссылку на ваш сайт</label><br/>
+    <div className="input-group-main align-self-start w-100">
+      <label htmlFor="website" className="mb-2">Укажите ссылку на Ваш сайт:</label><br/>
       <input
         id="website"
         step="1"
@@ -141,7 +141,7 @@ export default ({ step, desc, mess }) => {
   else if (step === 3) return (
     <div className="input-group-main">
       <label htmlFor="step3" className="mb-2">Если у Вас есть пожелания, которые необходимо учесть, пожалуйста, укажите
-        их здесь</label>
+        их здесь:</label>
       <textarea
         id="step3"
         name="message"

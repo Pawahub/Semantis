@@ -109,8 +109,8 @@ export default ({ step, desc, mess }) => {
     </div>
   )
   else if (step === 2) return (
-    <div className="input-group-main text-center">
-      <label htmlFor="step2" className="mb-2">Если есть конкретный дедлайн, пожалуйста, укажите его здесь</label><br/>
+    <div className="input-group-main">
+      <label htmlFor="step2" className="mb-2">Если есть конкретный дедлайн, пожалуйста, укажите его здесь:</label><br/>
       <DatePicker
         selected={step2}
         onChange={date => setStep2(date)}
@@ -122,7 +122,7 @@ export default ({ step, desc, mess }) => {
   else if (step === 3) return (
     <div className="input-group-main">
       <label htmlFor="step3" className="mb-2">Если у Вас есть особенные пожелания, которые необходимо учесть,
-        пожалуйста, укажите их здесь</label>
+        пожалуйста, укажите их здесь:</label>
       <textarea
         id="step3"
         name="message"

@@ -1,58 +1,58 @@
 import React, { useContext } from "react"
 import { StateContext } from "../../state/stateCotext"
-import { TransitionGroup, CSSTransition } from "react-transition-group"
-
-import triangles from "../../images/how/triangles.svg"
-import zz from "../../images/how/zz.svg"
-import stage1 from "../../images/how/1.png"
-import stage2 from "../../images/how/2.png"
-import stage3 from "../../images/how/3.png"
-import stage4 from "../../images/how/4.png"
-import stage5 from "../../images/how/5.png"
-import stage6 from "../../images/how/6.png"
+import { CSSTransition, TransitionGroup } from "react-transition-group"
+import { Card } from "../card"
 
 export default () => {
   const { state } = useContext(StateContext)
 
-  const stages = [
-    { img: stage1, text: "Формирование бизнес-логики" },
-    { img: stage2, text: "Разработка дизайна" },
-    { img: stage3, text: "Разработка функционала" },
-    { img: stage4, text: "Вёртска сайта" },
-    { img: stage5, text: "Наполнение контентом" },
-    { img: stage6, text: "Оптимизация и публикация" }
+  const offers = [
+    {
+      oldPrice: "$ 250",
+      price: "$ 200",
+      title: "Сайт-визитка (стандартный функционал)",
+      discount: "-20%"
+    },
+    {
+      oldPrice: "от $ 250",
+      price: "🔥 $ 190",
+      title: "Разработка логитпа",
+      discount: "-24%"
+    },
+    {
+      oldPrice: "от $ 1050",
+      price: "от $ 925",
+      title: "Интернет-магазин",
+      description: "1 год технической поддержки в подарок",
+      discount: "-12%"
+    },
+    {
+      oldPrice: "от $ 890",
+      price: "от $ 780",
+      title: "Корпоративный сайт (расширенный функционал)",
+      description: "Интеграция с CRM-системой в подарок",
+      discount: "-12%"
+    }
   ]
 
-  const delay = [500, 1000, 1500, 2000, 2500, 3000]
-
   return (
-    <section className="how">
-      <div className="container py-5 d-flex justify-content-center align-items-center flex-wrap">
-        <img className="triangles d-none d-md-block" src={triangles} alt=""/>
-        <img className="zz2 d-none d-lg-block" src={zz} alt=""/>
-        <h2 className="text-white">Как мы работаем?</h2>
-        <TransitionGroup className="row m-0 justify-content-center">
+    <section className="how py-5">
+      <div className="container">
+        <div className="row justify-content-center mb-5">
+          <h2 className="text-white">Мы предлагаем</h2>
+        </div>
+        <TransitionGroup className="row justify-content-center">
           {(state.selectedSection === 2 || /Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) ?
-            (stages.map(({ img, text }, index) => (
-              <div className="col-12 col-md-4 m-0 p-0">
+            (offers.map((offer, index) => (
+              <div className="col-lg-3 col-md-6 col-10 mt-3">
                 <CSSTransition
                   in={state.selectedSection === 2}
                   key={index}
-                  timeout={500}
-                  classNames="fade"
+                  timeout={500 * index}
+                  classNames="flip"
                 >
-                  <div className={(/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) ? "step fade-enter-done" : "step"} style={{ transitionDelay: delay[index] + "ms" }}>
-                    <img src={img} alt={text} className="rounded-circle"
-                         style={{ animationDelay: delay[index] + "ms" }}/>
-                    <div>
-                      <div className="d-md-none d-flex number">{index + 1}
-                        <strong>&#8228;</strong>
-                      </div>
-                      <h6>{text}</h6>
-                    </div>
-                  </div>
+                  <Card content={offer}/>
                 </CSSTransition>
-                <div className="progressLine" style={{ transitionDelay: delay[index] - 450 + "ms" }}>{index + 1}</div>
               </div>
             ))) : null}
         </TransitionGroup>
