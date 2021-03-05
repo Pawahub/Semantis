@@ -5,10 +5,8 @@ import List from "../../list"
 
 import dots1 from "../../../images/design/dots1.svg"
 import fon from "../../../images/design/fon.png"
-import polygon from "../../../images/design/polygon.png"
 import ellipse from "../../../images/design/ellipse.png"
 import ellipse1 from "../../../images/design/ellipse1.png"
-import ellipse2 from "../../../images/design/ellipse2.png"
 import spin from "../../../images/design/spin.svg"
 
 import "./logo.sass"
@@ -40,10 +38,8 @@ export default function Logo() {
       <div className="logo__elements">
         <div className="left">
           <img src={dots1} className='dots1' alt="dots1"/>
-          <img src={polygon} className='polygon' alt="polygon"/>
-          <img src={ellipse2} className='ellipse2' alt="ellipse2"/>
         </div>
-        {window.innerWidth >= 990 ? elements : null}
+        {window.innerWidth >= 992 ? elements : null}
       </div>
       <div className="container">
         <div className="row justify-content-start">

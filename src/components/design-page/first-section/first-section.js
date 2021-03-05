@@ -28,12 +28,13 @@ export default function FirstSectionDesign() {
         <div className="row justify-content-start">
           <div className="col-12 col-md-8 col-lg-6 d-flex flex-column">
             <h1>Дизайн сайта</h1>
-            <p>Сайт компании выглядит не современно и похож на множество других?
-              Снизилось количество посетителей? Оптимальное решение — сделать редизайн сайта.
-              Это возможность улучшить образ и имидж компании в глазах клиента,
-              привлечь новых посетителей и удержать старых, открыть компанию с новой
+            <p>Сайт компании выглядит не современно и похож на множество других?<br/>
+              Снизилось количество посетителей?<br/><br/>
+              Оптимальное решение — <b>сделать редизайн сайта!</b> Это возможность улучшить образ и имидж компании в глазах
+              клиента, привлечь новых посетителей и удержать старых, открыть компанию с новой
               стороны.</p>
-            <button className="mainBtn whiteBtn align-self-md-start" onClick={() => dispatch({ type: "open", payload: "lead" })}>
+            <button className="mainBtn whiteBtn mt-3 align-self-md-start"
+                    onClick={() => dispatch({ type: "open", payload: "lead" })}>
               Получить предложение
             </button>
           </div>

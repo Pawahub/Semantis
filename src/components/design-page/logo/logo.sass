@@ -22,6 +22,7 @@
     margin-top: 40px
 
   &__elements
+    display: none
     pointer-events: none
     position: absolute
     top: 0
@@ -36,30 +37,16 @@
       width: 50%
       height: 100%
 
-      .ellipse2,
-      .dots1,
-      .polygon
-        position: absolute
-
       .dots1
+        position: absolute
         left: 8%
         top: 40%
         transform: translateY(-40%)
 
-      .ellipse2
-        left: 80px
-        top: 20%
-        transform: translateY(-20%)
-
-      .polygon
-        left: 50px
-        top: 18%
-        transform: translateY(-18%)
-
     .right
       display: none
 
-@media screen and (min-width: 990px)
+@media screen and (min-width: 992px)
   .logo
     min-height: 100vh
 
@@ -95,13 +82,10 @@
           transform: translateY(-25%)
           right: 150px
 
-@media screen and (max-width: 500px)
+@media screen and (max-width: 575px)
   .logo
     ul
       padding-left: 10px
 
     > *
       z-index: 2
-
-    &__elements
-      z-index: 1 !important

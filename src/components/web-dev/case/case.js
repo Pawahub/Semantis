@@ -125,12 +125,6 @@ export default function Case() {
     }
   ]
 
-  const slider = (
-    <SliderSlick settings={settingsSlider}>
-      {caseList(arr)}
-    </SliderSlick>
-  )
-
   return (
     <section className={state.selectedSection === 3 ? "case active" : "case"}>
       <div className="container">
@@ -139,7 +133,9 @@ export default function Case() {
         </div>
         <div className="row mt-5">
           <div className="col-12">
-            {slider}
+            <SliderSlick settings={settingsSlider}>
+              {caseList(arr)}
+            </SliderSlick>
           </div>
         </div>
       </div>

@@ -70,10 +70,12 @@ export default ({ siteTitle, location }) => {
         return state.selectedSection === 2 ? "whiteMenu" : "grayMenu"
         break
       case "/web-dev/":
-        if (state.selectedSection === 2) {
-          return "left-gray_right-white"
+        if (state.selectedSection === 0) {
+          return "left-white_right-gray"
         } else if (state.selectedSection === 1) {
           return "whiteMenu"
+        } else if (state.selectedSection === 2) {
+          return "left-gray_right-white"
         } else return "grayMenu"
         break
       case "/internet-promotion/":

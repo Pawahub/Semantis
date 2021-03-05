@@ -459,6 +459,7 @@ h1, h2 {
 
 .flip-enter-active {
     opacity: 0;
+    transform-origin: left;
     transform: rotateY(120deg);
 }
 
@@ -471,11 +472,14 @@ h1, h2 {
 /*---------------------------------------------------*/
 /*                   R E V I E W                     */
 /*---------------------------------------------------*/
-.review {
+.testimonials {
     position: relative;
-    max-width: 100vw;
+    width: 100%;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
     background: #F6FAFF;
+    overflow: hidden;
 }
 
 .circle {
@@ -522,39 +526,31 @@ h1, h2 {
     max-width: 60px;
 }
 
-.review .carousel {
+.testimonials .slick-slider {
     margin-top: 30px;
     background: #F6FAFF;
     box-shadow: 0 10px 30px rgba(36, 67, 176, 0.2);
     font-weight: 300;
-    z-index: 2;
 }
 
-.review .carousel-control-next, .review .carousel-control-prev {
-    display: flex;
-    top: 50%;
-    transform: translateY(-50%);
+.testimonials .slick-next:before, .testimonials .slick-prev:before {
+    content: "";
 }
 
-.review .carousel-control-next {
-    right: -15%;
-}
-
-.review .carousel-control-prev {
-    left: -15%;
-}
-
-.review .carousel-control-next-icon, .review .carousel-control-prev-icon {
-    height: 30px;
+.testimonials .slick-next, .testimonials .slick-prev {
     width: 30px;
+    height: 30px;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
-.review .carousel-control-next-icon {
-    background-image: url("../images/review/next.svg");
+.testimonials .slick-next {
+    background-image: url("../images/testimonials/next.svg") !important;
 }
 
-.review .carousel-control-prev-icon {
-    background-image: url("../images/review/prev.svg");
+.testimonials .slick-prev {
+    background-image: url("../images/testimonials/prev.svg") !important;
 }
 
 /*---------------------------------------------------*/
@@ -904,10 +900,6 @@ textarea {
     }
 
     .circle {
-        display: none;
-    }
-
-    .carousel-control-next, .carousel-control-prev {
         display: none;
     }
 }
