@@ -47,7 +47,7 @@ export default function TargetedAdvertising() {
           <div className="col-12 d-flex flex-column">
             <h2 className="d-block d-md-none">Таргетинг</h2>
             <h2 className="d-none d-md-block">Таргетированная реклама</h2>
-            <p className="mt-3 mt-md-5">
+            <p>
               Даёт возможность не только увеличить продажи, но и продавать легко.
               Мы настроим её на вашу целевую аудиторию по заданным параметрам: пол, возраст, геолокация и т.д.,
               что позволит большинству потенциальных клиентов прийти именно к вам.

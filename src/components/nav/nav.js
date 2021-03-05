@@ -80,11 +80,11 @@ export default ({ siteTitle, location }) => {
         break
       case "/internet-promotion/":
         if (state.selectedSection === 1) {
-          return "gray"
+          return "left-white_right-gray"
         } else return "grayMenu"
         break
       case "/develop/":
-        return "greyMenu line-none"
+        return "greyMenu"
         break
       case "/design/":
         if (state.selectedSection === 0) {
@@ -97,7 +97,7 @@ export default ({ siteTitle, location }) => {
         if (state.selectedSection === 3) {
           return "whiteMenu"
         } else if (state.selectedSection === 0) {
-          return "gray"
+          return "left-white_right-gray"
         } else return "grayMenu"
         break
       default:
@@ -110,6 +110,9 @@ export default ({ siteTitle, location }) => {
         return state.selectedSection === 2 ? whiteLogo : blueLogo
         break
       case "/web-dev/":
+        return state.selectedSection === 1 ? whiteLogo : blueLogo
+        break
+      case "/internet-promotion/":
         return state.selectedSection === 1 ? whiteLogo : blueLogo
         break
       case "/design/":

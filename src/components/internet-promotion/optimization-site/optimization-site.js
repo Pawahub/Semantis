@@ -23,7 +23,7 @@ export default function OptimizationSite() {
     <div className="optimization-site section50 section50-left">
       <div className="container">
         <div className="row justify-content-start">
-          <h2>Оптимизация <span>сайта</span></h2>
+          <h2>Оптимизация сайта</h2>
           <div className="optimization-site__content">
             <p>SEO (Search Engine Optimization) — комплекс мер по оптимизации сайта для
               улучшения позиции в выдаче поисковых систем по определённым запросам и
