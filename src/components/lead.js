@@ -54,7 +54,7 @@ export default () => {
 
   return (
     <form className="quiz p-3">
-      <Form initialFormData={formData}/>
+      <Form initialFormData={formData} changeFormData={setFormData}/>
       <button className="mainBtn align-self-md-start" onClick={handleSubmit}>
         <FontAwesomeIcon icon={faPaperPlane} className="pr-2" size="lg"/> Получить предложение
       </button>

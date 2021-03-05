@@ -53,7 +53,7 @@ export default ({ location }) => {
       className={state.show === "messengers" ? "btnContainer d-none d-sm-flex chat_active" : "btnContainer d-none d-sm-flex"}>
       <a href="https://wa.me/79217750328" className="m-2"><img src={whatsapp} alt="whatsapp" width="40px"/></a>
       <a href="https://t.me/semantis" className="m-2"><img src={telegram} alt="telegram" width="40px"/></a>
-      <a href="viber://chat?number=+375292624063" className="m-2"><img src={viber} alt="viber" width="40px"/></a>
+      <a href="viber://chat?number=%2B375292624063" className="m-2"><img src={viber} alt="viber" width="40px"/></a>
       <button className={style()} onClick={handlerMessengerMenu}>
         <FontAwesomeIcon icon={faComments} size="lg" className={state.show === "messengers" ? "icon rotate" : "icon"}/>
       </button>

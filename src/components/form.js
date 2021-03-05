@@ -8,9 +8,7 @@ import whatsapp from "../images/nav/whatsapp.png"
 import telegram from "../images/nav/telegram.png"
 import viber from "../images/nav/viber.png"
 
-export default ({ initialFormData }) => {
-  const [formData, setFormData] = useState(initialFormData)
-
+export default ({ initialFormData, changeFormData }) => {
   const BY = {
     format: "+375 (##) ### ## ##",
     placeholder: "+375 (29) 262 40 63",
@@ -44,14 +42,14 @@ export default ({ initialFormData }) => {
         dropdown: false
       })
     }
-    setFormData({ ...formData, phone: { value: "", isValid: false, failed: false } })
+    changeFormData({ ...initialFormData, phone: { value: "", isValid: false, failed: false } })
   }
 
   const [showMask, setShowMask] = useState(false)
 
   const focusInput = e => {
-    if (formData[e.target.name].failed) setFormData({
-      ...formData,
+    if (initialFormData[e.target.name].failed) changeFormData({
+      ...initialFormData,
       [e.target.name]: { value: e.target.value, isValid: false, failed: false }
     })
     if (e.target.name === "phone" && !e.target.value) setShowMask(true)
@@ -59,20 +57,20 @@ export default ({ initialFormData }) => {
   }
 
   const handleInput = e => {
-    setFormData({ ...formData, [e.target.id]: { value: e.target.value, isValid: false, failed: false } })
+    changeFormData({ ...initialFormData, [e.target.id]: { value: e.target.value, isValid: false, failed: false } })
   }
 
   const checkInput = (e, expression) => {
     if (e.target.name === "phone") setShowMask(false)
 
     if (expression.test(e.target.value)) {
-      setFormData({ ...formData, [e.target.name]: { value: e.target.value, isValid: true, failed: false } })
-    } else setFormData({ ...formData, [e.target.name]: { value: e.target.value, isValid: false, failed: true } })
+      changeFormData({ ...initialFormData, [e.target.name]: { value: e.target.value, isValid: true, failed: false } })
+    } else changeFormData({ ...initialFormData, [e.target.name]: { value: e.target.value, isValid: false, failed: true } })
   }
 
   const handleCheckbox = e => {
-    if (formData[e.target.value] === "") setFormData({ ...formData, [e.target.value]: e.target.value })
-    else setFormData({ ...formData, [e.target.value]: "" })
+    if (initialFormData[e.target.value] === "") changeFormData({ ...initialFormData, [e.target.value]: e.target.value })
+    else changeFormData({ ...initialFormData, [e.target.value]: "" })
   }
 
   return (
@@ -84,14 +82,14 @@ export default ({ initialFormData }) => {
           name="name"
           type="text"
           placeholder="Ваше имя"
-          value={formData.name.value}
+          value={initialFormData.name.value}
           onFocus={focusInput}
           onChange={handleInput}
           onBlur={(e) => checkInput(e, /^[а-яА-ЯёЁ\s]+|[a-zA-Z\s]+$/)}
-          className={formData.name.failed ? "failed" : ""}
+          className={initialFormData.name.failed ? "failed" : ""}
         />
         <FontAwesomeIcon icon={faCheckCircle} size="lg"
-                         className={formData.name.isValid ? "ok blue-color d-block" : "ok d-none"}
+                         className={initialFormData.name.isValid ? "ok blue-color d-block" : "ok d-none"}
         />
       </div>
       <div className="input-group-main">
@@ -111,15 +109,15 @@ export default ({ initialFormData }) => {
             type="tel"
             placeholder={template.template.placeholder}
             format={template.template.format}
-            value={formData.phone.value}
+            value={initialFormData.phone.value}
             mask="_"
             allowEmptyFormatting={showMask}
             onFocus={focusInput}
             onBlur={(e) => checkInput(e, template.template.rexp)}
-            className={formData.phone.failed ? "failed" : ""}
+            className={initialFormData.phone.failed ? "failed" : ""}
           />
           <FontAwesomeIcon icon={faCheckCircle} size="lg"
-                           className={formData.phone.isValid ? "ok blue-color d-block" : "ok d-none"}/>
+                           className={initialFormData.phone.isValid ? "ok blue-color d-block" : "ok d-none"}/>
         </div>
       </div>
       <div className="d-flex flex-column">
@@ -129,7 +127,7 @@ export default ({ initialFormData }) => {
             id="whatsapp"
             type="checkbox"
             value="whatsapp"
-            checked={formData.whatsapp === "whatsapp"}
+            checked={initialFormData.whatsapp === "whatsapp"}
             onChange={handleCheckbox}
           />
           <label htmlFor="whatsapp"><img src={whatsapp} alt="whatsapp" width="20px"/>&nbsp;WhatsApp</label>
@@ -139,7 +137,7 @@ export default ({ initialFormData }) => {
             id="telegram"
             type="checkbox"
             value="telegram"
-            checked={formData.telegram === "telegram"}
+            checked={initialFormData.telegram === "telegram"}
             onChange={handleCheckbox}
           />
           <label htmlFor="telegram"><img src={telegram} alt="telegram" width="20px"/>&nbsp;Telegram</label>
@@ -149,7 +147,7 @@ export default ({ initialFormData }) => {
             id="viber"
             type="checkbox"
             value="viber"
-            checked={formData.viber === "viber"}
+            checked={initialFormData.viber === "viber"}
             onChange={handleCheckbox}
           />
           <label htmlFor="viber"><img src={viber} alt="viber" width="20px"/>&nbsp;Viber</label>

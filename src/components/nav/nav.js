@@ -179,7 +179,7 @@ export default ({ siteTitle, location }) => {
               <a href="https://t.me/semantis" className="m-2">
                 <img src={telegram} alt="telegram" width="40px"/>
               </a>
-              <a href="viber://chat?number=+375292624063" className="m-2">
+              <a href="viber://chat?number=%2B375292624063" className="m-2">
                 <img src={viber} alt="viber" width="40px"/>
               </a>
             </div>
@@ -194,7 +194,7 @@ export default ({ siteTitle, location }) => {
       {state.show === "phone" ?
         <Modal>
           <div className="modal-header">
-            <p className="m-0">Свяжитесь с нами</p>
+            <p className="m-0">Звоните</p>
             <FontAwesomeIcon icon={faTimes} size="lg" className="x" onClick={() => dispatch({ type: "close" })}/>
           </div>
           <button className="mainBtn mx-3 mt-3 justify-content-center" onClick={() => dispatch({ type: "close" })}>

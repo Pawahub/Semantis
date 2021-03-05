@@ -275,7 +275,7 @@ export default () => {
               </a>
             </div>
             <div className="text-center text-md-left pt-3">
-              <a href="https://www.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank"
+              <a href="https://api.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank"
                  className="mr-2">
                 <FontAwesomeIcon icon={faInstagram} size="lg" className="blue-color"/>
               </a>

@@ -99,7 +99,7 @@ export default ({ init }) => {
       {step === 4 ?
         <>
           <span className="mb-3 align-self-start">Почти готово!</span>
-          <Form initialFormData={formData}/>
+          <Form initialFormData={formData} changeFormData={setFormData}/>
         </> : null}
       {quiz !== "/" ? <div className="d-flex justify-content-between flex-row-reverse w-100">
         {step === 4 ? <button type="button" className="mainBtn" onClick={submitQuiz}>Узнать цену</button> :

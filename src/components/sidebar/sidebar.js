@@ -38,7 +38,7 @@ export default () => {
         <a href="mailto:info@semantis.by">info@semantis.by</a>
       </div>
       <div className="pt-5">
-        <a href="https://www.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank">
+        <a href="https://api.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank">
           <FontAwesomeIcon icon={faInstagram} size="lg"/>
         </a>
         <a href="https://www.facebook.com/semantis.online" rel="noreferrer noopener" target="_blank">

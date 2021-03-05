@@ -30,7 +30,7 @@ export default () => {
           <QuizBtn/>
         </div>
         <div className="offset-sm-4 offset-md-6 offset-lg-0 mt-5 social">
-          <a href="https://www.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank"
+          <a href="https://api.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank"
              className="my-2 mr-2">
             <FontAwesomeIcon icon={faInstagram} size="lg" className="blue-color"/>
           </a>
