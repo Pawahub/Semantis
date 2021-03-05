@@ -1,18 +1,18 @@
 .optimization-site
   &.section50-left
-    background: linear-gradient(rgba(8, 98, 255, 1), rgba(8, 93, 219, 1))
+    background: linear-gradient(90deg, #085DDB 50%, #FCFAF9 50%, #DFD9D9 100%)
     color: white
+    width: 100%
     min-height: auto
     display: flex
     padding: 50px
-    z-index: 2 !important
 
     > div
       margin: auto
 
   &.section50-right
     display: flex
-    background: linear-gradient(106.85deg, #FCFAF9 38.81%, #DFD9D9 100%)
+    width: 50%
 
     img
       margin: auto
@@ -32,6 +32,18 @@
       background: #F6FAFF
       color: #085DDB
 
+@media screen and (min-width: 992px)
+  .optimization-site
+    &__content
+      max-width: 50%
+
+    h2
+      color: #F6FAFF
+      min-width: max-content
+
+      span
+        color: #3B3F45
+
 @media (max-width: 991px)
   .optimization-site
     overflow: hidden
@@ -40,6 +52,7 @@
       position: relative
       width: 100%
       padding: 50px 15px
+      background: #085DDB
 
     &.section50-right
       display: none

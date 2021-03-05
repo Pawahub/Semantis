@@ -439,20 +439,20 @@ h1, h2 {
 }
 
 /*---------------------------------------------------*/
-/*                H O W  W E  D O                    */
+/*                    O F F E R                      */
 /*---------------------------------------------------*/
-.how {
+.offer {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100vw;
     min-height: 100vh;
-    background: url("../images/how/bg.svg") center top;
+    background: url("../images/offer/bg.svg") center top;
     background-size: cover;
 }
 
-.how .container {
+.offer .container {
     transform-style: preserve-3d;
     perspective: 450px;
 }
@@ -470,7 +470,7 @@ h1, h2 {
 }
 
 /*---------------------------------------------------*/
-/*                   R E V I E W                     */
+/*              T E S T I M O N I A L S              */
 /*---------------------------------------------------*/
 .testimonials {
     position: relative;
@@ -546,10 +546,12 @@ h1, h2 {
 }
 
 .testimonials .slick-next {
+    right: -50px;
     background-image: url("../images/testimonials/next.svg") !important;
 }
 
 .testimonials .slick-prev {
+    left: -50px;
     background-image: url("../images/testimonials/prev.svg") !important;
 }
 

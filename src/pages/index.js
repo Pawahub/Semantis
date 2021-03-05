@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 
 import Home from "../components/home-page/home"
 import About from "../components/home-page/about"
-import How from "../components/home-page/how"
+import How from "../components/home-page/offer"
 import Testimonials from "../components/home-page/testimonials"
 import Contacts from "../components/home-page/contacts"
 

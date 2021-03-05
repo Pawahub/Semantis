@@ -16,7 +16,8 @@ export default () => {
     {
       oldPrice: "от $ 250",
       price: "🔥 $ 190",
-      title: "Разработка логитпа",
+      title: "Разработка логотипа",
+      description: "Оформление бланка документов в подарок",
       discount: "-24%"
     },
     {
@@ -36,7 +37,7 @@ export default () => {
   ]
 
   return (
-    <section className="how py-5">
+    <section className="offer py-5">
       <div className="container">
         <div className="row justify-content-center mb-5">
           <h2 className="text-white">Мы предлагаем</h2>
