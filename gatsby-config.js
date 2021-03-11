@@ -20,12 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
+        name: `Semantis.online`,
+        short_name: `Semantis`,
+        start_url: `.`,
         background_color: `#F6FAFF`,
         theme_color: `#085DDB`,
         display: `minimal-ui`,
+        orientation: `portrait`,
         icon: `src/images/icon-192x192.png` // This path is relative to the root of the site.
       }
     },
