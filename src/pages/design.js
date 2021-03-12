@@ -17,6 +17,7 @@ const DesignPage = ({ location }) => {
       setSectionNumber(number)
     }
   }
+
   if (typeof window !== `undefined`) {
     if (/Android|webOS|Mac OS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || document.documentElement.clientWidth <= 991) {
       return (
