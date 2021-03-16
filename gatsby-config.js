@@ -32,6 +32,13 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: `GTM-K3ZBMHJ`,
+        includeInDevelopment: false,
+      },
+    },
   ]
 }
