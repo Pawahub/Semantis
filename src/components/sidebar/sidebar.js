@@ -27,15 +27,15 @@ export default () => {
       </div>
       <ul role="navigation" onClick={setCurrentPage} onKeyDown={setCurrentPage}>
         <li><Link to="/" className="active">Главная</Link></li>
-        <li><Link to="/web-dev">Разработка сайтов</Link></li>
-        <li><Link to="/internet-promotion">Продвижение в интернете</Link></li>
-        <li><Link to="/design">Дизайн</Link></li>
-        <li><Link to="/develop">SMM</Link></li>
+        <li><Link to="/web-dev/">Разработка сайтов</Link></li>
+        <li><Link to="/internet-promotion/">Продвижение в интернете</Link></li>
+        <li><Link to="/design/">Дизайн</Link></li>
+        <li><Link to="/develop/">SMM</Link></li>
       </ul>
       <div className="contact">
         <a href="tel:+375292624063">+375 (29) 2624063</a>
         <a href="tel:+79217750328">+7 (921) 7750328</a>
-        <a href="mailto:info@semantis.by">info@semantis.by</a>
+        <a href="mailto:info@semantis.by">mail@semantis.online</a>
       </div>
       <div className="pt-5">
         <a href="https://api.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank">

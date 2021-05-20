@@ -205,6 +205,7 @@ export default () => {
                       format={template.template.format}
                       value={formData.phone.value}
                       mask="_"
+                      autoComplete="on"
                       allowEmptyFormatting={showMask}
                       onFocus={focusInput}
                       onBlur={(e) => checkInput(e, template.template.rexp)}
@@ -261,20 +262,18 @@ export default () => {
           </div>
           <div className="col-12 col-md-6 px-3 pl-md-5 pt-5 pt-md-0">
             <h2 className="mb-4">Контакты</h2>
-            <div className="mb-4"><h6>Телефоны</h6>
+            <div className="mb-4 text-center text-md-left">
+              <h6>Телефоны</h6>
               <a href="tel:+79217750328">+7 (921) 7750328</a>
               <br/>
               <a href="tel:+375292624063">+375 (29) 2624063</a>
             </div>
-            <div className="mb-4"><h6>E-mail</h6>
+            <div className="mb-4 text-center text-md-left">
+              <h6>E-mail</h6>
               <a href="mailto:mail@semantis.online">mail@semantis.online</a>
             </div>
-            <div className="mb-4"><h6>Адрес</h6>
-              <a href="https://goo.gl/maps/jPtF6GyeSa6DTf178" rel="noreferrer noopener" target="_blank">
-                Беларусь, Гродно, ул. Урицкого, 12, офис 306
-              </a>
-            </div>
-            <div className="text-center text-md-left pt-3">
+            <div className="text-center text-md-left">
+              <h6>Мы в соц.сетях</h6>
               <a href="https://api.instagram.com/semantis.online/" rel="noreferrer noopener" target="_blank"
                  className="mr-2">
                 <FontAwesomeIcon icon={faInstagram} size="lg" className="blue-color"/>

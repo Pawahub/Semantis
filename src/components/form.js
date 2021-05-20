@@ -111,6 +111,7 @@ export default ({ initialFormData, changeFormData }) => {
             format={template.template.format}
             value={initialFormData.phone.value}
             mask="_"
+            autoComplete="on"
             allowEmptyFormatting={showMask}
             onFocus={focusInput}
             onBlur={(e) => checkInput(e, template.template.rexp)}
